@@ -1,92 +1,175 @@
-# Explore Application Modernization Accelerator to modernize WebSphere applications
+# IBM Modernized Runtime Extension for Java Hands-On Lab 1648 in TechXchange 2026
 
-<kbd>![Toolbar_terminal](./images/media/AMA_Visualization_SampleData.png)</kbd>
-
-**Last updated:** July 2026
 
 **Duration:** 90 minutes
 
+# Introduction
 
-Need support? Contact **Lars Besselmann, Lars.Besselmann@de.ibm.com**
+[IBM Modernized Runtime Extension for Java](https://www.ibm.com/docs/en/more) (MoRE) is an extension of WebSphere® Application Server Network Deployment (ND) 9.0.5 that enables you to run and manage Liberty servers from the traditional WebSphere environment. With MoRE, Liberty servers can be configured, clustered, and administered using familiar tools like the administrative console and wsadmin scripting.
 
+## About this hands-on lab
 
+This lab provides fundamental hands-on experience of the evaluation process of WebSphere application for their modernization journey to MoRE. It shows the value of using Application Modernization Accelerator (AMA) to evaluate on-premises Java applications, modernise using IBM Bob and then deploy to MoRE. In this interactive, hands-on lab, you'll explore the cutting-edge capabilities of WebSphere Application Server and MoRE, which are designed to supercharge your modernization journey. 
 
-## About the lab
+Through guided modules, you'll deploy modern Jakarta EE to a Managed Liberty server, using the WebSphere Administrative Console and/or automation with wsadmin scripts. Whether you're modernizing legacy systems or building cloud-native apps, this lab is your launchpad into the next generation of enterprise application management.
 
-This lab provides fundamental hands-on experience of the evaluation process of WebSphere application for their modernization journey to Liberty. It shows the value of using Application Modernization Accelerator (AMA) to evaluate on-premises Java applications.
+Upon completion of this lab, you will have gained experience using AMA to quickly analyze on-premises Java applications without accessing their source code, estimate the effort in moving to container-based clouds, and using IBM Bob to update the source code to accelerate your application modernization journey to MoRE.
 
-You will also learn how to use the deployment accelerators that AMA generates to help deploy and run Java applications on Liberty and in containers.
+---
+# Getting started
 
-Upon completion of this lab, you will have gained experience using AMA to quickly analyze on-premises Java applications without accessing their source code, estimate the effort in moving to container-based clouds, and using AMA’s deployment accelerators to accelerate your application modernization journey to Liberty and containers.
+This section guides you through the initial setup of the lab environment. Perform all tasks from the student virtual machine.
 
-The Application Modernization Accelerator provides the following value:
+## Lab environment overview
 
-- identify the Java EE programming models in the app.
+The lab environment is preinstalled with the following packages:
+* The Application Modernization Accelerator, version 5.0
+* IBM Bob
+* WebSphere Application Server Network Deployment (ND), version 9.0.5.28, running on Java SE 8
 
-- determine the complexity of apps by listing a high-level inventory of the content and structure of each app.
+    * Modernized Runtime Extension for Java (MoRE), version 1.0.4.0
 
-- highlight Java EE programming model and WebSphere API differences between the WebSphere profile types
+    * IBM HTTP Server (IHS) and Web Server Plug-ins for WebSphere Application Server
 
-- identify Java EE specification implementation differences that might affect the app
+* WebSphere Liberty, version 26.0.0.6, running on Java SE 21
 
-- generate accelerators for deploying the application to Liberty and containers in a target environment.
+In addition, the environment is preconfigured with the following profiles and server instances:
 
-Additionally, the tool provides a recommendation for the right-fit IBM WebSphere Application Server edition and offers advice, best practices, and potential solutions to assess the ease of moving apps to Liberty or newer versions of WebSphere traditional. It accelerates application migrating to cloud process, minimize errors and risks and reduce time to market.
+* A Deployment Manager (`dmgr`), which serves as the central controller for the WebSphere cell.
 
+* Two managed nodes, `node1` and `node2`, both federated into the same cell as the `dmgr`.
 
-## 1. Introduction
+* A preconfigured web server, `webserver1`, running on `node2`, which listens on ports `7777` (HTTP) and `8888` (HTTPS). This server forwards incoming requests to applications running on the Liberty cluster via IHS and the WebSphere Plugin, allowing external access without directly exposing Liberty server ports.
 
-As shown in the image below, your company has several web applications deployed to WebSphere Application Server (WAS) environment.
+All components are installed under `/home/techzone/IBM` on the student virtual machine.
 
-<kbd>![Toolbar_terminal](./images/media/AMA_Visualization_SampleData.png)</kbd>
+## Cloning the lab repository
 
-Your company wants to move these applications to the modern WebSphere Liberty server on a container-based cloud. However, you are not sure how much effort the migration process might take.
+Open a command-line terminal and run the following commands to clone the lab repository to your environment:
 
-You decide to use the IBM Application Modernization Accelerator to do a quick evaluation of these applications without their source code to identify a good candidate application to move to Liberty and/or container-based cloud.
+```sh
+cd /home/techzone/Student
 
-After determining a candidate application for modernization to WebSphere Liberty, you use the accelerators generated by AMA to deploy the application to WebSphere Liberty on your local developer machine and test it.
+git clone https://github.com/Emily-Jiang/tx-more-lab-2026.git
+cd tx-more-lab-2026
+```
 
-## 2. Objective
+## Starting WebSphere and IHS servers
 
-The objectives of this lab are to:
+The [`scripts/start-was-servers.sh`](scripts/start-was-servers.sh) script starts all preconfigured WebSphere components required for the lab, including the Deployment Manager, both node agents, and `webserver1`.
 
-- Learn how to collect Java application and configuration data using the Transformation Advisor Data Collector tool.
+Run the following command to execute the script:
 
-- Learn how to use the Application Modernization Accelerator to evaluate the effort involved to modernize to Liberty and container-based clouds and identify good application candidates for modernization.
+```sh
+./scripts/start-was-servers.sh
+```
+After the script completes, the message `All servers have been started!` is displayed.
 
-- Learn how to use the Application Modernization Accelerator Developer Tools to apply required code changes.
+---
+# Creating a static managed Liberty server cluster
 
+This section guides you through the process of creating a static managed Liberty server cluster.
 
-## 3. Prerequisites
+You can use either of the following methods to complete this task:
+* If you prefer a visual, step-by-step experience, continue with [Option 1: Using the administrative console](#option-1-using-the-administrative-console).
+* If you prefer automation or scripting, skip ahead to [Option 2: Using administrative scripting](#option-2-using-administrative-scripting).
 
-The following prerequisites must be completed prior to beginning this lab:
+## Option 1: Using the administrative console
 
-- Familiarity with basic Linux commands
+1. Launch the **WAS Admin Console** by selecting it from your browser bookmarks or navigating to the https://localhost:9043/ibm/console URL.
 
-- Have internet access
+   Log in using the following credentials:
+   * User ID: `techzone`
+   * Password: `IBMDem0s!` (Note that the zero is used instead of the letter "O")
 
-- Have a lab environment ready
+2. Navigate to **Servers** &rarr; **Clusters** &rarr; **WebSphere application server clusters**. Click **New...** to create a new cluster.
 
-## 4. About the lab environment
+   ![](assets/mlscluster-creation.png)
 
-The lab is written for a lab environment hosted by IBM and the software is already installed.
+3. On **Step 1**, set **Cluster name** to `MLSCluster`. Leave the other fields as default. Click **Next**.
 
-As IBMer, you can request the related TechZone environment here:
+4. On **Step 2**, configure the first cluster member:
 
-- Collection: https://techzone.ibm.com/collection/liberty-getting-started-labs-demos/journey-modernization-tools
-- Environment: **Application Modernization VM - for Liberty, AMA v5, IBM Bob**.
+   * **Member Name**: `libertyServer`
+   * **Select node**: `node1`
+   * **Select basis for first cluster member**: choose **Create the member using an application server template**, then select `default-managed-liberty-server` from the dropdown
 
-    (Please be aware that there is also an environemtn for AMA v4)
+   Leave all other settings as default. Click **Next**.
 
-The following software has been installed:
-- Java 17 or beyond 
-- Maven
-- Git
-- WebSphere Application Server Network Deployment
-- The Application Modernization Accelerator
-- Visual Studio Code with the following extensions:
-    - The Liberty Tools
-    - The Application Modernization Accelerator Developer Tools (AMA Dev Tools)
+5. On **Step 3**, configure the second cluster member:
+
+   * **Member Name**: `libertyServer`
+   * **Select node**: `node2`
+
+   Leave the other fields as default. Click **Add Member**, then click **Next**.
+
+6. On **Step 4**, review the configuration summary and click **Finish**.
+
+7. Click <ins>Review</ins>.
+
+   ![](assets/mlscluster-creation-review.png)
+
+8. Select **Synchronize changes with Nodes**, then click **Save** to apply the configuration and synchronize with both nodes.
+
+   ![](assets/mlscluster-creation-sync.png)
+
+9. After synchronization completes, click **OK**.
+
+   ![](assets/mlscluster-creation-sync-complete.png)
+
+10. Return to **Servers** &rarr; **Clusters** &rarr; **WebSphere application server clusters**. Locate <ins>MLSCluster</ins> in the list and ensure it is present. Check the box next to it, then click **Start** to initiate the cluster. Wait until the status displays a green arrow, indicating that it is running.
+
+    ![](assets/mlscluster-start.png)
+
+> [!NOTE]
+> After some wait, if the cluster does not show as started, you might want to check the servers status via **Servers** &rarr;  **All Servers** &rarr; and then the cluster servers. If the  servers are started, you are ready to go.
+
+## Option 2: Using administrative scripting
+
+Run the following command to create and start the cluster using the provided Jython script [`createMLSCluster.py`](scripts/createMLSCluster.py):
+
+```sh
+/home/techzone/IBM/WebSphere/AppServer/profiles/Dmgr01/bin/wsadmin.sh \
+  -lang jython -user techzone -password IBMDem0s! \
+  -f /home/techzone/Student/tx-more-lab/scripts/createMLSCluster.py
+```
+
+The script performs the following actions:
+
+* Creates the static cluster named `MLSCluster`
+* Adds one managed Liberty server on each node
+* Synchronizes the configuration across nodes
+* Starts the Liberty cluster
+
+When the cluster starts successfully, the message `!!!Successfully started the cluster!!!` is displayed.
+
+---
+# Next steps
+
+Proceed to [Module 1](module1/README.md) to deploy a Java 21 and Jakarta EE 10 application to the managed Liberty cluster.
+
+---
+# Troubleshooting
+
+This section provides guidance on troubleshooting common issues during the lab.
+
+## Resetting the lab environment
+
+If you encounter problems or want to start the lab from scratch, you can reset the environment to its original state by running:
+
+```sh
+/home/techzone/Student/tx-more-lab/scripts/reset-lab-env.sh
+```
+
+To remove the cloned lab repository, run:
+
+```sh
+cd /home/techzone/Student
+rm -rf tx-more-lab-2026
+```
+
+This ensures you’re starting from a clean workspace.
+
 
 
 ## 5. Explore Application Modernization Accelerator
