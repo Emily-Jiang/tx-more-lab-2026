@@ -20,3 +20,5 @@ logs/
 .project
 
 pom.xml.*
+
+was-dep/
