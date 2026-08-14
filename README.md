@@ -1103,7 +1103,7 @@ If you prefer to use a script, skip ahead to [Option 2: Using administrative scr
 
 2. Go to **Applications** &rarr; **New Application** &rarr; <ins>New Enterprise Application</ins>.
 
-   ![](../assets/new-app.png)
+   ![](./images/media/new-app.png)
 
 3. In the installation panel:
 
@@ -1112,7 +1112,7 @@ If you prefer to use a script, skip ahead to [Option 2: Using administrative scr
    
    Click **Next** and wait for the application to upload.
 
-   ![](../assets/module1-new-app-installation.png)
+   ![](./images/media/module1-new-app-installation.png)
 
 4. Choose **Fast Path** and click **Next**.
 
@@ -1128,7 +1128,7 @@ If you prefer to use a script, skip ahead to [Option 2: Using administrative scr
    
    Click **Next**.
 
-   ![](../assets/module1-map-modules-to-servers.png)
+   ![](./images/media/module1-map-modules-to-servers.png)
 
 7. On **Step 3**, confirm that the **Context Root** is set to `/resorts` and click **Next**.
 
@@ -1142,7 +1142,7 @@ If you prefer to use a script, skip ahead to [Option 2: Using administrative scr
 
 1. Go to **Servers** &rarr; **Server Types** &rarr; **Web servers**.
    
-   ![](../assets/webserver.png)
+   ![](./images/media/webserver.png)
 
 2. Select `webserver1` and click **Generate Plug-in**.
 
@@ -1178,7 +1178,7 @@ Because the application is accessible via IHS, use the following URLs based on t
 
 To confirm the application is functioning correctly, launch it and open the **Where to?** drop-down menu. Select any destination from the list—if successful, the relevant weather details should load and display without error messages.
 
-![](../assets/modresorts.png)
+![](./images/media/modresorts.png)
 
 ---
 # Troubleshooting
