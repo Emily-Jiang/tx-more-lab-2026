@@ -5,20 +5,24 @@
 
 # Introduction
 
-[IBM Modernized Runtime Extension for Java](https://www.ibm.com/docs/en/more) (MoRE) is an extension of WebSphere® Application Server Network Deployment (ND) 9.0.5 that enables you to run and manage Liberty servers from the traditional WebSphere environment. With MoRE, Liberty servers can be configured, clustered, and administered using familiar tools like the administrative console and wsadmin scripting.
+Modernizing Java applications doesn't mean manual work or abandoning your operational model. This lab walks you through a smooth and automatic end-to-end enterprise Java modernization workflow using IBM Application Modernization Accelerator (AMA), IBM Bob, and IBM Modernized Runtime Extension for Java (MoRE). 
 
 [IBM Application Modernization Accelerator](https://www.ibm.com/docs/en/ama) has the capability to quickly evaluate your on-premises applications for rapid deployment on WebSphere Application Server and Liberty on public and private cloud environments. The first step is to download and run a custom discovery tool on your application servers. Results from the scan are uploaded to Application Modernization Accelerator where a detailed analysis is provided.
 
 Application Modernization Accelerator creates a high-level inventory of the content and structure of each application. This information is used to determine complexity and identify the shared library and MQ Queue Manager dependencies for your applications. Application Modernization Accelerator also flags potential issues and estimates a development cost to complete a move to the cloud. Detailed reports with advice, suggestions, and best practices are provided to ensure that the application runs correctly in the preferred cloud environment.
+
+[IBM Bob](https://bob.ibm.com/) is an AI-powered integrated development environment (IDE) and software development partner to assist enterprises throughout the entire software development lifecycle. IBM Bob offers Premium packages, which has additional workflows. This lab uses the Liberty Replatform workflow from the Premium package to assist migrating your applications to a managed Liberty server in IBM Modernized Runtime Extensions for Java.
+
+[IBM Modernized Runtime Extension for Java](https://www.ibm.com/docs/en/more) (MoRE) is an extension of WebSphere® Application Server Network Deployment (ND) 9.0.5 that enables you to run and manage Liberty servers from the traditional WebSphere environment. With MoRE, Liberty servers can be configured, clustered, and administered using familiar tools like the administrative console and wsadmin scripting.
 
 
 ## About this hands-on lab
 
 This lab provides fundamental hands-on experience of the evaluation process of WebSphere application for their modernization journey to MoRE. It shows the value of using Application Modernization Accelerator (AMA) to evaluate on-premises Java applications, modernise using IBM Bob and then deploy to MoRE. In this interactive, hands-on lab, you'll explore the cutting-edge capabilities of WebSphere Application Server and MoRE, which are designed to supercharge your modernization journey. 
 
-Through guided modules, you'll deploy modern Jakarta EE to a Managed Liberty server, using the WebSphere Administrative Console and/or automation with wsadmin scripts. Whether you're modernizing legacy systems or building cloud-native apps, this lab is your launchpad into the next generation of enterprise application management.
+Upon completion of this lab, you will have gained experience using AMA to quickly analyze on-premises Java applications without accessing their source code, and using IBM Bob to update the source code to accelerate your application modernization journey to MoRE.
 
-Upon completion of this lab, you will have gained experience using AMA to quickly analyze on-premises Java applications without accessing their source code, estimate the effort in moving to container-based clouds, and using IBM Bob to update the source code to accelerate your application modernization journey to MoRE.
+You'll then deploy the modernized Modresort app to a Managed Liberty server in MoRE, using the WebSphere Administrative Console and/or automation with wsadmin scripts. 
 
 ---
 # Getting started
@@ -32,7 +36,7 @@ The lab environment is preinstalled with the following packages:
 * IBM Bob 2.0.3
 * WebSphere Application Server Network Deployment (ND), version 9.0.5.28, running on Java SE 8
 
-    * Modernized Runtime Extension for Java (MoRE), version 1.0.4.0
+    * Modernized Runtime Extension for Java (MoRE), version 1.0.3.0
 
     * IBM HTTP Server (IHS) and Web Server Plug-ins for WebSphere Application Server
 
