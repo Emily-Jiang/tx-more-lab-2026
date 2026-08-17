@@ -97,7 +97,7 @@ Let's check if AMA is already started. This can be validated by reviewing if the
     <kbd>![AMA_Launcher_stopped](./images/media/AMA_Launcher_started.png)</kbd>
 
 
-## Build and deploy the WebSphere application modResort
+## Build and deploy the WebSphere application ModResort
 
 The objective of this section is to assess the ModResort application that has been deployed to a traditional WAS 9 instance.
 
@@ -145,7 +145,7 @@ The application has not been installed to traditional WAS so far. You will now p
 
 2. Enter the following command to start the Note Agent
 
-       /home/techzone/IBM/WebSphere/profiles/node01/bin/startNode.sh
+       /home/techzone/IBM/WebSphere/profiles/AppSrv01/bin/startNode.sh
 
     Wait until the Node agent has been started
     
@@ -155,20 +155,20 @@ The application has not been installed to traditional WAS so far. You will now p
 
         cd modresorts-project/tWAS-Scripts
 
-        /home/techzone/IBM/WebSphere/AppServer/profiles/Dmgr01/bin/wsadmin.sh -f ./modresorts_install.py
+        /home/techzone/IBM/WebSphere/profiles/Dmgr01/bin/wsadmin.sh -f ./modresorts_install.py
 
     <kbd>![tWAS_install_modresorts](./images/media/tWAS_install_modresorts.png)</kbd>
 
 
 4. Set the URLProvider which is used by the modresorts application via wsadmin by entering the following commands:
 
-        ~/usr/IBM/WebSphere/AppServer/profiles/Dmgr01/bin/wsadmin.sh -f ./setURLProvider.py
+        ~/usr/IBM/WebSphere/profiles/Dmgr01/bin/wsadmin.sh -f ./setURLProvider.py
 
     <kbd>![tWAS_set_URLProvider](./images/media/tWAS_set_URLProvider.png)</kbd>
 
 5. Enter the following command to start the WAS server server1
 
-       ~/usr/IBM/WebSphere/AppServer/profiles/AppSrv01/bin/startServer.sh server1
+       ~/usr/IBM/WebSphere/profiles/AppSrv01/bin/startServer.sh server1
 
     Wait until the server serer1 has been started
     
@@ -207,9 +207,9 @@ The application has not been installed to traditional WAS so far. You will now p
 
 7. Switch back to the terminal window and stop the WAS cell.
 
-        ~/usr/IBM/WebSphere/AppServer/profiles/AppSrv01/bin/stopServer.sh server1
-        ~/usr/IBM/WebSphere/AppServer/profiles/AppSrv01/bin/stopNode.sh
-        ~/usr/IBM/WebSphere/AppServer/profiles/Dmgr01/bin/stopManager.sh
+    /home/TechZone/IBM/WebSphere/profiles/AppSrv01/bin/stopServer.sh server1
+    /home/TechZone/IBM/WebSphere/profiles/AppSrv01/bin/stopNode.sh
+    /home/TechZone/IBM/WebSphere/profiles/Dmgr01/bin/stopManager.sh
 
 As you have seen, the application works without any issue on WebSphere Traditional v9. The next step is to assess the application via AMA to find out which issues must be resolved to make the application work on Liberty with Java 8.
 
@@ -294,8 +294,8 @@ To evaluate on-premises Java applications, you need to run the AMA Discovery Too
 
         <kbd>![AMA_Discovery_Run_3](./images/media/AMA_Discovery_Run_3.png)</kbd>
         
-        Change the domain and you can see that the command will change.
-        Finally, switch back to the **IBM WebSphere** Domain. 
+        
+        Finally, choose the **IBM WebSphere** Domain. 
 
         c. Select the Analysis type
         
@@ -303,7 +303,7 @@ To evaluate on-premises Java applications, you need to run the AMA Discovery Too
 
         <kbd>![AMA_Discovery_Run_4](./images/media/AMA_Discovery_Run_4.png)</kbd>
         
-        Change the analysis type and you can see that the command will change. Finally, switch back to the **Apps & Configuration** analysis. 
+        Choose the **Apps & Configuration** analysis. 
         Selecting **Apps & Configuration** ensures that the application data and server configuration data is collected.
  
         The server configuration data is extremely helpful in Transformation Advisor to generate deployment artifacts in the migration bundle, which we will explore later in the lab.
@@ -336,10 +336,8 @@ To evaluate on-premises Java applications, you need to run the AMA Discovery Too
 
         Type **1** to accept the license agreement and press **Enter**.
 
-    3. Wait until the analysis has completed. As you can see, 4 applications have been analyzed, and the resulting data collection has been automatically uploaded. 
+    3. Wait until the analysis has completed. As you can see, 1 application has been analyzed, and the resulting data collection has been automatically uploaded. 
 
-        <kbd>![AMA_Discovery_Run_9](./images/media/AMA_Discovery_Run_9.png)</kbd>
-    
         The collection is also available as zip file in the directory where the discovery tool was called. It is named like the WAS profile.
 
             ls -l
@@ -523,21 +521,7 @@ You will then use IBM Bob to modernise the application.
       
         If you have a user with access to the premium package, it is listed under add-ons (see above). 
         
-    2. Perform these steps if the premium package is not listed.
-
-        <kbd>![Bob_standard_user.png](./images/media/Bob_standard_user.png)</kbd>
-  
-        If you don't see the premium package, your account might be mapped to multiple teams. 
-        
-        Try to switch the setting for **Team** to find the appropriate team.
-
-        <kbd>![Bob_standard_user_team.png](./images/media/Bob_standard_user_team.png)</kbd>
-  
-        If you have multiple accounts, switch the account by log out of IBM Bob and then login again. 
-
-        <kbd>![Bob_Logout.png](./images/media/Bob_Logout.png)</kbd>
-  
-    3. Finally, you should have an account that has access to the premium package.
+    You should have an account that has access to the premium package.
 
         <kbd>![Bob_premium_user.png](./images/media/Bob_premium_user.png)</kbd>
     
@@ -565,14 +549,14 @@ You will then use IBM Bob to modernise the application.
     
     5. In the **IBM Bob** panel, click on the workflow icon and take a look at the Bob workflows that are offered. 
     
-        You should see different workflows including the ones for Liberty Replatform (which are expanded in the screenshot below):
+        You should see different workflows including the ones for Liberty Modernization (which are expanded in the screenshot below):
 
         <kbd>![Bob_premium_user_Workflows.png](./images/media/Bob_premium_user_Workflows.png)</kbd>
 
 
 
-### Modernize modresorts to WebSphere Liberty using IBM Bob
-In the section you will use the **Liberty replatform Workflow** to modernize the application to Liberty. 
+### Modernize Modresorts to WebSphere Liberty using IBM Bob
+In the section you will use the **Java Modernization** to modernize the application to Liberty. 
 
 1. Start the Java Modernization workflow
 
@@ -652,7 +636,7 @@ In the section you will use the **Liberty replatform Workflow** to modernize the
 
         You can see that the **LogoutServlet.java** and the **Weatherservlet.java** have been changed. 
     
-    4. To better compare what has changed, switch to the **Source Control** view and compare the files. 5 files have been changed so far.
+    4. To better compare what has changed, switch to the **Source Control** view and compare the files. Some files have been changed. For an instance,
 
         - The files **server.xml** has been copied over from the migration plan.
         - The file **server.env** has been created to make Liberty use Java 21.
@@ -890,13 +874,11 @@ In the section you will use the **Liberty replatform Workflow** to modernize the
 
             Click on **Approve for task** to continue. 
 
-        18. Bob created a summary with a diagram visualizing the performed tasks. 
+        18. Bob created a summary with a diagram visualizing the performed tasks. [todo - add a new diagram]
         
             <kbd>![Bob_Visual_Summary.png](./images/media/Bob_Visual_Summary.png)</kbd>
 
             Click on the diagram to expand the diagram. 
-
-            <kbd>![Bob_Mermaid_Diagram](./images/media/Bob_Mermaid_Diagram.png)</kbd>
 
             As you can see, the diagram contains details about the performed modernization as well as details about the costs and tokens for the different tasks.
 
@@ -914,59 +896,6 @@ In the section you will use the **Liberty replatform Workflow** to modernize the
 
             Wait until the Liberty instance has stopped.
 
-4. Adjust the auto-approval permissions
-
-    Permissions are used to define what Bob is allowed to do without asking. Initially you set the permissions to **Read** only. 
-
-    1. Review the permissions for the task
-        
-        Click on **Permissions** to see what has been enabled:
-
-        <kbd>![Bob_Permissions_Task](./images/media/Bob_Permissions_Task.png)</kbd>
-
-        In the last part of the lab, you clicked several times on **Approve for task**. This is reflected in the task permissions.
-    
-    2. Adjust the permissions overall
-
-        Task permissions are only valid for the current task. But typically, there are some permissions that you want to approve for any project and task. These are defined in the **Bob Settings**.
-
-        Click in the Bob panel on **Settings**.
-
-        <kbd>![Bob_Settings1](./images/media/Bob_Settings1.png)</kbd>
-
-        Click on **Chat** to see the details about auto approvals:
-
-        <kbd>![Bob_Auto_Approval1.png](./images/media/Bob_Auto_Approval1.png)</kbd>
-
-        Expand the section **Execute** to see all allowed and denied commands:
-
-        <kbd>![Bob_Auto_Approval_Execute.png](./images/media/Bob_Auto_Approval_Execute.png)</kbd>
-
-        As you can see, the auto-approval for **Execute** is not enabled so far. Feel free to enable it.
-        
-        In the section, you could also add commands like **curl**, **mvn clean** and so on that you want to auto-approve.
-
-        Close the section for **Execute**.
-
-        Scroll down to the **Workspace sandbox** settings and you can see that the read and write files is only allowed within the workspace even if auto-approval for **Read** or **Edit** is enabled. 
-
-        <kbd>![Bob_Workspace_Sandbox.png](./images/media/Bob_Workspace_Sandbox.png)</kbd>
-
-        This makes sure that Bob cannot access files outside the workspace unintended.
-
-        You can also define task limits to make sure Bob does not consume all coins for example.
-
-        <kbd>![Bob_Task_Limit.png](./images/media/Bob_Task_Limit.png)</kbd>
-
-        For the next part of the lab, adjust the Chat settings to this: 
-
-        <kbd>![Bob_Settings2.png](./images/media/Bob_Settings2.png)</kbd>
-
-    
-        Finally, set the **Bob Settings** panel
-
-        <kbd>![Bob_Settings_Close.png](./images/media/Bob_Settings_Close.png)</kbd>
-    
 
 You should now have a good understanding how IBM Bob can help to modernize your applications. 
 
@@ -1083,7 +1012,7 @@ When the cluster starts successfully, the message `!!!Successfully started the c
 Before deploying the application, build it to generate the application WAR file:
 
 ```sh
-cd /home/techzone/Student/tx-more-lab/module1
+cd /home/techzone/Student/tx-more-lab-2026
 
 cd modresorts-project
 mvn clean package
@@ -1107,8 +1036,8 @@ If you prefer to use a script, skip ahead to [Option 2: Using administrative scr
 
 3. In the installation panel:
 
-   * Under **Path to new application**, select **Local file system** and choose the WAR file located at `/home/techzone/Student/tx-more-lab/module1/modresorts/target/modresorts-2.0.0.war`
-   * Set **Target Runtime Environment** to `WebSphere Liberty`
+   * Under **Path to new application**, select **Local file system** and choose the WAR file located at `/home/techzone/Student/tx-more-lab-2026/modresorts-project/target/modresorts-2.0.0.war`
+   * Set **Target Runtime Environment** to `Jakarta EE 10`
    
    Click **Next** and wait for the application to upload.
 
@@ -1157,9 +1086,9 @@ This section walks you through deploying the application using the administrativ
 Run the following command to deploy the application using the provided Jython  script [`deployModResorts.py`](deployModResorts.py):
 
 ```sh
-/home/techzone/IBM/WebSphere/AppServer/profiles/Dmgr01/bin/wsadmin.sh \
+/home/techzone/IBM/WebSphere/profiles/Dmgr01/bin/wsadmin.sh \
   -lang jython -user techzone -password IBMDem0s! \
-  -f /home/techzone/Student/tx-more-lab/module1/deployModResorts.py
+  -f /home/techzone/Student/tx-more-lab-2026/modresorts-project/deployModResorts.py
 ```
 
 The script performs the following actions:
@@ -1190,7 +1119,7 @@ This section provides guidance on troubleshooting common issues during the lab.
 If you encounter problems or want to start the lab from scratch, you can reset the environment to its original state by running:
 
 ```sh
-/home/techzone/Student/tx-more-lab/scripts/reset-lab-env.sh
+/home/techzone/Student/tx-more-lab-2026/scripts/reset-lab-env.sh
 ```
 
 To remove the cloned lab repository, run:
