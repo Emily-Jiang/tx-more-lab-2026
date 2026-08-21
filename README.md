@@ -32,6 +32,7 @@ This section guides you through the initial setup of the lab environment. Perfor
 The lab environment is preinstalled with the following packages:
 * The Application Modernization Accelerator, version 5.0
 * IBM Bob 2.0.3
+* IBM Bob Premium Package 1.0.1
 * WebSphere Application Server Network Deployment (ND), version 9.0.5.28, running on Java SE 8
 
     * Modernized Runtime Extension for Java (MoRE), version 1.0.3.0
