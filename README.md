@@ -749,7 +749,7 @@ In the section you will use the **Java Modernization** to modernize the applicat
 
         Copy the generated war file into the assets directory
     
-        cp ~/Student/modresorts-project/target/modresorts-2.0.0.war ~/Student/assets/modresorts-more-2.0.0.war
+            cp ~/Student/modresorts-project/target/modresorts-2.0.0.war ~/Student/assets/modresorts-more-2.0.0.war
 
 
 You should now have a good understanding how IBM Bob can help to modernize your applications. 
