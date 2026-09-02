@@ -31,8 +31,7 @@ This section guides you through the initial setup of the lab environment. Perfor
 
 The lab environment is preinstalled with the following packages:
 * The Application Modernization Accelerator, version 5.0
-* IBM Bob 2.0.3
-* IBM Bob Premium Package 1.0.1
+* IBM Bob 2.1.0
 * WebSphere Application Server Network Deployment (ND), version 9.0.5.28, running on Java SE 8
 
     * Modernized Runtime Extension for Java (MoRE), version 1.0.3.0
@@ -49,18 +48,9 @@ In addition, the environment is preconfigured with the following profiles and se
 
 * A preconfigured web server, `webserver1`, running on `node2`, which listens on ports `7777` (HTTP) and `8888` (HTTPS). This server forwards incoming requests to applications running on the Liberty cluster via IHS and the WebSphere Plugin, allowing external access without directly exposing Liberty server ports.
 
-All components are installed under `/home/techzone/IBM` on the student virtual machine.
+All components are installed under `/home/itzuser/usr/IBM` on the student virtual machine.
 
-## Cloning the lab repository
 
-Open a command-line terminal and run the following commands to clone the lab repository to your environment:
-
-```sh
-cd /home/techzone/Student
-
-git clone https://github.com/Emily-Jiang/tx-more-lab-2026.git
-cd tx-more-lab-2026
-```
 # Explore Application Modernization Accelerator
 In this section, you will explore the main capabilities of Application Modernization Accelerator. 
 
@@ -80,7 +70,7 @@ Let's check if AMA is already started. This can be validated by reviewing if the
 
 2. Access the AMA launch script to verify if AMA is started or not
 
-        cd /home/techzone/IBM/application-modernization-accelerator-local-*
+        cd ~/usr/IBM/application-modernization-accelerator-local-*
         ./launch.sh
 
         
@@ -98,23 +88,68 @@ Let's check if AMA is already started. This can be validated by reviewing if the
     <kbd>![AMA_Launcher_stopped](./images/media/AMA_Launcher_started.png)</kbd>
 
 
-## Build and deploy the WebSphere application ModResort
+## Build and analyze the modresorts application.
 
-The objective of this section is to assess the ModResort application that has been deployed to a traditional WAS 9 instance.
+### Verify the installed software 
 
-### Build the WAS application
+1. Open a terminal by clicking on Activities and selecting terminal.
 
-1. Install the required WAS library
+    <kbd>![Toolbar_terminal](./images/media/Toolbar_terminal.png)</kbd>
 
-       cd modresorts-project/
+    The terminal window opens.
 
-       mvn install:install-file -Dfile=/home/techzone/IBM/WebSphere/dev/was_public.jar -DpomFile=/home/techzone/IBM/WebSphere/dev/was_public-9.0.0.pom
+    <kbd>![Terminal](./images/media/Terminal.png)</kbd>
+
+2. Check the Maven version via the following command:
+
+        mvn -v
+
+
+    <kbd>![mvn-v](./images/media/mvn-v.png)</kbd>
+    
+    The version might be slightly different, but must be higher than 3.8.5
+
+
+3. Check the Git version via the following command:
+
+        git -v
+
+    <kbd>![git-v](./images/media/git-v.png)</kbd>
+
+    The version might be slightly different.
+
+### Create the required working directories
+
+1. Create the Student directories and some sub-directories used in the lab with commands:
+
+       mkdir ~/Student
+       mkdir ~/Student/assets
+       mkdir ~/Student/backup
+
+### Build and deploy the WebSphere applications
+
+The objective of this section is to assess the simple-pharmacy application that has been deployed to a traditional WAS 9 instance.
+
+#### Build the WAS application
+
+1. Clone the repository to get access to the application binaries and more.
+
+       rm -rf ~/Student/temprepo/
+       git clone https://github.com/Emily-Jiang/tx-more-lab-2026 ~/Student/temprepo
+       mv ~/Student/temprepo/modresorts-project ~/Student
+       rm -rf ~/Student/temprepo/
+
+2. Install the required WAS library
+
+        cd ~/Student/modresorts-project/
+
+       mvn install:install-file -Dfile=/home/itzuser/usr/IBM/WebSphere/AppServer/dev/was_public.jar -DpomFile=/home/itzuser/usr/IBM/WebSphere/AppServer/dev/was_public-9.0.0.pom
 
     Make sure that the build is successful.
 
     <kbd>![mvn-install_WAS_library](./images/media/mvn-install_WAS_library.png)</kbd>
 
-2. Build the application
+3. Build the application
     
        mvn clean package
 
@@ -122,97 +157,25 @@ The objective of this section is to assess the ModResort application that has be
 
     <kbd>![modresorts_mvn_build_tWAS_1.png](./images/media/modresorts_mvn_build_tWAS_2.png)</kbd>
 
-3. Copy the generated war file into the assets directory
+4. Copy the generated war file into the assets directory
     
-        cp target/modresorts-2.0.0.war /home/techzone/Student
+        cp ~/Student/modresorts-project/target/modresorts-2.0.0.war ~/Student/assets/
 
+#### Deploy the WebSphere application and test it
 
-### Deploy the WebSphere application and test it
+The application has not been installed to traditional WAS so far. Typically, you would do this now in detail, but this is out of scope here. Please look into the details about the required steps.
 
-The application has not been installed to traditional WAS so far. You will now perform the following steps:
-- Start the WAS ND Deployment Manager and a Node Agent
-- Deploy the application via wsadmin to the WAS ND server1 instance
-- Configure WAS for the application
-- Start server1
-- Test the application if it works fine on traditional WAS.
+Open a terminal window and enter the following commands to install the application:
 
-1. In the terminal window, enter the following command to start the Deployment Manager
+    ~/usr/IBM/WebSphere/AppServer/profiles/Dmgr01/bin/startManager.sh
 
-        /home/techzone/IBM/WebSphere/profiles/Dmgr01/bin/startManager.sh
+    cd ~/Student/modresorts-project/tWAS-Scripts
 
-    Wait until the Deployment Manager has been started
+    ~/usr/IBM/WebSphere/AppServer/profiles/Dmgr01/bin/wsadmin.sh -f ./modresorts_install.py
 
-    <kbd>![tWAS_dmgr-start](./images/media/tWAS_dmgr-start.png)</kbd>
+    ~/usr/IBM/WebSphere/AppServer/profiles/Dmgr01/bin/wsadmin.sh -f ./setURLProvider.py
 
-2. Enter the following command to start the Note Agent
-
-       /home/techzone/IBM/WebSphere/profiles/AppSrv01/bin/startNode.sh
-
-    Wait until the Node agent has been started
-    
-    <kbd>![tWAS_node-start](./images/media/tWAS_node-start.png)</kbd>
-
-3. Deploy the application using wsadmin by entering the following commands:
-
-        cd modresorts-project/tWAS-Scripts
-
-        /home/techzone/IBM/WebSphere/profiles/Dmgr01/bin/wsadmin.sh -f ./modresorts_install.py
-
-    <kbd>![tWAS_install_modresorts](./images/media/tWAS_install_modresorts.png)</kbd>
-
-
-4. Set the URLProvider which is used by the modresorts application via wsadmin by entering the following commands:
-
-        ~/usr/IBM/WebSphere/profiles/Dmgr01/bin/wsadmin.sh -f ./setURLProvider.py
-
-    <kbd>![tWAS_set_URLProvider](./images/media/tWAS_set_URLProvider.png)</kbd>
-
-5. Enter the following command to start the WAS server server1
-
-       ~/usr/IBM/WebSphere/profiles/AppSrv01/bin/startServer.sh server1
-
-    Wait until the server serer1 has been started
-    
-    <kbd>![tWAS_server1-start](./images/media/tWAS_server1_start.png)</kbd>
-
-6. Test the application
-
-    1. Open a browser window by clicking on **Activities** and then select the **Firefox** browser icon.
-
-        <kbd>![Toolbar_firefox](./images/media/Toolbar_firefox.png)</kbd>
-
-    2. Access the tWAS application using the URL http://localhost:9080/resorts
-
-    <kbd>![Toolbar_firefox](./images/media/modresorts_tWAS_1.png)</kbd>
-
-
-    3. Click on **Where to?** and switch to Paris or another city. 
-    (If the button does not work, make sure that the browser is in full-screen.)
-
-    <kbd>![Toolbar_firefox](./images/media/modresorts_tWAS_2.png)</kbd>
-
-    Verify that there are no errors shown. 
-    
-    <kbd>![Toolbar_firefox](./images/media/modresorts_tWAS_3.png)</kbd>
-    
-    4. Click on the **Logout** button.
-
-    <kbd>![Toolbar_firefox](./images/media/modresorts_tWAS_4.png)</kbd>
-
-    Verify that there are no errors shown. 
-    
-    <kbd>![Toolbar_firefox](./images/media/modresorts_tWAS_5.png)</kbd>
-
-    If everything worked fine, there should be no error displayed.
-    You will test the same application later on as is if it works on Liberty as well.
-
-7. Switch back to the terminal window and stop the WAS cell.
-
-    /home/TechZone/IBM/WebSphere/profiles/AppSrv01/bin/stopServer.sh server1
-    /home/TechZone/IBM/WebSphere/profiles/AppSrv01/bin/stopNode.sh
-    /home/TechZone/IBM/WebSphere/profiles/Dmgr01/bin/stopManager.sh
-
-As you have seen, the application works without any issue on WebSphere Traditional v9. The next step is to assess the application via AMA to find out which issues must be resolved to make the application work on Liberty with Java 8.
+    ~/usr/IBM/WebSphere/AppServer/profiles/Dmgr01/bin/stopManager.sh
 
 ## Create an AMA data collection for the WAS applications
 
@@ -222,9 +185,13 @@ To evaluate on-premises Java applications, you need to run the AMA Discovery Too
 
 1. Create in AMA a new workspace and download the AMA Discovery Tool.
     1. Switch back to the browser and open the existing AMA window.
-    Then click on **Home**
+    
         
-        Note: If you closed the browser window, open a new browser window and enter the URL https://localhost:3000
+        Note: If you closed the browser window, open a new browser window and enter the URL https://localhost:3000. 
+        
+        You will likely get a warning, that there is a potential security risk, click on **Advanced** and then **Accept the Risk and Continue**. 
+
+        <kbd>![AMA_Potential_Security_Risk](./images/media/AMA_Potential_Security_Risk3.png)</kbd>
 
     2. You should now be back on the AMA Overview page:
 
@@ -264,7 +231,7 @@ To evaluate on-premises Java applications, you need to run the AMA Discovery Too
 
     Run the AMA Discovery Tool against your WebSphere environment. After downloading the zipped Data Collector utility, it needs to be unpacked and run against a WebSphere Application server (WAS) to collect all the data of deployed applications and their configuration from the WAS server.
 
-    1. Go back to the Terminal window and navigate the /home/itzuser/Downloads directory and view its contents with commands:
+    1. Go back to the Terminal window by clicking the *Activities* on the top left corner and navigate the /home/itzuser/Downloads directory and view its contents with commands:
 
             cd /home/itzuser/Downloads/
             ls -l | grep Discovery
@@ -307,7 +274,7 @@ To evaluate on-premises Java applications, you need to run the AMA Discovery Too
         Choose the **Apps & Configuration** analysis. 
         Selecting **Apps & Configuration** ensures that the application data and server configuration data is collected.
  
-        The server configuration data is extremely helpful in Transformation Advisor to generate deployment artifacts in the migration bundle, which we will explore later in the lab.
+        The server configuration data is extremely helpful in AMA to generate deployment artifacts in the migration bundle.
  
         d. Review the final command.
         To analyze the application and configuration for WebSphere will be done using a command as shown in the screenshot
@@ -359,21 +326,44 @@ To evaluate on-premises Java applications, you need to run the AMA Discovery Too
 
     5. Click on the **Evaluation** workspace to open it.  
     You will be asked to specify the modernization destination. Select **Liberty administered from WebSphere (MoRE)** as the destination, choose **Java SE 21** under the Standard edition and then click on **Confirm**.
+    <kbd>![AMA_Select_Liberty](./images/media/AMA_Select_MoRE.png)</kbd>
     
 
-        The Evaluation workspace will open in the Visualization View. [todo]
+        The Evaluation workspace will open in the Visualization View. 
     
         <kbd>![AMA_Visualization_Evaluation](./images/media/AMA_Visualization_Evaluation.png)</kbd>
 
-    ___
+   6. Switch to the Assessment View.
 
-4. Click to download the **Migration Plan** generated by AMA.
+        <kbd>![AMA_Assessment_Tab2](./images/media/AMA_Assessment_Tab2.png)</kbd>
+
+You can see the assessment details for the 4 applications and the efforts to modernize them to MoRE.
+
+<kbd>![AMA_Evaluation_AllApplications](./images/media/AMA_Evaluation_AllApplications.png)</kbd>
+
+7. Click on the modresorts-2_0_0_war.ear to view its migration details. Click on **Inventory report**, **Technology report** and **Analysis report** to learn more details.
+
+    <kbd>![AMA_Evaluation_Assessment-modresorts0.png](./images/media/AMA_Evaluation_Assessment-modresorts0.png)</kbd>
+
+8. Click on **View migration plan** on the top right to view the Download migration plan.
+
+9. Click on **Download plan** to download the **Migration Plan** generated by AMA.
 
     <kbd>![AMA_Evaluation_Assessment-modresorts11.png](./images/media/AMA_Evaluation_Assessment-modresorts11.png)</kbd>
 
     The migration plan will be downloaded to the Downloads directory.
     <kbd>![AMA_Evaluation_Assessment-modresorts12.png](./images/media/AMA_Evaluation_Assessment-modresorts12.png)</kbd>
 
+10. Switch to the terminal window and execute the following command to see the content of the migration bundle. 
+
+        unzip -t ~/Downloads/modresorts-2_0_0_war.ear_migrationPlan.zip 
+
+    
+    <kbd>![AMA_Evaluation_Assessment-modresorts13.png](./images/media/AMA_Evaluation_Assessment-modresorts13.png)</kbd>
+
+
+
+11. Close the browser window containing the AMA UI.
 
 ### Recap
 
@@ -402,6 +392,8 @@ You will then use IBM Bob to modernise the application.
 
         git add .
         git commit -a -m "Initial project"
+
+        
 
 2. Open IBM Bob
 
@@ -453,7 +445,7 @@ You will then use IBM Bob to modernise the application.
         Click on **Skip migration** to continue.
 
         
-    4. The lab document uses the color theme **Bob Theme**. If you want to change your theme, you can do so under settings. 
+    4. The lab document uses the color theme **Bob Theme**. If you want to change your theme, you can do so under **settings** on the bottom left corner of your IDE. 
 
         <kbd>![Bob_Change_Theme.png](./images/media/Bob_Change_Theme.png)</kbd>
 
@@ -518,13 +510,13 @@ You will then use IBM Bob to modernise the application.
 
     1. On the upper right part of the Bob IDE, click on the **Settings** icon.    Then take a look at the account:
     
-         <kbd>![Bob_premium_user.png](./images/media/Bob_premium_user.png)</kbd>
+        <kbd>![Bob_premium_user.png](./images/media/Bob_premium_user.png)</kbd>
       
         If you have a user with access to the premium package, it is listed under add-ons (see above). 
         
     You should have an account that has access to the premium package.
-
-        <kbd>![Bob_premium_user.png](./images/media/Bob_premium_user.png)</kbd>
+    
+    <kbd>![Bob_premium_user.png](./images/media/Bob_premium_user.png)</kbd>
     
 6. Install the premium package extension:
     
@@ -561,7 +553,7 @@ In the section you will use the **Java Modernization** to modernize the applicat
 
 1. Start the Java Modernization workflow
 
-    1. In the **Bob** panel, click on **Permissions** to see which activities IBM Bob is allowed to do without approval. Set the settings to **Read**.
+    1. In the **Bob** panel, click on **Permissions** on the bottom to see which activities IBM Bob is allowed to do without approval. Set the settings to **Read**.
     This will allow you to better understand the workflow and decisions.
 
         <kbd>![Bob_Permissions.png](./images/media/Bob_Permissions.png)</kbd>
@@ -571,11 +563,7 @@ In the section you will use the **Java Modernization** to modernize the applicat
 
         <kbd>![Bob_Java_Modernization_Workflow_start.png](./images/media/Bob_Java_Modernization_Workflow_start.png)</kbd>
 
-    3. Open the twisties in the **Getting Started** section to get some background.
-    
-        <kbd>![Bob_Java_Modernization_Workflow_GettingStarted.png](./images/media/Bob_Java_Modernization_Workflow_GettingStarted.png)</kbd>
-
-        Finally, click on **Continue**.
+    3. Click on **Continue**.
 
 2. Bob prepares the modernization
 
@@ -585,13 +573,7 @@ In the section you will use the **Java Modernization** to modernize the applicat
 
         Click on **Approve once**.
 
-    2. Review the vulnerability results by expanding the twisties.
-    
-        <kbd>![Bob_Java_Modernization_Workflow_Vulnerabilities2.png](./images/media/Bob_Java_Modernization_Workflow_Vulnerabilities2.png)</kbd>
-
-        Click on **Approve once**.
-
-    3. Next Bob wants to perform an initial build of the application. 
+    2. Next Bob wants to perform an initial build of the application. 
     
         <kbd>![Bob_Java_Modernization_Workflow_InitialBuild.png](./images/media/Bob_Java_Modernization_Workflow_InitialBuild.png)</kbd>
 
@@ -623,23 +605,15 @@ In the section you will use the **Java Modernization** to modernize the applicat
         <kbd>![Bob_Java_Modernization_Workflow_Extract_migrationplan.png](./images/media/Bob_Java_Modernization_Workflow_Extract_migrationplan.png)</kbd>
 
 
-    5. Bob has analyzed the AMA reports and knows which issues have been identified. As  next step, Bob wants to download the recipes for the automated fixes. Click on **Approve once** to apply the automated fixes.
+    5. Bob has analyzed the AMA reports and knows which issues have been identified. As  next step, Bob wants to Run OpenRewrite Recipes for the automated fixes. Click on **Approve once** to apply the automated fixes.
 
         <kbd>![Bob_Java_Modernization_Workflow_after_testing.png](./images/media/Bob_Java_Modernization_Workflow_after_testing.png)</kbd>
 
-    6. The recipes will be applied. Wait until the process has completed.
-
-        <kbd>![Bob_Recipes_applied.png](./images/media/Bob_Recipes_applied.png)</kbd>
-
-    7. Click on **Recipes applied** to see more details.
-
-        <kbd>![Bob_Recipes_applied_details.png](./images/media/Bob_Recipes_applied_details.png)</kbd>
-
-        You can see that the **LogoutServlet.java** and the **Weatherservlet.java** have been changed. 
+    
+        After Bob has applied the recipes, you can see that the **LogoutServlet.java** and the **Weatherservlet.java** have been changed. 
     
     4. To better compare what has changed, switch to the **Source Control** view and compare the files. Some files have been changed. For an instance,
 
-        - The files **server.xml** has been copied over from the migration plan.
         - The file **server.env** has been created to make Liberty use Java 21.
         - The files **LogoutServlet.java** and the **Weatherservlet.java** have been changed by the recipes. 
         
@@ -652,28 +626,28 @@ In the section you will use the **Java Modernization** to modernize the applicat
 
 3. Now that Bob resolved all issues with automated fixes via recipes, Bob will take a look at the remaining issues and will use agentic AI to resolve them. While the overall resolution steps will stay the same, there might be differences in the order and the recommendations provided by Bob.
 
-    1. Fix the issues around **WebSphere Runtime APIs and SPIs**
+    1. Fix the issues around **Behavious changes**
 
-        1. Bob wants to start a new subtask to fix the issues around the WebSphere Runtime APIs and SPIs.
+        1. Bob wants to start a new subtask to fix the issues.
 
             <kbd>![Bob_Fix_WebSphere_Runtimes.png](./images/media/Bob_Fix_WebSphere_Runtimes.png)</kbd>
 
             Click on **Approve once** to continue. 
 
-        2. Bob creates a subtask and a **Todo** list to fix the issue based on the recommendations from the AMA migration plan.
+        2. Bob creates a subtask and a **Todo** list to fix the issue based on the recommendations from the AMA migration plan. Click Click on **Approve once** to continue.
 
-            <kbd>![Bob_Fix_WebSphere_Runtimes2.png](./images/media/Bob_Fix_WebSphere_Runtimes2.png)</kbd>
+           
 
             Review the Todo list (you could also edit it to add or remove steps). Finally, click on **Approve once** to continue. 
 
 
-        3. Bob detects that the critical code no longer exists in the WeatherServlet. It wants to review the changes in git to understand why.
+        3. You might have to click on **Approve once** to continue a few times until Bob finishes the todolist. Afterwards, Bob asks whether you want the changes to be applied. 
 
             <kbd>![Bob_Fix_WebSphere_Runtimes3.png](./images/media/Bob_Fix_WebSphere_Runtimes3.png)</kbd>
 
-            Click on **Approve once** to continue. 
+            Click on **Yes, apply the fix as described** to continue. 
 
-        4. Bob verified that the code was already changed (by the recipes), so no further action is required. Therefore, Bob wants to update the Todo list.
+        4. Bob applies the changes and ask for approval. Click on **Approve once** to continue a few times. 
 
             <kbd>![Bob_Fix_WebSphere_Runtimes4.png](./images/media/Bob_Fix_WebSphere_Runtimes4.png)</kbd>
 
@@ -691,211 +665,90 @@ In the section you will use the **Java Modernization** to modernize the applicat
 
             Click on **Approve once** to continue. 
 
-        7. Bob wants to complete the subtask.
+        7. Bob wants to complete the subtask. Click on **Approve once** to continue. 
 
-            <kbd>![Bob_Fix_WebSphere_Runtimes7.png](./images/media/Bob_Fix_WebSphere_Runtimes7.png)</kbd>
+    2. Fix the issues around **Behavious changes**  
+        
+        <kbd>![Bob_Fix_WebSphere_Runtimes8.png](./images/media/Bob_Fix_WebSphere_Runtimes8.png)</kbd>
 
-            Click on **Approve once** to continue. 
-
-        8. Bob has created the summary what has been done in the subtask.
-            You can expand the section to see the details.
-
-            <kbd>![Bob_Fix_WebSphere_Runtimes8.png](./images/media/Bob_Fix_WebSphere_Runtimes8.png)</kbd>
+        Review the task and click on **Approve once** to get continue.  
 
 
-    2. Fix the issues around **WebSphere Servlet API**
+    3. Fix the issues around **WebSphere Servlet API**
 
         1. Bob wants to start a new subtask to fix the issues around the WebSphere Servlet API. 
+        
+        2. Bob creates a subtask and a Todo list  to fix the issue based on the recommendations from the AMA migration plan.
 
             <kbd>![Bob_Fix_WebSphere_ServletAPI1.png](./images/media/Bob_Fix_WebSphere_ServletAPI1.png)</kbd>
 
             Click on **Approve once** to get continue. 
-
-
-
-        2. Bob creates a subtask and a Todo list  to fix the issue based on the recommendations from the AMA migration plan.
-
-            <kbd>![Bob_Fix_WebSphere_ServletAPI2.png](./images/media/Bob_Fix_WebSphere_ServletAPI2.png)</kbd>
 
             Review the Todo list (you could also edit it if needed). 
             To reduce the number of approvals, you can allow Bob to update the Todo list for the subtask without approval. 
             Click on **Approve todo tools for task** to continue. 
 
 
-        3. Bob explains the issue and proposes a solution based on **Apache Commons**.
+        3. Bob find a solution and ready to apply the changes.
 
             <kbd>![Bob_Fix_WebSphere_ServletAPI3.png](./images/media/Bob_Fix_WebSphere_ServletAPI3.png)</kbd>
 
-            You can select to apply the recommended changes or to use a different approach. Let's see which different approaches are available.
-
-            Enter in the chat window the following text to get alternatives:
-
-                What are the alternatives?
-
-            <kbd>![Bob_Fix_WebSphere_ServletAPI4.png](./images/media/Bob_Fix_WebSphere_ServletAPI4.png)</kbd>
-
-            Then press ENTER or click the icon.    
-
-        4. Bob comes back with a list of different alternatives.
-
-            <kbd>![Bob_Fix_WebSphere_ServletAPI5.png](./images/media/Bob_Fix_WebSphere_ServletAPI5.png)</kbd>
-
-            Your list of alternatives might look different; Bob might also decide to display the alternatives as list instead of a table.
-
-            Select **Apache Commons** by clicking on the related field.
-
-        5. Bob wants to edit the pom.xml.
-
-            <kbd>![Bob_Fix_WebSphere_ServletAPI6.png](./images/media/Bob_Fix_WebSphere_ServletAPI6.png)</kbd>
+            You can select to apply the recommended changes or to use a different approach. Let's see which different approaches are available. Let's use the listed approach by click on **Yes, apply both changes**.   Click on **Approve once** to continue. 
 
             To reduce the number of approvals for the task, click on **Approve edit tools for task** to continue. 
+
+    3. Bob has completed the tasks related to **Replatform Liberty issues**. 
     
-        6. Bob wants to execute the command "mvn compile". 
-
-            <kbd>![Bob_Fix_WebSphere_ServletAPI7.png](./images/media/Bob_Fix_WebSphere_ServletAPI7.png)</kbd>
-
-            Click on **Approve for task** to continue. 
-
-        7. Bob wants to complete the subtask.
-
-            <kbd>![Bob_Fix_WebSphere_ServletAPI8.png](./images/media/Bob_Fix_WebSphere_ServletAPI8.png)</kbd>
-
-            Click on **Approve once** to continue. 
-
-        8. Bob has created the summary what has been done in the subtask.
-            You can expand the section to see the details.
-
-            <kbd>![Bob_Fix_WebSphere_Runtimes8.png](./images/media/Bob_Fix_WebSphere_Runtimes8.png)</kbd>
-
-
-    3. Bob has completed the tasks related to **Replatform Liberty issues**. Let's review the performed tasks and validate the changes.
     
-        1. Review what has been done so far:
-    
-            <kbd>![Bob_Replatforming_Summary.png](./images/media/Bob_Replatforming_Summary.png)</kbd>
-
-    
-        2. The next step is to deploy and validate.
+        1. The first step is to deploy and validate.
 
             <kbd>![Bob_Start_Deployment.png](./images/media/Bob_Start_Deployment.png)</kbd>
 
             Click on **Start local deployment**.
 
-        3. Bob will ask for permission to start the **Deploy** subtask.
+        2. Bob will ask for permission to start the **Deploy** subtask.
 
             <kbd>![Bob_Start_Deployment1.png](./images/media/Bob_Start_Deployment1.png)</kbd>
 
             Click on **Approve once** to continue. 
 
-        4. Bob will ask for permission to build the application.
+        4. Bob will ask for permission to build the application. Click on **Approve once** to continue. 
 
-            <kbd>![Bob_Start_Deployment2.png](./images/media/Bob_Start_Deployment2.png)</kbd>
+        5. Bob rebuilt the application and will ask again for permission to Add Liberty Maven Plugin to pom.xml. Click on **Approve Once** for task to continue. 
 
-            Click on **Approve once** to continue. 
+        6. Click on **Approve Once** a few times in the subtasks. Bob will finish issues if anything is not working.
 
-        5. Bob rebuilt the application and will ask again for permission to install the application.
-
-            <kbd>![Bob_Start_Deployment3.png](./images/media/Bob_Start_Deployment3.png)</kbd>
-
-            Click on **Approve for task** to continue. 
-
-        6. Bob wants to clean up the Liberty installation.
-
-            <kbd>![Bob_Start_Deployment4.png](./images/media/Bob_Start_Deployment4.png)</kbd>
-
-            Click on **Approve for task** to continue. 
-        
-        7. Bob wants to install the required Liberty features.
-
-            <kbd>![Bob_Start_Deployment5.png](./images/media/Bob_Start_Deployment5.png)</kbd>
-
-            Click on **Approve for task** to continue. 
-        
-        8. Bob wants to backup the server configuration and adjust it.
-
-            <kbd>![Bob_Start_Deployment6.png](./images/media/Bob_Start_Deployment6.png)</kbd>
-
-            Click on **Approve for task** to continue. 
-
-        9. Bob wants to deploy the application.
-
-            <kbd>![Bob_Start_Deployment7.png](./images/media/Bob_Start_Deployment7.png)</kbd>
-
-            Click on **Approve for task** to continue. 
-
-        10. Bob wants to start the Liberty instance.
-
-            <kbd>![Bob_Start_Deployment8.png](./images/media/Bob_Start_Deployment8.png)</kbd>
-
-            Click on **Approve for task** to continue. 
-
-        11. Bob started Liberty and the application, analyzed the logs and detected some configuration issues. Therefore, Bob wants to stop the Liberty instance to clean up the Liberty configuration.
-
-            <kbd>![Bob_Start_Deployment9.png](./images/media/Bob_Start_Deployment9.png)</kbd>
-
-            Click on **Approve for task** to continue. 
-
-        12. Bob started Liberty again and did some reconfiguration using Liberty hot-reloading. Now Bob wants to test the endpoints via curl:
-
-            <kbd>![Bob_Start_Deployment10.png](./images/media/Bob_Start_Deployment10.png)</kbd>
-
-            Click on **Approve for task** to continue. 
-
-        13. Bob tested the first endpoint successfully and wants to test additional endpoints via curl:
-        
-            <kbd>![Bob_Start_Deployment11.png](./images/media/Bob_Start_Deployment11.png)</kbd>
-
-            Click on **Approve for task** to continue. 
-
-        14. Bob tested additional endpoints successfully and wants to test additional endpoints via curl:
-        
-            <kbd>![Bob_Start_Deployment12.png](./images/media/Bob_Start_Deployment12.png)</kbd>
-
-            Click on **Approve for task** to continue. 
-
-        15. Bob tested additional endpoints successfully and got some errors. Therefore, Bob wants to test additional endpoints via curl:
-        
-            <kbd>![Bob_Start_Deployment13.png](./images/media/Bob_Start_Deployment13.png)</kbd>
-
-            Click on **Approve for task** to continue. 
-
-        16. Bob tested all endpoints successfully. Now it asks you to review the logs. 
+        7. Bob tested all endpoints successfully. Now it provides deployment summary. 
         
             <kbd>![Bob_Start_Deployment14.png](./images/media/Bob_Start_Deployment14.png)</kbd>
 
-            Feel free to do so, you can find the log here: 
-            **Explorer > target/liberty/wlp/usr/servers/modresorts/logs/messages.log**
+           
+            
+        8. Open the browser and test the application to verify, that the initial issues are resolved. 
         
-            Then click on **Yes, the application started successfully with no errors** to continue. 
+            In the browser, open the URL http://localhost:9080/resorts. If the port 9080 is in use, the URL would be http://localhost:9081/resorts.
+            Then navigate to **Where To > Paris** to verify that the error is gone. Do the same with the **Logout** button. 
 
-
-        17. Bob wants to complete the subtask. 
-        
-            <kbd>![Bob_Start_Deployment15.png](./images/media/Bob_Start_Deployment15.png)</kbd>
-
-            Click on **Approve for task** to continue. 
-
-        18. Bob created a summary with a diagram visualizing the performed tasks. [todo - add a new diagram]
+        9. Switch back to Bob and click click on **Yes, the application started successfully with no errors** to continue. Then click on on **Approve Once** a few times. Finally, Bob created a summary with a diagram visualizing the performed tasks. 
         
             <kbd>![Bob_Visual_Summary.png](./images/media/Bob_Visual_Summary.png)</kbd>
 
             Click on the diagram to expand the diagram. 
 
-            As you can see, the diagram contains details about the performed modernization as well as details about the costs and tokens for the different tasks.
-
-            
-        19. Open the browser and test the application to verify, that the initial issues are resolved. 
+            As you can see, the diagram contains details about the performed modernization as well as details about the costs and tokens for the different tasks.    
         
-            In the browser, open the URL http://localhost:9080/resorts.
-            Then navigate to **Where To > Paris** to verify that the error is gone. Do the same with the **Logout** button. 
-
-        20. Switch back to Bob and ask Bob to stop the Liberty instance.
+        10. ask Bob to stop the Liberty instance.
 
                 Stop Liberty
 
-            <kbd>![Bob_Stop_Liberty](./images/media/Bob_Stop_Liberty.png)</kbd>
+            <kbd>![Bob_Stop_Liberty.png](./images/media/Bob_Stop_Liberty.png)</kbd>
+    4. Copy the new modresorts.war for the deployment to MoRE.
+    The newly built modresorts-2.0.0.war by Bob is located under targe directory.
+        <kbd>![Bob_ModResorts_war.png](./images/media/Bob_ModResorts_war.png)</kbd>
 
-            Wait until the Liberty instance has stopped.
+        Copy the generated war file into the assets directory
+    
+        cp ~/Student/modresorts-project/target/modresorts-2.0.0.war ~/Student/assets/modresorts-more-2.0.0.war
 
 
 You should now have a good understanding how IBM Bob can help to modernize your applications. 
@@ -916,21 +769,22 @@ The next step is to deploy the application to MoRE.
 
 
 
-# Starting WebSphere and IHS servers
+# Deploy the modernized modResorts to MoRE
 
-The [`scripts/start-was-servers.sh`](scripts/start-was-servers.sh) script starts all preconfigured WebSphere components required for the lab, including the Deployment Manager, both node agents, and `webserver1`.
+In this section, you will install the modernized modResorts to MoRE.
 
-Run the following command to execute the script:
+1. Open a terminal window and enter the following commands to start the servers:
 
-```sh
-./scripts/start-was-servers.sh
-```
+    ~/Student/modresorts-project/tWAS-Scripts/WAS_905_Cell_start.sh
+
+
+
 After the script completes, the message `All servers have been started!` is displayed.
 
 ---
-## Creating a static managed Liberty server cluster
+## Creating a managed Liberty server
 
-This section guides you through the process of creating a static managed Liberty server cluster.
+This section guides you through the process of creating a managed Liberty serve.
 
 You can use either of the following methods to complete this task:
 * If you prefer a visual, step-by-step experience, continue with [Option 1: Using the administrative console](#option-1-using-the-administrative-console).
@@ -938,88 +792,46 @@ You can use either of the following methods to complete this task:
 
 ## Option 1: Using the administrative console
 
-1. Launch the **WAS Admin Console** by selecting it from your browser bookmarks or navigating to the https://localhost:9043/ibm/console URL.
+1. Switch to a brower window. Launch the **WAS Admin Console** by selecting **WAS** from your browser bookmarks or navigating to the https://localhost:9043/ibm/console URL.
 
    Log in using the following credentials:
-   * User ID: `techzone`
-   * Password: `IBMDem0s!` (Note that the zero is used instead of the letter "O")
+   * User ID: `wasadmin`
+   * Password: `password` 
 
-2. Navigate to **Servers** &rarr; **Clusters** &rarr; **WebSphere application server clusters**. Click **New...** to create a new cluster.
+2. Navigate to **Servers** &rarr; **Server Types** &rarr; **WebSphere application server clusters**. Click **New...** and then **Managed Liberty server** to create a new Managed Liberty server.
 
-   ![](assets/mlscluster-creation.png)
+   ![](images/media/MoRE_Server_Creation_1.png)
 
-3. On **Step 1**, set **Cluster name** to `MLSCluster`. Leave the other fields as default. Click **Next**.
+3. On **Step 1**, enter **txc** to Server name. Leave the other fields as default. Click **Next**.
 
-4. On **Step 2**, configure the first cluster member:
+ ![](images/media/MoRE_Server_Creation_2.png)
 
-   * **Member Name**: `libertyServer`
-   * **Select node**: `node1`
-   * **Select basis for first cluster member**: choose **Create the member using an application server template**, then select `default-managed-liberty-server` from the dropdown
+4. On **Step 2**, leave all other settings as default. Click **Next**.
 
-   Leave all other settings as default. Click **Next**.
-
-5. On **Step 3**, configure the second cluster member:
-
-   * **Member Name**: `libertyServer`
-   * **Select node**: `node2`
-
-   Leave the other fields as default. Click **Add Member**, then click **Next**.
+5. On **Step 3**, leave all other settings as default. Click **Next**.
 
 6. On **Step 4**, review the configuration summary and click **Finish**.
 
-7. Click <ins>Review</ins>.
+7. Click <ins>Save</ins>.
 
-   ![](assets/mlscluster-creation-review.png)
+   ![](images/media/MoRE_Server_Creation_3.png)
 
-8. Select **Synchronize changes with Nodes**, then click **Save** to apply the configuration and synchronize with both nodes.
 
-   ![](assets/mlscluster-creation-sync.png)
-
-9. After synchronization completes, click **OK**.
-
-   ![](assets/mlscluster-creation-sync-complete.png)
-
-10. Return to **Servers** &rarr; **Clusters** &rarr; **WebSphere application server clusters**. Locate <ins>MLSCluster</ins> in the list and ensure it is present. Check the box next to it, then click **Start** to initiate the cluster. Wait until the status displays a green arrow, indicating that it is running.
-
-    ![](assets/mlscluster-start.png)
-
-> [!NOTE]
-> After some wait, if the cluster does not show as started, you might want to check the servers status via **Servers** &rarr;  **All Servers** &rarr; and then the cluster servers. If the  servers are started, you are ready to go.
 
 ## Option 2: Using administrative scripting
 
-Run the following command to create and start the cluster using the provided Jython script [`createMLSCluster.py`](scripts/createMLSCluster.py):
+Run the following command to create a Managed Liberty Server using the provided Jython script [`MLS_create.py`](tWA-Scripts/MLS_create.py):
 
-```sh
-/home/techzone/IBM/WebSphere/AppServer/profiles/Dmgr01/bin/wsadmin.sh \
-  -lang jython -user techzone -password IBMDem0s! \
-  -f /home/techzone/Student/tx-more-lab/scripts/createMLSCluster.py
-```
 
-The script performs the following actions:
+    ~/usr/IBM/WebSphere/AppServer/profiles/Dmgr01/bin/wsadmin.sh -lang jython -user wasadmin -password password -f ~/Student/modresorts-project/tWAS-Scripts/MLS_create.py
 
-* Creates the static cluster named `MLSCluster`
-* Adds one managed Liberty server on each node
-* Synchronizes the configuration across nodes
-* Starts the Liberty cluster
 
-When the cluster starts successfully, the message `!!!Successfully started the cluster!!!` is displayed.
 
 ---
 # Deploy the modernised application ModResort to MoRE
 
-## Building the application WAR file
 
-Before deploying the application, build it to generate the application WAR file:
-
-```sh
-cd /home/techzone/Student/tx-more-lab-2026
-
-cd modresorts-project
-mvn clean package
-```
-
-The WAR file `modresorts-2.0.0.war` is created in the project's `target` directory and will be used for deployment to the Liberty cluster.
+The modernised WAR file `modresorts-more-2.0.0.war` was copied to the directory (~/Student/assets) and will be used for deployment to the Liberty server.
 
 ## Option 1: Using the administrative console
 
@@ -1033,11 +845,11 @@ If you prefer to use a script, skip ahead to [Option 2: Using administrative scr
 
 2. Go to **Applications** &rarr; **New Application** &rarr; <ins>New Enterprise Application</ins>.
 
-   ![](./images/media/new-app.png)
+   ![](./images/media/MoRE_new_app.png)
 
 3. In the installation panel:
 
-   * Under **Path to new application**, select **Local file system** and choose the WAR file located at `/home/techzone/Student/tx-more-lab-2026/modresorts-project/target/modresorts-2.0.0.war`
+   * Under **Path to new application**, select **Local file system** and choose the WAR file located at `/home/itzuser/Student/assets/modresorts-more-2.0.0.war`
    * Set **Target Runtime Environment** to `Jakarta EE 10`
    
    Click **Next** and wait for the application to upload.
@@ -1048,17 +860,8 @@ If you prefer to use a script, skip ahead to [Option 2: Using administrative scr
 
 5. Leave **Step 1** unchanged and click **Next**.
 
-6. On **Step 2**, map the application module:
+6. Leave **Step 1** unchanged and click **Next**.
 
-   * Under **Cluster and servers**, select both `MLSCluster` and `webserver1` by holding **Shift** or dragging between options.
-
-   * Check the box next to `modresorts-2.0.0.war` and click **Apply**.
-
-   * Confirm that both `MLSCluster` and `webserver1` are now listed under the **Server** column for the `modresorts-2.0.0.war` module.
-   
-   Click **Next**.
-
-   ![](./images/media/module1-map-modules-to-servers.png)
 
 7. On **Step 3**, confirm that the **Context Root** is set to `/resorts` and click **Next**.
 
@@ -1068,70 +871,41 @@ If you prefer to use a script, skip ahead to [Option 2: Using administrative scr
    
    Select **Synchronize changes with Nodes**, and click **Save**. Click **OK** when synchronization is complete.
 
-### Generating and propagating the web server plug-in
+10. Start the Managed Liberty server.
+Navigate to **Servers** &rarr; **Server Types** &rarr; **WebSphere application server clusters**. Tick the box next to **txc** and then click **Start**.
 
-1. Go to **Servers** &rarr; **Server Types** &rarr; **Web servers**.
-   
-   ![](./images/media/webserver.png)
+![](./images/media/MoRE_start_MLS.png)
 
-2. Select `webserver1` and click **Generate Plug-in**.
+You will then see the message that the server started successfully.
 
-3. Select `webserver1` again and click **Propagate Plug-in**.
-
-After plug-in generation and propagation are complete, verify that the application is running by following the steps in [Checking out the application](#checking-out-the-application).
+![](./images/media/MoRE_MLS_started.png)
 
 ## Option 2: Using administrative scripting
 
 This section walks you through deploying the application using the administrative console.
 
-Run the following command to deploy the application using the provided Jython  script [`deployModResorts.py`](deployModResorts.py):
+Run the following command to deploy the application using the provided Jython  script:
 
-```sh
-/home/techzone/IBM/WebSphere/profiles/Dmgr01/bin/wsadmin.sh \
-  -lang jython -user techzone -password IBMDem0s! \
-  -f /home/techzone/Student/tx-more-lab-2026/modresorts-project/deployModResorts.py
-```
+
+    ~/usr/IBM/WebSphere/AppServer/profiles/Dmgr01/bin/wsadmin.sh -lang jython -user wasadmin -password password -f ~/Student/modresorts-project/tWAS-Scripts/MLS_install_modresorts.py
+
 
 The script performs the following actions:
 
-* Installs the `modresorts-2.0.0.war` WAR file to the managed Liberty cluster `MLSCluster`
-* Maps the application to both `MLSCluster` and `webserver1`
-* Generates and propagates the web server plug-in configuration
+* Installs the `modresorts-more-2.0.0.war` WAR file to the managed Liberty server `txc`. It then started the Managed Liberty server.
 
 After the script finishes, the message `ModResorts successfully deployed!` is displayed. Wait for a while to let the application to start. Verify that the application is running by following the steps in [Checking out the application](#checking-out-the-application).
 
 ## Checking out the application
 
-Because the application is accessible via IHS, use the following URLs based on the connection type:
-* **SSL (HTTPS):** https://localhost:8888/resorts _(also available in bookmarks as Mod Resorts)_
-* **Non-SSL (HTTP):** http://localhost:7777/resorts
+Because the application is accessible, use the following URLs based on the connection type:
+* http://localhost:9081/resorts
 
 To confirm the application is functioning correctly, launch it and open the **Where to?** drop-down menu. Select any destination from the list—if successful, the relevant weather details should load and display without error messages.
 
 ![](./images/media/modresorts.png)
 
 ---
-# Troubleshooting
-
-This section provides guidance on troubleshooting common issues during the lab.
-
-## Resetting the lab environment
-
-If you encounter problems or want to start the lab from scratch, you can reset the environment to its original state by running:
-
-```sh
-/home/techzone/Student/tx-more-lab-2026/scripts/reset-lab-env.sh
-```
-
-To remove the cloned lab repository, run:
-
-```sh
-cd /home/techzone/Student
-rm -rf tx-more-lab-2026
-```
-
-This ensures you’re starting from a clean workspace.
-
 
 
 

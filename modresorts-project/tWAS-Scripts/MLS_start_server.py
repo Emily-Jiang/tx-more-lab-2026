@@ -1,0 +1,1 @@
+AdminControl.invoke('WebSphere:name=NodeAgent,process=nodeagent,platform=common,node=AppSrv01Node1,diagnosticProvider=true,version=9.0.5.28,type=NodeAgent,mbeanIdentifier=NodeAgent,cell=Default01Cell,spec=1.0', 'launchProcess', '[txc]') 

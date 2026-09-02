@@ -1,0 +1,3 @@
+AdminApp.install('/home/itzuser/Student/assets/modresorts-more-2.0.0.war', '[ -distributeApp -useMetaDataFromBinary -appname modresorts-more-2_0_0_war -validateinstall warn -filepermission .*\.dll=755#.*\.so=755#.*\.a=755#.*\.sl=755 -nouseAutoLink -novalidateSchema -contextroot /resorts -MapModulesToServers [[ modresorts-more-2.0.0.war modresorts-more-2.0.0.war,WEB-INF/web.xml WebSphere:cell=Default01Cell,node=AppSrv01Node1,server=txc ]]]' ) 
+AdminConfig.save()
+AdminControl.invoke('WebSphere:name=NodeAgent,process=nodeagent,platform=common,node=AppSrv01Node1,diagnosticProvider=true,version=9.0.5.28,type=NodeAgent,mbeanIdentifier=NodeAgent,cell=Default01Cell,spec=1.0', 'launchProcess', '[txc]') 
