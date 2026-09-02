@@ -3,7 +3,7 @@
 
 **Duration:** 90 minutes
 
-# Introduction
+# 1. Introduction
 
 Modernizing Java applications doesn't mean manual work or abandoning your operational model. This lab walks you through a smooth and automatic end-to-end enterprise Java modernization workflow using IBM Application Modernization Accelerator (AMA), IBM Bob, and IBM Modernized Runtime Extension for Java (MoRE). 
 
@@ -14,7 +14,7 @@ Modernizing Java applications doesn't mean manual work or abandoning your operat
 [IBM Modernized Runtime Extension for Java](https://www.ibm.com/docs/en/more) (MoRE) is an extension of WebSphere® Application Server Network Deployment (ND) 9.0.5 that enables you to run and manage Liberty servers from the traditional WebSphere environment. With MoRE, Liberty servers can be configured, clustered, and administered using familiar tools like the administrative console and wsadmin scripting.
 
 
-## About this hands-on lab
+## 1.1 About this hands-on lab
 
 This lab provides fundamental hands-on experience of the evaluation process of WebSphere application for their modernization journey to MoRE. It shows the value of using Application Modernization Accelerator (AMA) to evaluate on-premises Java applications, modernise using IBM Bob and then deploy to MoRE. In this interactive, hands-on lab, you'll explore the cutting-edge capabilities of WebSphere Application Server and MoRE, which are designed to supercharge your modernization journey. 
 
@@ -50,9 +50,9 @@ In addition, the environment is preconfigured with the following profiles and se
 All components are installed under `/home/itzuser/usr/IBM` on the student virtual machine.
 
 
-# 2. Build and analyze the modresorts application.
+# 3. Build and analyze the modresorts application.
 
-## 2.1 Verify the installed software 
+## 3.1 Verify the installed software
 
 1. Open a terminal by clicking on Activities and selecting terminal.
 
@@ -80,7 +80,7 @@ All components are installed under `/home/itzuser/usr/IBM` on the student virtua
 
     The version might be slightly different.
 
-## Create the required working directories
+## 3.2 Create the required working directories
 
 1. Create the Student directories and some sub-directories used in the lab with commands:
 
@@ -88,11 +88,11 @@ All components are installed under `/home/itzuser/usr/IBM` on the student virtua
        mkdir ~/Student/assets
        mkdir ~/Student/backup
 
-## Build and deploy the WebSphere applications
+## 3.3 Build and deploy the WebSphere applications
 
 The objective of this section is to assess the simple-pharmacy application that has been deployed to a traditional WAS 9 instance.
 
-### Build the WAS application
+### 3.3.1 Build the WAS application
 
 1. Clone the repository to get access to the application binaries and more.
 
@@ -123,7 +123,7 @@ The objective of this section is to assess the simple-pharmacy application that 
     
         cp ~/Student/modresorts-project/target/modresorts-2.0.0.war ~/Student/assets/
 
-### Deploy the WebSphere application and test it
+### 3.3.2 Deploy the WebSphere application and test it
 
 The application has not been installed to traditional WAS so far. Typically, you would do this now in detail, but this is out of scope here. Please look into the details about the required steps.
 
@@ -139,10 +139,10 @@ Open a terminal window and enter the following commands to install the applicati
 
     ~/usr/IBM/WebSphere/AppServer/profiles/Dmgr01/bin/stopManager.sh
 
-# Explore Application Modernization Accelerator
+# 4. Explore Application Modernization Accelerator
 In this section, you will explore the main capabilities of Application Modernization Accelerator. 
 
-## Start AMA
+## 4.1 Start AMA
 
 Application Modernization Accelerator(AMA) is already installed and typically running. 
 
@@ -175,7 +175,7 @@ Let's check if AMA is already started. This can be validated by reviewing if the
     Wait until AMA has started and the URL is displayed
     <kbd>![AMA_Launcher_stopped](./images/media/AMA_Launcher_started.png)</kbd>
 
-## Create an AMA data collection for the WAS applications
+## 4.2 Create an AMA data collection for the WAS applications
 
 You will now switch back to the AMA User Interface and create a new workspace called **Evaluation**. Then you will download the AMA Discovery Tool to scan the existing WebSphere landscape.
 
@@ -363,7 +363,7 @@ You can see the assessment details for the 4 applications and the efforts to mod
 
     11. Close the browser window containing the AMA UI.
 
-### Recap
+### 4.2.1 Recap
 
 Congratulations, you have finished the application assessment part.
 
@@ -375,9 +375,9 @@ Congratulations, you have finished the application assessment part.
 - You generated a migration plan
 You will then use IBM Bob to modernise the application.
 
-# Modernise the application using IBM Bob 
+# 5. Modernise the application using IBM Bob
 
-## Explore the IBM Bob installation and complete setup
+## 5.1 Explore the IBM Bob installation and complete setup
 
 1. Initialize git
 
@@ -546,7 +546,7 @@ You will then use IBM Bob to modernise the application.
 
 
 
-### Modernize Modresorts to WebSphere Liberty using IBM Bob
+### 5.1.1 Modernize Modresorts to WebSphere Liberty using IBM Bob
 In the section you will use the **Java Modernization** to modernize the application to Liberty. 
 
 1. Start the Java Modernization workflow
@@ -751,7 +751,7 @@ In the section you will use the **Java Modernization** to modernize the applicat
 
 You should now have a good understanding how IBM Bob can help to modernize your applications. 
 
-### IBM Bob Recap
+### 5.1.2 IBM Bob Recap
 
 Congratulations, you have finished the application modernization part.
 
@@ -767,7 +767,7 @@ The next step is to deploy the application to MoRE.
 
 
 
-# Deploy the modernized modResorts to MoRE
+# 6. Deploy the modernized modResorts to MoRE
 
 In this section, you will install the modernized modResorts to MoRE.
 
@@ -780,7 +780,7 @@ In this section, you will install the modernized modResorts to MoRE.
 After the script completes, the message `All servers have been started!` is displayed.
 
 ---
-## Creating a managed Liberty server
+## 6.1 Creating a managed Liberty server
 
 This section guides you through the process of creating a managed Liberty serve.
 
@@ -788,7 +788,7 @@ You can use either of the following methods to complete this task:
 * If you prefer a visual, step-by-step experience, continue with [Option 1: Using the administrative console](#option-1-using-the-administrative-console).
 * If you prefer automation or scripting, skip ahead to [Option 2: Using administrative scripting](#option-2-using-administrative-scripting).
 
-## Option 1: Using the administrative console
+## 6.2 Option 1: Using the administrative console
 
 1. Switch to a brower window. Launch the **WAS Admin Console** by selecting **WAS** from your browser bookmarks or navigating to the https://localhost:9043/ibm/console URL.
 
@@ -816,7 +816,7 @@ You can use either of the following methods to complete this task:
 
 
 
-## Option 2: Using administrative scripting
+## 6.3 Option 2: Using administrative scripting
 
 Run the following command to create a Managed Liberty Server using the provided Jython script [`MLS_create.py`](tWA-Scripts/MLS_create.py):
 
@@ -826,18 +826,18 @@ Run the following command to create a Managed Liberty Server using the provided 
 
 
 ---
-# Deploy the modernised application ModResort to MoRE
+# 7. Deploy the modernised application ModResort to MoRE
 
 
 The modernised WAR file `modresorts-more-2.0.0.war` was copied to the directory (~/Student/assets) and will be used for deployment to the Liberty server.
 
-## Option 1: Using the administrative console
+## 7.1 Option 1: Using the administrative console
 
 This section walks you through deploying the application using the administrative console.
 
 If you prefer to use a script, skip ahead to [Option 2: Using administrative scripting](#option-2-using-administrative-scripting).
 
-### Installing the application WAR file
+### 7.1.1 Installing the application WAR file
 
 1. Launch the **WAS Admin Console** by selecting it from your browser bookmarks or navigating to the https://localhost:9043/ibm/console URL.
 
@@ -878,7 +878,7 @@ You will then see the message that the server started successfully.
 
 ![](./images/media/MoRE_MLS_started.png)
 
-## Option 2: Using administrative scripting
+## 7.2 Option 2: Using administrative scripting
 
 This section walks you through deploying the application using the administrative console.
 
@@ -894,7 +894,7 @@ The script performs the following actions:
 
 After the script finishes, the message `ModResorts successfully deployed!` is displayed. Wait for a while to let the application to start. Verify that the application is running by following the steps in [Checking out the application](#checking-out-the-application).
 
-## Checking out the application
+## 7.3 Checking out the application
 
 Because the application is accessible, use the following URLs based on the connection type:
 * http://localhost:9081/resorts
