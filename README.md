@@ -182,14 +182,15 @@ You will now switch back to the AMA User Interface and create a new workspace ca
 To evaluate on-premises Java applications, you need to run the AMA Discovery Tool against the Application server environment. It will extract application information from the environment. The utility can be downloaded from the AMA.
 
 ### 4.2.1 Create in AMA a new workspace and download the AMA Discovery Tool.
-    1. Switch back to the browser and open the existing AMA window.
+
+1. Switch back to the browser and open the existing AMA window.
     
         
         Note: If you closed the browser window, open a new browser window and enter the URL https://localhost:3000. 
         
-        You will likely get a warning, that there is a potential security risk, click on **Advanced** and then **Accept the Risk and Continue**. 
+    You will likely get a warning, that there is a potential security risk, click on **Advanced** and then **Accept the Risk and Continue**. 
 
-        <kbd>![AMA_Potential_Security_Risk](./images/media/AMA_Potential_Security_Risk3.png)</kbd>
+    <kbd>![AMA_Potential_Security_Risk](./images/media/AMA_Potential_Security_Risk3.png)</kbd>
 
     2. You should now be back on the AMA Overview page:
 
@@ -228,16 +229,16 @@ To evaluate on-premises Java applications, you need to run the AMA Discovery Too
     
 ### 4.2.2 Use the AMA Discovery Tool to analyze the installed WebSphere Applications
 
-    Run the AMA Discovery Tool against your WebSphere environment. After downloading the zipped Data Collector utility, it needs to be unpacked and run against a WebSphere Application server (WAS) to collect all the data of deployed applications and their configuration from the WAS server.
+Run the AMA Discovery Tool against your WebSphere environment. After downloading the zipped Data Collector utility, it needs to be unpacked and run against a WebSphere Application server (WAS) to collect all the data of deployed applications and their configuration from the WAS server.
 
-    1. Go back to the Terminal window by clicking the *Activities* on the top left corner and navigate the /home/itzuser/Downloads directory and view its contents with commands:
+1. Go back to the Terminal window by clicking the *Activities* on the top left corner and navigate the /home/itzuser/Downloads directory and view its contents with commands:
 
-            cd /home/itzuser/Downloads/
+        cd /home/itzuser/Downloads/
             ls -l | grep Discovery
 
-        <kbd>![AMA_Discovery_Run_1](./images/media/AMA_Discovery_Run_1.png)</kbd>
+    <kbd>![AMA_Discovery_Run_1](./images/media/AMA_Discovery_Run_1.png)</kbd>
             
-        You can see the downloaded Discovery Tool file named “DiscoveryTool-Linux_Evaluation.tgz”
+    You can see the downloaded Discovery Tool file named “DiscoveryTool-Linux_Evaluation.tgz”
 
     2. Extract the data collector utility to the Student directory using the following command:
 
@@ -282,12 +283,12 @@ To evaluate on-premises Java applications, you need to run the AMA Discovery Too
 
 ### 4.2.3 Execute the AMA Discovery Tool
 
-    1. Go back to the Terminal window and navigate the directory where the AMA Discovery Tool was extracted, then list the content:
+1. Go back to the Terminal window and navigate the directory where the AMA Discovery Tool was extracted, then list the content:
 
             cd ~/Student/ama-discovery-*
             ls -l
 
-        <kbd>![AMA_Discovery_Run_6](./images/media/AMA_Discovery_Run_6.png)</kbd>
+    <kbd>![AMA_Discovery_Run_6](./images/media/AMA_Discovery_Run_6.png)</kbd>
 
 
     2.  Execute the following command to start the AMA Discovery Tool:
@@ -340,7 +341,8 @@ You can see the assessment details for the 4 applications and the efforts to mod
 
 <kbd>![AMA_Evaluation_AllApplications](./images/media/AMA_Evaluation_AllApplications.png)</kbd>
 
-    7. Click on the modresorts-2_0_0_war.ear to view its migration details. Click on **Inventory report**, **Technology report** and **Analysis report** to learn more details.
+
+7. Click on the modresorts-2_0_0_war.ear to view its migration details. Click on **Inventory report**, **Technology report** and **Analysis report** to learn more details.
 
         <kbd>![AMA_Evaluation_Assessment-modresorts0.png](./images/media/AMA_Evaluation_Assessment-modresorts0.png)</kbd>
 
@@ -382,7 +384,7 @@ You will then use IBM Bob to modernise the application.
 
 ### 5.1.1 Initialize git
 
-    Open a terminal window and switch to the project directory, then initialize git.
+Open a terminal window and switch to the project directory, then initialize git.
 
         cd ~/Student/modresorts-project
         git init
@@ -396,15 +398,15 @@ You will then use IBM Bob to modernise the application.
 
 ### 5.1.2 Open IBM Bob
 
-    1. Start the IBM Bob IDE
+1. Start the IBM Bob IDE
 
             bobide . &
 
-        The IBM Bob IDE will be opened.
+    The IBM Bob IDE will be opened.
 
-        If you get a Welcome panel offering to import settings, click on **Skip for now**,
+    If you get a Welcome panel offering to import settings, click on **Skip for now**,
 
-        <kbd>![Bob_Import_Panel.png](./images/media/Bob_Import_Panel.png)</kbd>
+    <kbd>![Bob_Import_Panel.png](./images/media/Bob_Import_Panel.png)</kbd>
         
 
     2. If you get a pop-up that a Bob update is available, click on settings and select **Keep current version**.
@@ -451,65 +453,65 @@ You will then use IBM Bob to modernise the application.
 
 ### 5.1.3 Take a look at the installed extensions
 
-    1. Open the Extensions panel
+1. Open the Extensions panel
 
-        <kbd>![Bob_Extensions.png](./images/media/Bob_Extensions.png)</kbd>
+    <kbd>![Bob_Extensions.png](./images/media/Bob_Extensions.png)</kbd>
 
-    2. Click on the extension called **Liberty Tools**. The Liberty tools provide an easy way to develop against Liberty
+2. Click on the extension called **Liberty Tools**. The Liberty tools provide an easy way to develop against Liberty
 
-        <kbd>![Bob_Extension_Liberty.png](./images/media/Bob_Extension_Liberty.png)</kbd>
+    <kbd>![Bob_Extension_Liberty.png](./images/media/Bob_Extension_Liberty.png)</kbd>
 
-        Look at the details, then close the Liberty Tools Extension panel.
-        You might have a newer version displayed.
+Look at the details, then close the Liberty Tools Extension panel.
+You might have a newer version displayed.
     
-        You will use the Liberty Tools Extension during the lab.
+You will use the Liberty Tools Extension during the lab.
 
 ### 5.1.4 Log into IBM Bob
-    1. On the right side of the IDE, click on the button **Log in to Bob** 
+1. On the right side of the IDE, click on the button **Log in to Bob** 
 
-        <kbd>![Bob_Login.png](./images/media/Bob_Login.png)</kbd>
+    <kbd>![Bob_Login.png](./images/media/Bob_Login.png)</kbd>
 
-    2. On the pop-up, click on **Allow**. 
+2. On the pop-up, click on **Allow**. 
 
-        <kbd>![Bob_signup.png](./images/media/Bob_signup.png)</kbd>
+    <kbd>![Bob_signup.png](./images/media/Bob_signup.png)</kbd>
 
-        Click on **Open**
+Click on **Open**
 
-        <kbd>![Bob_signup2.png](./images/media/Bob_signup2.png)</kbd>
+<kbd>![Bob_signup2.png](./images/media/Bob_signup2.png)</kbd>
 
-        A browser window will open.
+A browser window will open.
 
-        <kbd>![Bob_signup3.png](./images/media/Bob_signup3.png)</kbd>
+<kbd>![Bob_signup3.png](./images/media/Bob_signup3.png)</kbd>
 
-    3. Choose a way of login and enter your login credentials.
+3. Choose a way of login and enter your login credentials.
 
-        <kbd>![Bob_signup4.png](./images/media/Bob_signup4.png)</kbd>
+<kbd>![Bob_signup4.png](./images/media/Bob_signup4.png)</kbd>
 
-        The example uses SSO with the IBMid.
+The example uses SSO with the IBMid.
 
-    4. On the new browser page, select **Open Link**
+4. On the new browser page, select **Open Link**
 
-        <kbd>![Bob_signup5.png](./images/media/Bob_signup5.png)</kbd>
+<kbd>![Bob_signup5.png](./images/media/Bob_signup5.png)</kbd>
 
-        You should see a panel like this:
+You should see a panel like this:
 
-        <kbd>![Bob_signup6.png](./images/media/Bob_signup6.png)</kbd>
+<kbd>![Bob_signup6.png](./images/media/Bob_signup6.png)</kbd>
 
-    5. Switch back to the IBM Bob IDE and you should see a pop-up like this:
+5. Switch back to the IBM Bob IDE and you should see a pop-up like this:
 
-        <kbd>![Bob_signup7.png](./images/media/Bob_signup7.png)</kbd>
+<kbd>![Bob_signup7.png](./images/media/Bob_signup7.png)</kbd>
 
-        Click on **Open**.
+Click on **Open**.
 
-        You should now have access to IBM Bob and the IBM Bob chat window:
+You should now have access to IBM Bob and the IBM Bob chat window:
 
-        <kbd>![Bob_signup8.png](./images/media/Bob_signup8.png)</kbd>
+<kbd>![Bob_signup8.png](./images/media/Bob_signup8.png)</kbd>
 
 ### 5.1.5 Verify that you use an account that has access to the IBM Premium Package for Java Modernization
 
-    1. On the upper right part of the Bob IDE, click on the **Settings** icon.    Then take a look at the account:
+1. On the upper right part of the Bob IDE, click on the **Settings** icon.    Then take a look at the account:
     
-        <kbd>![Bob_premium_user.png](./images/media/Bob_premium_user.png)</kbd>
+    <kbd>![Bob_premium_user.png](./images/media/Bob_premium_user.png)</kbd>
       
         If you have a user with access to the premium package, it is listed under add-ons (see above). 
         
@@ -519,31 +521,31 @@ You will then use IBM Bob to modernise the application.
     
 ### 5.1.6 Install the premium package extension:
     
-    1. In the list of **Add-ons**, click on the **Install** button next to **IBM Premium Package for Java Modernization**.
+1. In the list of **Add-ons**, click on the **Install** button next to **IBM Premium Package for Java Modernization**.
     
-        <kbd>![Bob_premium_user_install.png](./images/media/Bob_premium_user_install.png)</kbd>
+    <kbd>![Bob_premium_user_install.png](./images/media/Bob_premium_user_install.png)</kbd>
     
-    2. In the pop-up, click on **Trust Publisher & Install**.
+2. In the pop-up, click on **Trust Publisher & Install**.
     
-        <kbd>![Bob_premium_user_install2.png](./images/media/Bob_premium_user_install2.png)</kbd>
+    <kbd>![Bob_premium_user_install2.png](./images/media/Bob_premium_user_install2.png)</kbd>
 
-    3. Finally, you should see something like this:
+3. Finally, you should see something like this:
 
-        <kbd>![Bob_premium_user_installed.png](./images/media/Bob_premium_user_installed.png)</kbd>
+    <kbd>![Bob_premium_user_installed.png](./images/media/Bob_premium_user_installed.png)</kbd>
 
         As you can see, you could start the modernization workflow from here.
 
 
-    4. If the **IBM Bob** Panel on the right is not open, click on the **Bob** icon to open it.
+4. If the **IBM Bob** Panel on the right is not open, click on the **Bob** icon to open it.
 
-        <kbd>![Bob_Open_Bob_Panel.png](./images/media/Bob_Open_Bob_Panel.png)</kbd>
+    <kbd>![Bob_Open_Bob_Panel.png](./images/media/Bob_Open_Bob_Panel.png)</kbd>
 
     
-    5. In the **IBM Bob** panel, click on the workflow icon and take a look at the Bob workflows that are offered. 
+5. In the **IBM Bob** panel, click on the workflow icon and take a look at the Bob workflows that are offered. 
     
-        You should see different workflows including the ones for Liberty Modernization (which are expanded in the screenshot below):
+You should see different workflows including the ones for Liberty Modernization (which are expanded in the screenshot below):
 
-        <kbd>![Bob_premium_user_Workflows.png](./images/media/Bob_premium_user_Workflows.png)</kbd>
+<kbd>![Bob_premium_user_Workflows.png](./images/media/Bob_premium_user_Workflows.png)</kbd>
 
 
 
@@ -711,24 +713,24 @@ In the section you will use the **Java Modernization** to modernize the applicat
 
             Click on **Approve once** to continue. 
 
-        4. Bob will ask for permission to build the application. Click on **Approve once** to continue. 
+        3. Bob will ask for permission to build the application. Click on **Approve once** to continue. 
 
-        5. Bob rebuilt the application and will ask again for permission to Add Liberty Maven Plugin to pom.xml. Click on **Approve Once** for task to continue. 
+        4. Bob rebuilt the application and will ask again for permission to Add Liberty Maven Plugin to pom.xml. Click on **Approve Once** for task to continue. 
 
-        6. Click on **Approve Once** a few times in the subtasks. Bob will finish issues if anything is not working.
+        5. Click on **Approve Once** a few times in the subtasks. Bob will finish issues if anything is not working.
 
-        7. Bob tested all endpoints successfully. Now it provides deployment summary. 
+        6. Bob tested all endpoints successfully. Now it provides deployment summary. 
         
             <kbd>![Bob_Start_Deployment14.png](./images/media/Bob_Start_Deployment14.png)</kbd>
 
            
             
-        8. Open the browser and test the application to verify, that the initial issues are resolved. 
+        7. Open the browser and test the application to verify, that the initial issues are resolved. 
         
             In the browser, open the URL http://localhost:9080/resorts. If the port 9080 is in use, the URL would be http://localhost:9081/resorts.
             Then navigate to **Where To > Paris** to verify that the error is gone. Do the same with the **Logout** button. 
 
-        9. Switch back to Bob and click click on **Yes, the application started successfully with no errors** to continue. Then click on on **Approve Once** a few times. Finally, Bob created a summary with a diagram visualizing the performed tasks. 
+        8. Switch back to Bob and click click on **Yes, the application started successfully with no errors** to continue. Then click on on **Approve Once** a few times. Finally, Bob created a summary with a diagram visualizing the performed tasks. 
         
             <kbd>![Bob_Visual_Summary.png](./images/media/Bob_Visual_Summary.png)</kbd>
 
@@ -736,7 +738,7 @@ In the section you will use the **Java Modernization** to modernize the applicat
 
             As you can see, the diagram contains details about the performed modernization as well as details about the costs and tokens for the different tasks.    
         
-        10. ask Bob to stop the Liberty instance.
+        9. ask Bob to stop the Liberty instance.
 
                 Stop Liberty
 
