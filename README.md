@@ -23,11 +23,11 @@ Upon completion of this lab, you will have gained experience using AMA to quickl
 You'll then deploy the modernized Modresort app to a Managed Liberty server in MoRE, using the WebSphere Administrative Console and/or automation with wsadmin scripts. 
 
 ---
-# Getting started
+# 2. Getting started
 
 This section guides you through the initial setup of the lab environment. Perform all tasks from the student virtual machine.
 
-## Lab environment overview
+## 2.1 Lab environment overview
 
 The lab environment is preinstalled with the following packages:
 * The Application Modernization Accelerator, version 5.0
@@ -44,12 +44,100 @@ In addition, the environment is preconfigured with the following profiles and se
 
 * A Deployment Manager (`dmgr`), which serves as the central controller for the WebSphere cell.
 
-* Two managed nodes, `node1` and `node2`, both federated into the same cell as the `dmgr`.
+* one managed node, `AppSrv01Node1` federated into the same cell as the `dmgr`.
 
-* A preconfigured web server, `webserver1`, running on `node2`, which listens on ports `7777` (HTTP) and `8888` (HTTPS). This server forwards incoming requests to applications running on the Liberty cluster via IHS and the WebSphere Plugin, allowing external access without directly exposing Liberty server ports.
 
 All components are installed under `/home/itzuser/usr/IBM` on the student virtual machine.
 
+
+# 2. Build and analyze the modresorts application.
+
+## 2.1 Verify the installed software 
+
+1. Open a terminal by clicking on Activities and selecting terminal.
+
+    <kbd>![Toolbar_terminal](./images/media/Toolbar_terminal.png)</kbd>
+
+    The terminal window opens.
+
+    <kbd>![Terminal](./images/media/Terminal.png)</kbd>
+
+2. Check the Maven version via the following command:
+
+        mvn -v
+
+
+    <kbd>![mvn-v](./images/media/mvn-v.png)</kbd>
+    
+    The version might be slightly different, but must be higher than 3.8.5
+
+
+3. Check the Git version via the following command:
+
+        git -v
+
+    <kbd>![git-v](./images/media/git-v.png)</kbd>
+
+    The version might be slightly different.
+
+## Create the required working directories
+
+1. Create the Student directories and some sub-directories used in the lab with commands:
+
+       mkdir ~/Student
+       mkdir ~/Student/assets
+       mkdir ~/Student/backup
+
+## Build and deploy the WebSphere applications
+
+The objective of this section is to assess the simple-pharmacy application that has been deployed to a traditional WAS 9 instance.
+
+### Build the WAS application
+
+1. Clone the repository to get access to the application binaries and more.
+
+       rm -rf ~/Student/temprepo/
+       git clone https://github.com/Emily-Jiang/tx-more-lab-2026 ~/Student/temprepo
+       mv ~/Student/temprepo/modresorts-project ~/Student
+       rm -rf ~/Student/temprepo/
+
+2. Install the required WAS library
+
+        cd ~/Student/modresorts-project/
+
+       mvn install:install-file -Dfile=/home/itzuser/usr/IBM/WebSphere/AppServer/dev/was_public.jar -DpomFile=/home/itzuser/usr/IBM/WebSphere/AppServer/dev/was_public-9.0.0.pom
+
+    Make sure that the build is successful.
+
+    <kbd>![mvn-install_WAS_library](./images/media/mvn-install_WAS_library.png)</kbd>
+
+3. Build the application
+    
+       mvn clean package
+
+    <kbd>![modresorts_mvn_build_tWAS_1.png](./images/media/modresorts_mvn_build_tWAS_1.png)</kbd>
+
+    <kbd>![modresorts_mvn_build_tWAS_1.png](./images/media/modresorts_mvn_build_tWAS_2.png)</kbd>
+
+4. Copy the generated war file into the assets directory
+    
+        cp ~/Student/modresorts-project/target/modresorts-2.0.0.war ~/Student/assets/
+
+### Deploy the WebSphere application and test it
+
+The application has not been installed to traditional WAS so far. Typically, you would do this now in detail, but this is out of scope here. Please look into the details about the required steps.
+
+Open a terminal window and enter the following commands to install the application:
+
+    ~/usr/IBM/WebSphere/AppServer/profiles/Dmgr01/bin/startManager.sh
+
+    cd ~/Student/modresorts-project/tWAS-Scripts
+
+    ~/usr/IBM/WebSphere/AppServer/profiles/Dmgr01/bin/wsadmin.sh -f ./modresorts_install.py
+
+    ~/usr/IBM/WebSphere/AppServer/profiles/Dmgr01/bin/wsadmin.sh -f ./setURLProvider.py
+
+    ~/usr/IBM/WebSphere/AppServer/profiles/Dmgr01/bin/stopManager.sh
 
 # Explore Application Modernization Accelerator
 In this section, you will explore the main capabilities of Application Modernization Accelerator. 
@@ -86,96 +174,6 @@ Let's check if AMA is already started. This can be validated by reviewing if the
         
     Wait until AMA has started and the URL is displayed
     <kbd>![AMA_Launcher_stopped](./images/media/AMA_Launcher_started.png)</kbd>
-
-
-## Build and analyze the modresorts application.
-
-### Verify the installed software 
-
-1. Open a terminal by clicking on Activities and selecting terminal.
-
-    <kbd>![Toolbar_terminal](./images/media/Toolbar_terminal.png)</kbd>
-
-    The terminal window opens.
-
-    <kbd>![Terminal](./images/media/Terminal.png)</kbd>
-
-2. Check the Maven version via the following command:
-
-        mvn -v
-
-
-    <kbd>![mvn-v](./images/media/mvn-v.png)</kbd>
-    
-    The version might be slightly different, but must be higher than 3.8.5
-
-
-3. Check the Git version via the following command:
-
-        git -v
-
-    <kbd>![git-v](./images/media/git-v.png)</kbd>
-
-    The version might be slightly different.
-
-### Create the required working directories
-
-1. Create the Student directories and some sub-directories used in the lab with commands:
-
-       mkdir ~/Student
-       mkdir ~/Student/assets
-       mkdir ~/Student/backup
-
-### Build and deploy the WebSphere applications
-
-The objective of this section is to assess the simple-pharmacy application that has been deployed to a traditional WAS 9 instance.
-
-#### Build the WAS application
-
-1. Clone the repository to get access to the application binaries and more.
-
-       rm -rf ~/Student/temprepo/
-       git clone https://github.com/Emily-Jiang/tx-more-lab-2026 ~/Student/temprepo
-       mv ~/Student/temprepo/modresorts-project ~/Student
-       rm -rf ~/Student/temprepo/
-
-2. Install the required WAS library
-
-        cd ~/Student/modresorts-project/
-
-       mvn install:install-file -Dfile=/home/itzuser/usr/IBM/WebSphere/AppServer/dev/was_public.jar -DpomFile=/home/itzuser/usr/IBM/WebSphere/AppServer/dev/was_public-9.0.0.pom
-
-    Make sure that the build is successful.
-
-    <kbd>![mvn-install_WAS_library](./images/media/mvn-install_WAS_library.png)</kbd>
-
-3. Build the application
-    
-       mvn clean package
-
-    <kbd>![modresorts_mvn_build_tWAS_1.png](./images/media/modresorts_mvn_build_tWAS_1.png)</kbd>
-
-    <kbd>![modresorts_mvn_build_tWAS_1.png](./images/media/modresorts_mvn_build_tWAS_2.png)</kbd>
-
-4. Copy the generated war file into the assets directory
-    
-        cp ~/Student/modresorts-project/target/modresorts-2.0.0.war ~/Student/assets/
-
-#### Deploy the WebSphere application and test it
-
-The application has not been installed to traditional WAS so far. Typically, you would do this now in detail, but this is out of scope here. Please look into the details about the required steps.
-
-Open a terminal window and enter the following commands to install the application:
-
-    ~/usr/IBM/WebSphere/AppServer/profiles/Dmgr01/bin/startManager.sh
-
-    cd ~/Student/modresorts-project/tWAS-Scripts
-
-    ~/usr/IBM/WebSphere/AppServer/profiles/Dmgr01/bin/wsadmin.sh -f ./modresorts_install.py
-
-    ~/usr/IBM/WebSphere/AppServer/profiles/Dmgr01/bin/wsadmin.sh -f ./setURLProvider.py
-
-    ~/usr/IBM/WebSphere/AppServer/profiles/Dmgr01/bin/stopManager.sh
 
 ## Create an AMA data collection for the WAS applications
 
@@ -341,29 +339,29 @@ You can see the assessment details for the 4 applications and the efforts to mod
 
 <kbd>![AMA_Evaluation_AllApplications](./images/media/AMA_Evaluation_AllApplications.png)</kbd>
 
-7. Click on the modresorts-2_0_0_war.ear to view its migration details. Click on **Inventory report**, **Technology report** and **Analysis report** to learn more details.
+    7. Click on the modresorts-2_0_0_war.ear to view its migration details. Click on **Inventory report**, **Technology report** and **Analysis report** to learn more details.
 
-    <kbd>![AMA_Evaluation_Assessment-modresorts0.png](./images/media/AMA_Evaluation_Assessment-modresorts0.png)</kbd>
+        <kbd>![AMA_Evaluation_Assessment-modresorts0.png](./images/media/AMA_Evaluation_Assessment-modresorts0.png)</kbd>
 
-8. Click on **View migration plan** on the top right to view the Download migration plan.
+    8. Click on **View migration plan** on the top right to view the Download migration plan.
 
-9. Click on **Download plan** to download the **Migration Plan** generated by AMA.
+    9. Click on **Download plan** to download the **Migration Plan** generated by AMA.
 
-    <kbd>![AMA_Evaluation_Assessment-modresorts11.png](./images/media/AMA_Evaluation_Assessment-modresorts11.png)</kbd>
+        <kbd>![AMA_Evaluation_Assessment-modresorts11.png](./images/media/AMA_Evaluation_Assessment-modresorts11.png)</kbd>
 
     The migration plan will be downloaded to the Downloads directory.
     <kbd>![AMA_Evaluation_Assessment-modresorts12.png](./images/media/AMA_Evaluation_Assessment-modresorts12.png)</kbd>
 
-10. Switch to the terminal window and execute the following command to see the content of the migration bundle. 
+    10. Switch to the terminal window and execute the following command to see the content of the migration bundle. 
 
         unzip -t ~/Downloads/modresorts-2_0_0_war.ear_migrationPlan.zip 
 
     
-    <kbd>![AMA_Evaluation_Assessment-modresorts13.png](./images/media/AMA_Evaluation_Assessment-modresorts13.png)</kbd>
+        <kbd>![AMA_Evaluation_Assessment-modresorts13.png](./images/media/AMA_Evaluation_Assessment-modresorts13.png)</kbd>
 
 
 
-11. Close the browser window containing the AMA UI.
+    11. Close the browser window containing the AMA UI.
 
 ### Recap
 
