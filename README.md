@@ -181,7 +181,7 @@ You will now switch back to the AMA User Interface and create a new workspace ca
 
 To evaluate on-premises Java applications, you need to run the AMA Discovery Tool against the Application server environment. It will extract application information from the environment. The utility can be downloaded from the AMA.
 
-1. Create in AMA a new workspace and download the AMA Discovery Tool.
+### 4.2.1 Create in AMA a new workspace and download the AMA Discovery Tool.
     1. Switch back to the browser and open the existing AMA window.
     
         
@@ -206,6 +206,7 @@ To evaluate on-premises Java applications, you need to run the AMA Discovery Too
     5. Click on **Open discovery tool**.
         <kbd>![AMA_Workspace_Evaluation_Create2](./images/media/AMA_Workspace_Evaluation_Create2.png)</kbd>
     The Discovery Tool panel opens and provides the option to download the tool; in addition, it provides information how to use the tool. 
+
     6. Click on **Download discovery tool**.
     <kbd>![AMA_DiscoveryTool_Panel](./images/media/AMA_DiscoveryTool_Panel.png)</kbd>
 
@@ -225,7 +226,7 @@ To evaluate on-premises Java applications, you need to run the AMA Discovery Too
         <kbd>![AMA_DiscoveryTool_Download2](./images/media/AMA_DiscoveryTool_Download2.png)</kbd>
     
     
-2. Use the AMA Discovery Tool to analyze the installed WebSphere Applications.
+### 4.2.2 Use the AMA Discovery Tool to analyze the installed WebSphere Applications
 
     Run the AMA Discovery Tool against your WebSphere environment. After downloading the zipped Data Collector utility, it needs to be unpacked and run against a WebSphere Application server (WAS) to collect all the data of deployed applications and their configuration from the WAS server.
 
@@ -279,7 +280,7 @@ To evaluate on-premises Java applications, you need to run the AMA Discovery Too
         <kbd>![AMA_Discovery_Run_5](./images/media/AMA_Discovery_Run_5.png)</kbd>
     
 
-6.  Execute the AMA Discovery Tool.
+### 4.2.3 Execute the AMA Discovery Tool
 
     1. Go back to the Terminal window and navigate the directory where the AMA Discovery Tool was extracted, then list the content:
 
@@ -363,7 +364,7 @@ You can see the assessment details for the 4 applications and the efforts to mod
 
     11. Close the browser window containing the AMA UI.
 
-### 4.2.1 Recap
+### 4.2.4 Recap
 
 Congratulations, you have finished the application assessment part.
 
@@ -379,7 +380,7 @@ You will then use IBM Bob to modernise the application.
 
 ## 5.1 Explore the IBM Bob installation and complete setup
 
-1. Initialize git
+### 5.1.1 Initialize git
 
     Open a terminal window and switch to the project directory, then initialize git.
 
@@ -393,7 +394,7 @@ You will then use IBM Bob to modernise the application.
 
         
 
-2. Open IBM Bob
+### 5.1.2 Open IBM Bob
 
     1. Start the IBM Bob IDE
 
@@ -443,12 +444,12 @@ You will then use IBM Bob to modernise the application.
         Click on **Skip migration** to continue.
 
         
-    4. The lab document uses the color theme **Bob Theme**. If you want to change your theme, you can do so under **settings** on the bottom left corner of your IDE. 
+    6. The lab document uses the color theme **Bob Theme**. If you want to change your theme, you can do so under **settings** on the bottom left corner of your IDE. 
 
         <kbd>![Bob_Change_Theme.png](./images/media/Bob_Change_Theme.png)</kbd>
 
 
-3. Take a look at the installed extensions
+### 5.1.3 Take a look at the installed extensions
 
     1. Open the Extensions panel
 
@@ -463,7 +464,7 @@ You will then use IBM Bob to modernise the application.
     
         You will use the Liberty Tools Extension during the lab.
 
-4. Log into IBM Bob
+### 5.1.4 Log into IBM Bob
     1. On the right side of the IDE, click on the button **Log in to Bob** 
 
         <kbd>![Bob_Login.png](./images/media/Bob_Login.png)</kbd>
@@ -504,7 +505,7 @@ You will then use IBM Bob to modernise the application.
 
         <kbd>![Bob_signup8.png](./images/media/Bob_signup8.png)</kbd>
 
-5. Verify that you use an account that has access to the IBM Premium Package for Java Modernization
+### 5.1.5 Verify that you use an account that has access to the IBM Premium Package for Java Modernization
 
     1. On the upper right part of the Bob IDE, click on the **Settings** icon.    Then take a look at the account:
     
@@ -516,7 +517,7 @@ You will then use IBM Bob to modernise the application.
     
     <kbd>![Bob_premium_user.png](./images/media/Bob_premium_user.png)</kbd>
     
-6. Install the premium package extension:
+### 5.1.6 Install the premium package extension:
     
     1. In the list of **Add-ons**, click on the **Install** button next to **IBM Premium Package for Java Modernization**.
     
@@ -546,7 +547,7 @@ You will then use IBM Bob to modernise the application.
 
 
 
-### 5.1.1 Modernize Modresorts to WebSphere Liberty using IBM Bob
+### 5.1.7 Modernize Modresorts to WebSphere Liberty using IBM Bob
 In the section you will use the **Java Modernization** to modernize the application to Liberty. 
 
 1. Start the Java Modernization workflow
@@ -751,7 +752,7 @@ In the section you will use the **Java Modernization** to modernize the applicat
 
 You should now have a good understanding how IBM Bob can help to modernize your applications. 
 
-### 5.1.2 IBM Bob Recap
+### 5.1.8 IBM Bob Recap
 
 Congratulations, you have finished the application modernization part.
 
