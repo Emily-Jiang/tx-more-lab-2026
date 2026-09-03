@@ -366,6 +366,7 @@ Congratulations, you have finished the application assessment part.
 - You ran the AMA Discovery Tool to assess a WebSphere cell
 - You assessed the modresorts application
 - You generated a migration plan
+
 You will then use IBM Bob to modernise the application.
 
 # 5. Modernise the application using IBM Bob
