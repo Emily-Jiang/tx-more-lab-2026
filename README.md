@@ -523,7 +523,6 @@ You should now have access to IBM Bob and the IBM Bob chat window:
 3. Finally, you should see something like this:
 
     <kbd>![Bob_premium_user_installed.png](./images/media/Bob_premium_user_installed.png)</kbd>
-
     As you can see, you could start the modernization workflow from here.
 
 
