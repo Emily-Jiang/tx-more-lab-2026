@@ -148,15 +148,8 @@ Application Modernization Accelerator(AMA) is already installed and typically ru
 
 Let's check if AMA is already started. This can be validated by reviewing if the related podman containers are started. 
 
-1. Open a terminal by clicking on Activities and selecting terminal.
 
-    <kbd>![Toolbar_terminal](./images/media/Toolbar_terminal.png)</kbd>
-
-    The terminal window opens.  
-
-    <kbd>![Terminal](./images/media/Terminal.png)</kbd>
-
-2. Access the AMA launch script to verify if AMA is started or not
+Access the AMA launch script to verify if AMA is started or not
 
         cd ~/usr/IBM/application-modernization-accelerator-local-*
         ./launch.sh
@@ -337,12 +330,12 @@ Run the AMA Discovery Tool against your WebSphere environment. After downloading
 
         <kbd>![AMA_Assessment_Tab2](./images/media/AMA_Assessment_Tab2.png)</kbd>
 
-You can see the assessment details for the 4 applications and the efforts to modernize them to MoRE.
+    You can see the assessment details for the 4 applications and the efforts to modernize them to MoRE.
 
-<kbd>![AMA_Evaluation_AllApplications](./images/media/AMA_Evaluation_AllApplications.png)</kbd>
+    <kbd>![AMA_Evaluation_AllApplications](./images/media/AMA_Evaluation_AllApplications.png)</kbd>
 
 
-7. Click on the modresorts-2_0_0_war.ear to view its migration details. Click on **Inventory report**, **Technology report** and **Analysis report** to learn more details.
+    7. Click on the modresorts-2_0_0_war.ear to view its migration details. Click on **Inventory report**, **Technology report** and **Analysis report** to learn more details.
 
         <kbd>![AMA_Evaluation_Assessment-modresorts0.png](./images/media/AMA_Evaluation_Assessment-modresorts0.png)</kbd>
 
@@ -353,16 +346,13 @@ You can see the assessment details for the 4 applications and the efforts to mod
         <kbd>![AMA_Evaluation_Assessment-modresorts11.png](./images/media/AMA_Evaluation_Assessment-modresorts11.png)</kbd>
 
     The migration plan will be downloaded to the Downloads directory.
-    <kbd>![AMA_Evaluation_Assessment-modresorts12.png](./images/media/AMA_Evaluation_Assessment-modresorts12.png)</kbd>
+        <kbd>![AMA_Evaluation_Assessment-modresorts12.png](./images/media/AMA_Evaluation_Assessment-modresorts12.png)</kbd>
 
     10. Switch to the terminal window and execute the following command to see the content of the migration bundle. 
 
-        unzip -t ~/Downloads/modresorts-2_0_0_war.ear_migrationPlan.zip 
+            unzip -t ~/Downloads/modresorts-2_0_0_war.ear_migrationPlan.zip 
 
-    
         <kbd>![AMA_Evaluation_Assessment-modresorts13.png](./images/media/AMA_Evaluation_Assessment-modresorts13.png)</kbd>
-
-
 
     11. Close the browser window containing the AMA UI.
 
