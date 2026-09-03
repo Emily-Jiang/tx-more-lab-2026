@@ -845,7 +845,7 @@ Run the following command to create a Managed Liberty Server using the provided 
 # 7. Deploy the modernised application ModResort to MoRE
 
 
-The modernised WAR file `modresorts-more-2.0.0.war` was copied to the directory (~/Student/assets) and will be used for deployment to the Liberty server.
+The modernised WAR file `modresorts-more-2.0.0.war` was copied to the directory `~/Student/assets` and will be used for deployment to the Liberty server.
 
 ## 7.1 Option 1: Using the administrative console
 
