@@ -748,7 +748,7 @@ In this section, you will install the modernized modResorts to MoRE.
 
 1. In a terminal window and enter the following commands to start the servers:
 
-    ~/Student/modresorts-project/tWAS-Scripts/WAS_905_Cell_start.sh
+        ~/Student/modresorts-project/tWAS-Scripts/WASND_905_Cell_start.sh
 
 
 
