@@ -908,7 +908,7 @@ The script performs the following actions:
 
 * Installs the `modresorts-more-2.0.0.war` WAR file to the managed Liberty server `txc`. It then started the Managed Liberty server.
 
-After the script finishes, the message `ModResorts successfully deployed!` is displayed. Wait for a while to let the application to start. Verify that the application is running by following the steps in [Checking out the application](#checking-out-the-application).
+After the script finishes, the message `Application modresorts-more-2_0_0_war installed successfully.` is displayed. Wait for a while to let the application to start. Verify that the application is running by following the steps in [Checking out the application](#checking-out-the-application).
 
 ## 7.3 Checking out the application
 
