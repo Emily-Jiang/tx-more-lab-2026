@@ -616,20 +616,14 @@ In the section you will use the **Java Modernization** to modernize the applicat
 
     1. Fix the issues around **Behavious changes**
 
-        1. Bob wants to start a new subtask to fix the issues.
-
-            <kbd>![Bob_Fix_WebSphere_Runtimes.png](./images/media/Bob_Fix_WebSphere_Runtimes.png)</kbd>
-
-            Click on **Approve once** to continue. 
-
-        2. Bob creates a subtask and a **Todo** list to fix the issue based on the recommendations from the AMA migration plan. Click Click on **Approve once** to continue.
+        1. Bob creates a subtask and a **Todo** list to fix the issue based on the recommendations from the AMA migration plan. Click Click on **Approve once** to continue.
 
            
 
             Review the Todo list (you could also edit it to add or remove steps). Finally, click on **Approve once** to continue. 
 
 
-        3. You might have to click on **Approve once** to continue a few times until Bob finishes the todolist. Afterwards, Bob asks whether you want the changes to be applied. 
+        2. You might have to click on **Approve once** to continue a few times until Bob finishes the todolist. Afterwards, Bob asks whether you want the changes to be applied. 
 
             <kbd>![Bob_Fix_WebSphere_Runtimes3.png](./images/media/Bob_Fix_WebSphere_Runtimes3.png)</kbd>
 
@@ -655,10 +649,8 @@ In the section you will use the **Java Modernization** to modernize the applicat
 
         7. Bob wants to complete the subtask. Click on **Approve once** to continue. 
 
-    2. Fix the issues around **Behavious changes**  
+    2. Fix the issues around **The WebSphere Runtime APIs and SPIs are unavailable" rule**  
         
-        <kbd>![Bob_Fix_WebSphere_Runtimes8.png](./images/media/Bob_Fix_WebSphere_Runtimes8.png)</kbd>
-
         Review the task and click on **Approve once** to get continue.  
 
 
@@ -685,7 +677,7 @@ In the section you will use the **Java Modernization** to modernize the applicat
 
             To reduce the number of approvals for the task, click on **Approve edit tools for task** to continue. 
 
-    3. Bob has completed the tasks related to **Replatform Liberty issues**. 
+    4. Bob has completed the tasks related to **Replatform Liberty issues**. Bob does the validation.
     
     
         1. The first step is to deploy and validate.
