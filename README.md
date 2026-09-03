@@ -1,5 +1,45 @@
 # IBM Modernized Runtime Extension for Java Hands-On Lab 1648 in TechXchange 2026
 
+## Table of Contents
+
+- [1. Introduction](#1-introduction)
+  - [1.1 About this hands-on lab](#11-about-this-hands-on-lab)
+- [2. Getting started](#2-getting-started)
+  - [2.1 Lab environment overview](#21-lab-environment-overview)
+- [3. Build and analyze the modresorts application](#3-build-and-analyze-the-modresorts-application)
+  - [3.1 Verify the installed software](#31-verify-the-installed-software)
+  - [3.2 Create the required working directories](#32-create-the-required-working-directories)
+  - [3.3 Build and deploy the WebSphere applications](#33-build-and-deploy-the-websphere-applications)
+    - [3.3.1 Build the WAS application](#331-build-the-was-application)
+    - [3.3.2 Deploy the WebSphere application and test it](#332-deploy-the-websphere-application-and-test-it)
+- [4. Explore Application Modernization Accelerator](#4-explore-application-modernization-accelerator)
+  - [4.1 Start AMA](#41-start-ama)
+  - [4.2 Create an AMA data collection for the WAS applications](#42-create-an-ama-data-collection-for-the-was-applications)
+    - [4.2.1 Create in AMA a new workspace and download the AMA Discovery Tool](#421-create-in-ama-a-new-workspace-and-download-the-ama-discovery-tool)
+    - [4.2.2 Use the AMA Discovery Tool to analyze the installed WebSphere Applications](#422-use-the-ama-discovery-tool-to-analyze-the-installed-websphere-applications)
+    - [4.2.3 Execute the AMA Discovery Tool](#423-execute-the-ama-discovery-tool)
+    - [4.2.4 Recap](#424-recap)
+- [5. Modernise the application using IBM Bob](#5-modernise-the-application-using-ibm-bob)
+  - [5.1 Explore the IBM Bob installation and complete setup](#51-explore-the-ibm-bob-installation-and-complete-setup)
+    - [5.1.1 Initialize git](#511-initialize-git)
+    - [5.1.2 Open IBM Bob](#512-open-ibm-bob)
+    - [5.1.3 Take a look at the installed extensions](#513-take-a-look-at-the-installed-extensions)
+    - [5.1.4 Log into IBM Bob](#514-log-into-ibm-bob)
+    - [5.1.5 Verify that you use an account that has access to the IBM Premium Package for Java Modernization](#515-verify-that-you-use-an-account-that-has-access-to-the-ibm-premium-package-for-java-modernization)
+    - [5.1.6 Install the premium package extension](#516-install-the-premium-package-extension)
+    - [5.1.7 Modernize Modresorts to WebSphere Liberty using IBM Bob](#517-modernize-modresorts-to-websphere-liberty-using-ibm-bob)
+    - [5.1.8 IBM Bob Recap](#518-ibm-bob-recap)
+- [6. Deploy the modernized modResorts to MoRE](#6-deploy-the-modernized-modresorts-to-more)
+  - [6.1 Creating a managed Liberty server](#61-creating-a-managed-liberty-server)
+  - [6.2 Option 1: Using the administrative console](#62-option-1-using-the-administrative-console)
+  - [6.3 Option 2: Using administrative scripting](#63-option-2-using-administrative-scripting)
+- [7. Deploy the modernised application ModResort to MoRE](#7-deploy-the-modernised-application-modresort-to-more)
+  - [7.1 Option 1: Using the administrative console](#71-option-1-using-the-administrative-console)
+    - [7.1.1 Installing the application WAR file](#711-installing-the-application-war-file)
+  - [7.2 Option 2: Using administrative scripting](#72-option-2-using-administrative-scripting)
+  - [7.3 Checking out the application](#73-checking-out-the-application)
+
+---
 
 **Duration:** 90 minutes
 
