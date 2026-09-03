@@ -701,7 +701,7 @@ In the section you will use the **Java Modernization** to modernize the applicat
             In the browser, open the URL http://localhost:9080/resorts. If the port 9080 is in use, the URL would be http://localhost:9081/resorts.
             Then navigate to **Where To > Paris** to verify that the error is gone. Do the same with the **Logout** button. 
 
-        8. Switch back to Bob and click click on **Yes, the application started successfully with no errors** to continue. Then click on on **Approve Once** a few times. Finally, Bob created a summary with a diagram visualizing the performed tasks. 
+        8. Switch back to Bob and click click on **Yes, the application started successfully with no errors** to continue. If you are asked for permission, click on on **Approve Once**. Finally, Bob created a summary with a diagram visualizing the performed tasks. 
         
             <kbd>![Bob_Visual_Summary.png](./images/media/Bob_Visual_Summary.png)</kbd>
 
