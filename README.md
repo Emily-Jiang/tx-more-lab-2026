@@ -593,9 +593,6 @@ In the section you will use the **Java Modernization** to modernize the applicat
 
     4. Bob extracts the migration plan and wants to save the embedded Liberty server configuration file **server.xml**. Click on  **Approve once** for server.xml.
 
-        <kbd>![Bob_Java_Modernization_Workflow_Extract_migrationplan.png](./images/media/Bob_Java_Modernization_Workflow_Extract_migrationplan.png)</kbd>
-
-
     5. Bob has analyzed the AMA reports and knows which issues have been identified. As  next step, Bob wants to Run OpenRewrite Recipes for the automated fixes. Click on **Approve once** to apply the automated fixes.
 
         <kbd>![Bob_Java_Modernization_Workflow_after_testing.png](./images/media/Bob_Java_Modernization_Workflow_after_testing.png)</kbd>
