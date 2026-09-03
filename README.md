@@ -504,7 +504,7 @@ You should now have access to IBM Bob and the IBM Bob chat window:
     
     <kbd>![Bob_premium_user.png](./images/media/Bob_premium_user.png)</kbd>
       
-        If you have a user with access to the premium package, it is listed under add-ons (see above). 
+    If you have a user with access to the premium package, it is listed under add-ons (see above). 
         
     You should have an account that has access to the premium package.
     
