@@ -119,7 +119,9 @@ The objective of this section is to assess the simple-pharmacy application that 
 
     <kbd>![modresorts_mvn_build_tWAS_1.png](./images/media/modresorts_mvn_build_tWAS_2.png)</kbd>
 
-4. Copy the generated war file into the assets directory. Go to the terminal window to copy the file.
+4. Copy the generated war file into the assets directory. 
+
+Go to the terminal window to copy the file.
     
         cp ~/Student/modresorts-project/target/modresorts-2.0.0.war ~/Student/assets/
 
