@@ -119,9 +119,8 @@ The objective of this section is to assess the simple-pharmacy application that 
 
     <kbd>![modresorts_mvn_build_tWAS_1.png](./images/media/modresorts_mvn_build_tWAS_2.png)</kbd>
 
-4. Copy the generated war file into the assets directory. 
+4. Copy the generated war file into the assets directory 
 
-Go to the terminal window to copy the file.
     
         cp ~/Student/modresorts-project/target/modresorts-2.0.0.war ~/Student/assets/
 
@@ -720,7 +719,7 @@ In the section you will use the **Java Modernization** to modernize the applicat
     The newly built modresorts-2.0.0.war by Bob is located under targe directory.
         <kbd>![Bob_ModResorts_war.png](./images/media/Bob_ModResorts_war.png)</kbd>
 
-        Copy the generated war file into the assets directory
+        Switch to a **Terminal** window to copy the generated war file into the assets directory. 
     
             cp ~/Student/modresorts-project/target/modresorts-2.0.0.war ~/Student/assets/modresorts-more-2.0.0.war
 
