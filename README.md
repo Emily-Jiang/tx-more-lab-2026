@@ -686,19 +686,11 @@ In the section you will use the **Java Modernization** to modernize the applicat
 
             Click on **Start local deployment**.
 
-        2. Bob will ask for permission to start the **Deploy** subtask.
 
-            <kbd>![Bob_Start_Deployment1.png](./images/media/Bob_Start_Deployment1.png)</kbd>
 
-            Click on **Approve once** to continue. 
+        2. Click on **Approve Once** a few times in the subtasks. Bob will finish issues if anything is not working.
 
-        3. Bob will ask for permission to build the application. Click on **Approve once** to continue. 
-
-        4. Bob rebuilt the application and will ask again for permission to Add Liberty Maven Plugin to pom.xml. Click on **Approve Once** for task to continue. 
-
-        5. Click on **Approve Once** a few times in the subtasks. Bob will finish issues if anything is not working.
-
-        6. Bob tested all endpoints successfully. Now it provides deployment summary. 
+        3. Bob tested all endpoints successfully. Now it provides deployment summary. 
         
             <kbd>![Bob_Start_Deployment14.png](./images/media/Bob_Start_Deployment14.png)</kbd>
 
