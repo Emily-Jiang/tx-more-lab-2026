@@ -524,7 +524,7 @@ You should now have access to IBM Bob and the IBM Bob chat window:
 
     <kbd>![Bob_premium_user_installed.png](./images/media/Bob_premium_user_installed.png)</kbd>
 
-        As you can see, you could start the modernization workflow from here.
+    As you can see, you could start the modernization workflow from here.
 
 
 4. If the **IBM Bob** Panel on the right is not open, click on the **Bob** icon to open it.
