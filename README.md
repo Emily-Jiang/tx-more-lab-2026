@@ -812,7 +812,7 @@ You can use either of the following methods to complete this task:
    * User ID: `wasadmin`
    * Password: `password` 
 
-2. Navigate to **Servers** &rarr; **Server Types** &rarr; **WebSphere application server clusters**. Click **New...** and then **Managed Liberty server** to create a new Managed Liberty server.
+2. Navigate to **Servers** &rarr; **Server Types** &rarr; **WebSphere application servers**. Click **New...** and then **Managed Liberty server** to create a new Managed Liberty server.
 
    ![](images/media/MoRE_Server_Creation_1.png)
 
