@@ -18,17 +18,15 @@
     - [4.2.1 Create in AMA a new workspace and download the AMA Discovery Tool](#421-create-in-ama-a-new-workspace-and-download-the-ama-discovery-tool)
     - [4.2.2 Use the AMA Discovery Tool to analyze the installed WebSphere Applications](#422-use-the-ama-discovery-tool-to-analyze-the-installed-websphere-applications)
     - [4.2.3 Execute the AMA Discovery Tool](#423-execute-the-ama-discovery-tool)
-    - [4.2.4 Recap](#424-recap)
+  - [4.3 Recap](#43-recap)
 - [5. Modernise the application using IBM Bob](#5-modernise-the-application-using-ibm-bob)
   - [5.1 Explore the IBM Bob installation and complete setup](#51-explore-the-ibm-bob-installation-and-complete-setup)
     - [5.1.1 Initialize git](#511-initialize-git)
     - [5.1.2 Open IBM Bob](#512-open-ibm-bob)
-    - [5.1.3 Take a look at the installed extensions](#513-take-a-look-at-the-installed-extensions)
-    - [5.1.4 Log into IBM Bob](#514-log-into-ibm-bob)
-    - [5.1.5 Verify that you use an account that has access to the IBM Premium Package for Java Modernization](#515-verify-that-you-use-an-account-that-has-access-to-the-ibm-premium-package-for-java-modernization)
-    - [5.1.6 Install the premium package extension](#516-install-the-premium-package-extension)
-    - [5.1.7 Modernize Modresorts to WebSphere Liberty using IBM Bob](#517-modernize-modresorts-to-websphere-liberty-using-ibm-bob)
-    - [5.1.8 IBM Bob Recap](#518-ibm-bob-recap)
+    - [5.1.3 Log into IBM Bob](#513-log-into-ibm-bob)
+    - [5.1.4 IBM Premium Package for Java Modernization](#514-ibm-premium-package-for-java-modernization)
+  - [5.2 Modernize Modresorts to WebSphere Liberty using IBM Bob](#52-modernize-modresorts-to-websphere-liberty-using-ibm-bob)
+  - [5.3 IBM Bob Recap](#53-ibm-bob-recap)
 - [6. Deploy the modernized modResorts to MoRE](#6-deploy-the-modernized-modresorts-to-more)
   - [6.1 Creating a managed Liberty server](#61-creating-a-managed-liberty-server)
     - [6.1.1 Option 1: Using the administrative console](#611-option-1-using-the-administrative-console)
@@ -38,6 +36,7 @@
       - [6.2.1.1 Installing the application WAR file](#6211-installing-the-application-war-file)
     - [6.2.2 Option 2: Using administrative scripting](#622-option-2-using-administrative-scripting)
     - [6.2.3 Checking out the application](#623-checking-out-the-application)
+  - [6.3 MoRE Recap](#63-more-recap)
 
 ---
 
@@ -402,7 +401,7 @@ Run the AMA Discovery Tool against your WebSphere environment. After downloading
 
     11. Close the browser window containing the AMA UI.
 
-### 4.2.4 Recap
+## 4.3 Recap
 
 Congratulations, you have finished the application assessment part.
 
@@ -503,7 +502,7 @@ Open a terminal window and switch to the project directory, then initialize git.
     
         You will use the Liberty Tools Extension during the lab.
 
-### 5.1.4 Log into IBM Bob
+### 5.1.3 Log into IBM Bob
 1. On the right side of the IDE, click on the button **Log in to Bob** 
 
     <kbd>![Bob_Login.png](./images/media/Bob_Login.png)</kbd>
@@ -544,7 +543,9 @@ You should now have access to IBM Bob and the IBM Bob chat window:
 
 <kbd>![Bob_signup8.png](./images/media/Bob_signup8.png)</kbd>
 
-### 5.1.5 Verify that you use an account that has access to the IBM Premium Package for Java Modernization
+### 5.1.4 IBM Premium Package for Java Modernization
+
+Verify that you use an account that has access to the IBM Premium Package for Java Modernization
 
 1. On the upper right part of the Bob IDE, click on the **Settings** icon.    Then take a look at the account:
     
@@ -556,32 +557,32 @@ You should now have access to IBM Bob and the IBM Bob chat window:
     
     <kbd>![Bob_premium_user.png](./images/media/Bob_premium_user.png)</kbd>
     
-### 5.1.6 Install the premium package extension:
+2. Install the premium package extension:
     
-1. In the list of **Add-ons**, click on the **Install** button next to **IBM Premium Package for Java Modernization**.
+    1. In the list of **Add-ons**, click on the **Install** button next to **IBM Premium Package for Java Modernization**.
     
     <kbd>![Bob_premium_user_install.png](./images/media/Bob_premium_user_install.png)</kbd>
     
-2. In the pop-up, click on **Trust Publisher & Install**.
+    2. In the pop-up, click on **Trust Publisher & Install**.
     
     <kbd>![Bob_premium_user_install2.png](./images/media/Bob_premium_user_install2.png)</kbd>
 
-3. Finally, you should see something like this:
+    3. Finally, you should see something like this:
 
     <kbd>![Bob_premium_user_installed.png](./images/media/Bob_premium_user_installed.png)</kbd>
     As you can see, you could start the modernization workflow from here.
 
 
-4. If the **IBM Bob** Panel on the right is not open, click on the **Bob** icon to open it.
+    4. If the **IBM Bob** Panel on the right is not open, click on the **Bob** icon to open it.
 
     <kbd>![Bob_Open_Bob_Panel.png](./images/media/Bob_Open_Bob_Panel.png)</kbd>
 
     
-5. In the **IBM Bob** panel, click on the workflow icon and take a look at the Bob workflows that are offered. 
+    5. In the **IBM Bob** panel, click on the workflow icon and take a look at the Bob workflows that are offered. 
     
-You should see different workflows including the ones for Liberty Modernization (which are expanded in the screenshot below):
+    You should see different workflows including the ones for Liberty Modernization (which are expanded in the screenshot below):
 
-<kbd>![Bob_premium_user_Workflows.png](./images/media/Bob_premium_user_Workflows.png)</kbd>
+    <kbd>![Bob_premium_user_Workflows.png](./images/media/Bob_premium_user_Workflows.png)</kbd>
 
 
 
@@ -771,7 +772,7 @@ In the section you will use the **Java Modernization** to modernize the applicat
 
 You should now have a good understanding how IBM Bob can help to modernize your applications. 
 
-### 5.1.8 IBM Bob Recap
+## 5.3 IBM Bob Recap
 
 Congratulations, you have finished the application modernization part.
 
@@ -932,6 +933,8 @@ Because the application is accessible, use the following URLs based on the conne
 To confirm the application is functioning correctly, launch it and open the **Where to?** drop-down menu. Select any destination from the list—if successful, the relevant weather details should load and display without error messages.
 
 ![](./images/media/modresorts.png)
+
+## 6.3 MoRE Recap
 
 Congratulations, you have finished the MoRE part.
 
