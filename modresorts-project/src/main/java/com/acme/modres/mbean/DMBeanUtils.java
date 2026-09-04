@@ -24,6 +24,10 @@ public final class DMBeanUtils {
         String desc = opMetadata.getDescription();
         String type = opMetadata.getType();
         int impact = opMetadata.getImpact();
+        if (impact != MBeanOperationInfo.INFO && impact != MBeanOperationInfo.ACTION
+            && impact != MBeanOperationInfo.ACTION_INFO) {
+          impact = MBeanOperationInfo.UNKNOWN;
+        }
 
         MBeanOperationInfo opInfo = new MBeanOperationInfo(name, desc, /* signature */ null, type, impact, /*
                                                                                                             * descriptor
