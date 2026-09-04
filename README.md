@@ -31,13 +31,13 @@
     - [5.1.8 IBM Bob Recap](#518-ibm-bob-recap)
 - [6. Deploy the modernized modResorts to MoRE](#6-deploy-the-modernized-modresorts-to-more)
   - [6.1 Creating a managed Liberty server](#61-creating-a-managed-liberty-server)
-  - [6.2 Option 1: Using the administrative console](#62-option-1-using-the-administrative-console)
-  - [6.3 Option 2: Using administrative scripting](#63-option-2-using-administrative-scripting)
-- [7. Deploy the modernised application ModResort to MoRE](#7-deploy-the-modernised-application-modresort-to-more)
-  - [7.1 Option 1: Using the administrative console](#71-option-1-using-the-administrative-console)
-    - [7.1.1 Installing the application WAR file](#711-installing-the-application-war-file)
-  - [7.2 Option 2: Using administrative scripting](#72-option-2-using-administrative-scripting)
-  - [7.3 Checking out the application](#73-checking-out-the-application)
+    - [6.1.1 Option 1: Using the administrative console](#611-option-1-using-the-administrative-console)
+    - [6.1.2 Option 2: Using administrative scripting](#612-option-2-using-administrative-scripting)
+  - [6.2 Deploy the modernised application ModResort to MoRE](#62-deploy-the-modernised-application-modresort-to-more)
+    - [6.2.1 Option 1: Using the administrative console](#621-option-1-using-the-administrative-console)
+      - [6.2.1.1 Installing the application WAR file](#6211-installing-the-application-war-file)
+    - [6.2.2 Option 2: Using administrative scripting](#622-option-2-using-administrative-scripting)
+    - [6.2.3 Checking out the application](#623-checking-out-the-application)
 
 ---
 
@@ -220,7 +220,12 @@ To evaluate on-premises Java applications, you need to run the AMA Discovery Too
 1. Switch back to the browser and open the existing AMA window.
     
         
-        Note: If you closed the browser window, open a new browser window and enter the URL https://localhost:3000. 
+    ---
+    **NOTE**
+
+    If you closed the browser window, open a new browser window and enter the URL https://localhost:3000. 
+
+    ---
         
     You will likely get a warning, that there is a potential security risk, click on **Advanced** and then **Accept the Risk and Continue**. 
 
@@ -804,7 +809,7 @@ You can use either of the following methods to complete this task:
 * If you prefer a visual, step-by-step experience, continue with [Option 1: Using the administrative console](#option-1-using-the-administrative-console).
 * If you prefer automation or scripting, skip ahead to [Option 2: Using administrative scripting](#option-2-using-administrative-scripting).
 
-## 6.2 Option 1: Using the administrative console
+### 6.1.1 Option 1: Using the administrative console
 
 1. Switch to a brower window. Launch the **WAS Admin Console** by selecting **WAS** from your browser bookmarks or navigating to the https://localhost:9043/ibm/console URL.
 
@@ -832,7 +837,7 @@ You can use either of the following methods to complete this task:
 
 
 
-## 6.3 Option 2: Using administrative scripting
+### 6.1.2 Option 2: Using administrative scripting
 
 Run the following command to create a Managed Liberty Server using the provided Jython script [`MLS_create.py`](tWA-Scripts/MLS_create.py):
 
@@ -842,18 +847,27 @@ Run the following command to create a Managed Liberty Server using the provided 
 
 
 ---
-# 7. Deploy the modernised application ModResort to MoRE
+## 6.2 Deploy the modernised application ModResort to MoRE
 
 
-The modernised WAR file `modresorts-more-2.0.0.war` was copied to the directory `~/Student/assets` and will be used for deployment to the Liberty server.
+The modernised WAR file `modresorts-more-2.0.0.war` was copied to the directory `~/Student/assets` and will be used for deployment to the Liberty server. 
 
-## 7.1 Option 1: Using the administrative console
+---
+**NOTE (the following not needed if you have completed Section 6)** 
+
+If you have NOT finished the section 5, you can used the modernized WAR file modresorts-more-2.0.0.war from `~/modresorts-project/assets`. In a **Terminal** window, copy the file to the directory `~/Student/assets`.
+        
+    cp ~/Student/modresorts-project/assets/modresorts-more-2.0.0.war ~/Student/assets/modresorts-more-2.0.0.war
+---        
+
+
+### 6.2.1 Option 1: Using the administrative console
 
 This section walks you through deploying the application using the administrative console.
 
 If you prefer to use a script, skip ahead to [Option 2: Using administrative scripting](#option-2-using-administrative-scripting).
 
-### 7.1.1 Installing the application WAR file
+#### 6.2.1.1 Installing the application WAR file
 
 1. Launch the **WAS Admin Console** by selecting it from your browser bookmarks or navigating to the https://localhost:9043/ibm/console URL.
 
@@ -894,7 +908,7 @@ You will then see the message that the server started successfully.
 
 ![](./images/media/MoRE_MLS_started.png)
 
-## 7.2 Option 2: Using administrative scripting
+### 6.2.2 Option 2: Using administrative scripting
 
 This section walks you through deploying the application using the administrative console.
 
@@ -910,7 +924,7 @@ The script performs the following actions:
 
 After the script finishes, the message `Application modresorts-more-2_0_0_war installed successfully.` is displayed. Wait for a while to let the application to start. Verify that the application is running by following the steps in [Checking out the application](#checking-out-the-application).
 
-## 7.3 Checking out the application
+### 6.2.3 Checking out the application
 
 Because the application is accessible, use the following URLs based on the connection type:
 * http://localhost:9081/resorts
@@ -918,6 +932,15 @@ Because the application is accessible, use the following URLs based on the conne
 To confirm the application is functioning correctly, launch it and open the **Where to?** drop-down menu. Select any destination from the list—if successful, the relevant weather details should load and display without error messages.
 
 ![](./images/media/modresorts.png)
+
+Congratulations, you have finished the MoRE part.
+
+**Let’s recap what you did so far.** 
+
+- You learned how to created a Managed Liberty server via GUI or scripts
+- You learned how to deploy a modernised Jakarta EE 10 app on Java 21 to MoRE
+
+Congratulations, you have completed this lab successfully.
 
 ---
 
