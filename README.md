@@ -488,20 +488,20 @@ Open a terminal window and switch to the project directory, then initialize git.
         <kbd>![Bob_Change_Theme.png](./images/media/Bob_Change_Theme.png)</kbd>
 
 
-### 5.1.3 Take a look at the installed extensions
+    7. Take a look at the installed extensions
 
-1. Open the Extensions panel
+        1. Open the Extensions panel
 
-    <kbd>![Bob_Extensions.png](./images/media/Bob_Extensions.png)</kbd>
+        <kbd>![Bob_Extensions.png](./images/media/Bob_Extensions.png)</kbd>
 
-2. Click on the extension called **Liberty Tools**. The Liberty tools provide an easy way to develop against Liberty
+        2. Click on the extension called **Liberty Tools**. The Liberty tools provide an easy way to develop against Liberty
 
-    <kbd>![Bob_Extension_Liberty.png](./images/media/Bob_Extension_Liberty.png)</kbd>
+        <kbd>![Bob_Extension_Liberty.png](./images/media/Bob_Extension_Liberty.png)</kbd>
 
-Look at the details, then close the Liberty Tools Extension panel.
-You might have a newer version displayed.
+        Look at the details, then close the Liberty Tools Extension panel.
+        You might have a newer version displayed.
     
-You will use the Liberty Tools Extension during the lab.
+        You will use the Liberty Tools Extension during the lab.
 
 ### 5.1.4 Log into IBM Bob
 1. On the right side of the IDE, click on the button **Log in to Bob** 
@@ -585,7 +585,7 @@ You should see different workflows including the ones for Liberty Modernization 
 
 
 
-### 5.1.7 Modernize Modresorts to WebSphere Liberty using IBM Bob
+## 5.2 Modernize Modresorts to WebSphere Liberty using IBM Bob
 In the section you will use the **Java Modernization** to modernize the application to Liberty. 
 
 1. Start the Java Modernization workflow
