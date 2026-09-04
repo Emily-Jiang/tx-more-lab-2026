@@ -9,7 +9,7 @@
 - [3. Build and analyze the modresorts application](#3-build-and-analyze-the-modresorts-application)
   - [3.1 Verify the installed software](#31-verify-the-installed-software)
   - [3.2 Create the required working directories](#32-create-the-required-working-directories)
-  - [3.3 Build and deploy the WebSphere applications](#33-build-and-deploy-the-websphere-applications)
+  - [3.3 Build and deploy the WebSphere application modResort](#33-build-and-deploy-the-websphere-application-modresort)
     - [3.3.1 Build the WAS application](#331-build-the-was-application)
     - [3.3.2 Deploy the WebSphere application and test it](#332-deploy-the-websphere-application-and-test-it)
 - [4. Explore Application Modernization Accelerator](#4-explore-application-modernization-accelerator)
@@ -18,22 +18,21 @@
     - [4.2.1 Create in AMA a new workspace and download the AMA Discovery Tool](#421-create-in-ama-a-new-workspace-and-download-the-ama-discovery-tool)
     - [4.2.2 Use the AMA Discovery Tool to analyze the installed WebSphere Applications](#422-use-the-ama-discovery-tool-to-analyze-the-installed-websphere-applications)
     - [4.2.3 Execute the AMA Discovery Tool](#423-execute-the-ama-discovery-tool)
-  - [4.3 Recap](#43-recap)
+  - [4.3 AMA Recap](#43-ama-recap)
 - [5. Modernise the application using IBM Bob](#5-modernise-the-application-using-ibm-bob)
   - [5.1 Explore the IBM Bob installation and complete setup](#51-explore-the-ibm-bob-installation-and-complete-setup)
     - [5.1.1 Initialize git](#511-initialize-git)
     - [5.1.2 Open IBM Bob](#512-open-ibm-bob)
     - [5.1.3 Log into IBM Bob](#513-log-into-ibm-bob)
-    - [5.1.4 IBM Premium Package for Java Modernization](#514-ibm-premium-package-for-java-modernization)
+    - [5.1.4 Set up IBM Premium Package for Java Modernization](#514-set-up-ibm-premium-package-for-java-modernization)
   - [5.2 Modernize Modresorts to WebSphere Liberty using IBM Bob](#52-modernize-modresorts-to-websphere-liberty-using-ibm-bob)
   - [5.3 IBM Bob Recap](#53-ibm-bob-recap)
 - [6. Deploy the modernized modResorts to MoRE](#6-deploy-the-modernized-modresorts-to-more)
   - [6.1 Creating a managed Liberty server](#61-creating-a-managed-liberty-server)
     - [6.1.1 Option 1: Using the administrative console](#611-option-1-using-the-administrative-console)
     - [6.1.2 Option 2: Using administrative scripting](#612-option-2-using-administrative-scripting)
-  - [6.2 Deploy the modernised application ModResort to MoRE](#62-deploy-the-modernised-application-modresort-to-more)
+  - [6.2 Deploy the modernised application modResort to MoRE](#62-deploy-the-modernised-application-modresort-to-more)
     - [6.2.1 Option 1: Using the administrative console](#621-option-1-using-the-administrative-console)
-      - [6.2.1.1 Installing the application WAR file](#6211-installing-the-application-war-file)
     - [6.2.2 Option 2: Using administrative scripting](#622-option-2-using-administrative-scripting)
     - [6.2.3 Checking out the application](#623-checking-out-the-application)
   - [6.3 MoRE Recap](#63-more-recap)
@@ -127,7 +126,7 @@ All components are installed under `/home/itzuser/usr/IBM` on the student virtua
        mkdir ~/Student/assets
        mkdir ~/Student/backup
 
-## 3.3 Build and deploy the WebSphere applications
+## 3.3 Build and deploy the WebSphere application modResort
 
 The objective of this section is to assess the simple-pharmacy application that has been deployed to a traditional WAS 9 instance.
 
@@ -401,7 +400,7 @@ Run the AMA Discovery Tool against your WebSphere environment. After downloading
 
     11. Close the browser window containing the AMA UI.
 
-## 4.3 Recap
+## 4.3 AMA Recap
 
 Congratulations, you have finished the application assessment part.
 
@@ -543,7 +542,7 @@ You should now have access to IBM Bob and the IBM Bob chat window:
 
 <kbd>![Bob_signup8.png](./images/media/Bob_signup8.png)</kbd>
 
-### 5.1.4 IBM Premium Package for Java Modernization
+### 5.1.4 Set up IBM Premium Package for Java Modernization
 
 Verify that you use an account that has access to the IBM Premium Package for Java Modernization
 
@@ -848,7 +847,7 @@ Run the following command to create a Managed Liberty Server using the provided 
 
 
 ---
-## 6.2 Deploy the modernised application ModResort to MoRE
+## 6.2 Deploy the modernised application modResort to MoRE
 
 
 The modernised WAR file `modresorts-more-2.0.0.war` was copied to the directory `~/Student/assets` and will be used for deployment to the Liberty server. 
@@ -868,7 +867,7 @@ This section walks you through deploying the application using the administrativ
 
 If you prefer to use a script, skip ahead to [Option 2: Using administrative scripting](#option-2-using-administrative-scripting).
 
-#### 6.2.1.1 Installing the application WAR file
+Installing the application WAR file
 
 1. Launch the **WAS Admin Console** by selecting it from your browser bookmarks or navigating to the https://localhost:9043/ibm/console URL.
 
