@@ -443,62 +443,62 @@ Open a terminal window and switch to the project directory, then initialize git.
     <kbd>![Bob_Import_Panel.png](./images/media/Bob_Import_Panel.png)</kbd>
         
 
-    2. If you get a pop-up that a Bob update is available, click on settings and select **Keep current version**.
+2. If you get a pop-up that a Bob update is available, click on settings and select **Keep current version**.
 
-        <kbd>![Bob_UpdateAvailable.png](./images/media/Bob_UpdateAvailable.png)</kbd>
+    <kbd>![Bob_UpdateAvailable.png](./images/media/Bob_UpdateAvailable.png)</kbd>
 
-        <kbd>![Bob_Keep_current_version.png](./images/media/Bob_Keep_current_version.png)</kbd>
+    <kbd>![Bob_Keep_current_version.png](./images/media/Bob_Keep_current_version.png)</kbd>
        
 
-    3. If you get a **Bob Getting Started** panel, close it:
+3. If you get a **Bob Getting Started** panel, close it:
 
-        <kbd>![Bob_Getting_Started.png](./images/media/Bob_Getting_Started.png)</kbd>
+    <kbd>![Bob_Getting_Started.png](./images/media/Bob_Getting_Started.png)</kbd>
 
-    4. If you see during the lab a pop-up like below or any other pop-up asking to install something, close the pop-up without installation by clicking the **X**. 
+4. If you see during the lab a pop-up like below or any other pop-up asking to install something, close the pop-up without installation by clicking the **X**. 
 
-        <kbd>![Bob_Popup2.png](./images/media/Bob_Popup2.png)</kbd>
+    <kbd>![Bob_Popup2.png](./images/media/Bob_Popup2.png)</kbd>
 
 
-    5. Look at the bottom left of your Bobide window to find out if Bobide runs in Restricted Mode.
+5. Look at the bottom left of your Bobide window to find out if Bobide runs in Restricted Mode.
 
-        <kbd>![Bob_RestrictedMode2.png](./images/media/Bob_RestrictedMode2.png)</kbd>
+    <kbd>![Bob_RestrictedMode2.png](./images/media/Bob_RestrictedMode2.png)</kbd>
 
-        If so, click on the field **Restricted Mode** to open the panel.
+    If so, click on the field **Restricted Mode** to open the panel.
 
-        <kbd>![Bob_RestrictedMode1.png](./images/media/Bob_RestrictedMode1.png)</kbd>
+    <kbd>![Bob_RestrictedMode1.png](./images/media/Bob_RestrictedMode1.png)</kbd>
 
-        Then click on **Trust** to make this workspace trusted.
-        <kbd>![Bob_RestrictedMode3.png](./images/media/Bob_RestrictedMode3.png)</kbd>
+    Then click on **Trust** to make this workspace trusted.
+    <kbd>![Bob_RestrictedMode3.png](./images/media/Bob_RestrictedMode3.png)</kbd>
 
-        Finally, close the pop-up by clicking on **X**.
-        <kbd>![Bob_RestrictedMode4.png](./images/media/Bob_RestrictedMode4.png)</kbd>
+    Finally, close the pop-up by clicking on **X**.
+    <kbd>![Bob_RestrictedMode4.png](./images/media/Bob_RestrictedMode4.png)</kbd>
 
-        If you used Bob before, you might see a **Migration** panel like this:
+    If you used Bob before, you might see a **Migration** panel like this:
 
-        <kbd>![Bob_Skip_Migration.png](./images/media/Bob_Skip_Migration.png)</kbd>
+    <kbd>![Bob_Skip_Migration.png](./images/media/Bob_Skip_Migration.png)</kbd>
 
-        Click on **Skip migration** to continue.
+    Click on **Skip migration** to continue.
 
         
-    6. The lab document uses the color theme **Bob Theme**. If you want to change your theme, you can do so under **settings** on the bottom left corner of your IDE. 
+6. The lab document uses the color theme **Bob Theme**. If you want to change your theme, you can do so under **settings** on the bottom left corner of your IDE. 
 
-        <kbd>![Bob_Change_Theme.png](./images/media/Bob_Change_Theme.png)</kbd>
+    <kbd>![Bob_Change_Theme.png](./images/media/Bob_Change_Theme.png)</kbd>
 
 
-    7. Take a look at the installed extensions
+7. Take a look at the installed extensions
 
-        1. Open the Extensions panel
+    1. Open the Extensions panel
 
         <kbd>![Bob_Extensions.png](./images/media/Bob_Extensions.png)</kbd>
 
-        2. Click on the extension called **Liberty Tools**. The Liberty tools provide an easy way to develop against Liberty
+    2. Click on the extension called **Liberty Tools**. The Liberty tools provide an easy way to develop against Liberty
 
         <kbd>![Bob_Extension_Liberty.png](./images/media/Bob_Extension_Liberty.png)</kbd>
 
-        Look at the details, then close the Liberty Tools Extension panel.
-        You might have a newer version displayed.
+    Look at the details, then close the Liberty Tools Extension panel.
+    You might have a newer version displayed.
     
-        You will use the Liberty Tools Extension during the lab.
+    You will use the Liberty Tools Extension during the lab.
 
 ### 5.1.3 Log into IBM Bob
 1. On the right side of the IDE, click on the button **Log in to Bob** 
