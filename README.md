@@ -197,71 +197,70 @@ Access the AMA launch script to verify if AMA is started or not
     Check the status if AMA is started. 
     If AMA **is available** (see screenshot below), enter **q** to quit the menu and keep AMA running. 
 
-    <kbd>![AMA_Launcher](./images/media/AMA_Launcher.png)</kbd>
+<kbd>![AMA_Launcher](./images/media/AMA_Launcher.png)</kbd>
 
     If AMA is avalable, enter **q** to quit the script.
 
     If AMA is **not running** (see screenshot below), enter **5** to start AMA. 
-    <kbd>![AMA_Launcher_stopped](./images/media/AMA_Launcher_stopped.png)</kbd>
+<kbd>![AMA_Launcher_stopped](./images/media/AMA_Launcher_stopped.png)</kbd>
         
     Wait until AMA has started and the URL is displayed
-    <kbd>![AMA_Launcher_stopped](./images/media/AMA_Launcher_started.png)</kbd>
+<kbd>![AMA_Launcher_stopped](./images/media/AMA_Launcher_started.png)</kbd>
+
+
 
 ## 4.2 Create an AMA data collection for the WAS applications
 
-You will now switch back to the AMA User Interface and create a new workspace called **Evaluation**. Then you will download the AMA Discovery Tool to scan the existing WebSphere landscape.
+You will now create a new workspace called **Evaluation**. Then you will download the AMA Discovery Tool to scan the existing WebSphere landscape.
 
 To evaluate on-premises Java applications, you need to run the AMA Discovery Tool against the Application server environment. It will extract application information from the environment. The utility can be downloaded from the AMA.
 
+### 4.2.1 Access the AMA UI.
+
+1. Open a browser window by clicking on **Activities** and then select the **Firefox** browser icon.
+
+<kbd>![Toolbar_firefox](./images/media/Toolbar_firefox.png)</kbd>
+
+2. Access the AMA User Interface via the URL https://localhost:3000
+
+If you get a warning, that there is a potential security risk, click on **Advanced** and then **Accept the Risk and Continue**. 
+
+<kbd>![AMA_Potential_Security_Risk](./images/media/AMA_Potential_Security_Risk.png)</kbd>
+    
+Finally, you should see the Application Modernization Overview Screen. Click the button to **Accept all** to accept all cookies.
+        
+<kbd>![AMA_Initial_Screen-Intro.png](./images/media/AMA_Initial_Screen-Intro.png)</kbd>
+
 ### 4.2.1 Create in AMA a new workspace and download the AMA Discovery Tool.
 
-1. Switch back to the browser and open the existing AMA window.
+1. Click on the button **Create workspace** and enter **Evaluation**, do NOT select **include sample data**, then click on **Create**.
+
+    <kbd>![AMA_Workspace_Evaluation](./images/media/AMA_Workspace_Evaluation.png)</kbd>
     
-        
-    ---
-    **NOTE**
+2. An empty workspace will be created, and you will be asked if you want to upload an existing data collection or if you want to use the Discovery Tool.
+    <kbd>![AMA_Workspace_Evaluation_Create](./images/media/AMA_Workspace_Evaluation_Create.png)</kbd>
+    
+3. Click on **Open discovery tool**.
+        <kbd>![AMA_Workspace_Evaluation_Create2](./images/media/AMA_Workspace_Evaluation_Create2.png)</kbd>
+The Discovery Tool panel opens and provides the option to download the tool; in addition, it provides information how to use the tool. 
 
-    If you closed the browser window, open a new browser window and enter the URL https://localhost:3000. 
+4. Click on **Download discovery tool**.
+    <kbd>![AMA_DiscoveryTool_Panel](./images/media/AMA_DiscoveryTool_Panel.png)</kbd>
 
-    ---
-        
-    You will likely get a warning, that there is a potential security risk, click on **Advanced** and then **Accept the Risk and Continue**. 
+    The discovery tool package will be generated and prepared for download.
+    Once done, you will likely get a warning, that there is a potential security risk, click on **Advanced** and then **Accept the Risk and Continue**. 
 
     <kbd>![AMA_Potential_Security_Risk](./images/media/AMA_Potential_Security_Risk3.png)</kbd>
 
-    2. You should now be back on the AMA Overview page:
-
-        <kbd>![AMA_Initial_Screen2](./images/media/AMA_Initial_Screen2.png)</kbd>
     
-
-    3. Click on the button **Create workspace** and enter **Evaluation**, do NOT select **include sample data**, then click on **Create**.
-
-        <kbd>![AMA_Workspace_Evaluation](./images/media/AMA_Workspace_Evaluation.png)</kbd>
+    The AMA Discovery Tool package will be generated and downloaded.
+    <kbd>![AMA_DiscoveryTool_Download](./images/media/AMA_DiscoveryTool_Download.png)</kbd>
     
-    4. An empty workspace will be created, and you will be asked if you want to upload an existing data collection or if you want to use the Discovery Tool.
-        <kbd>![AMA_Workspace_Evaluation_Create](./images/media/AMA_Workspace_Evaluation_Create.png)</kbd>
-    
-    5. Click on **Open discovery tool**.
-        <kbd>![AMA_Workspace_Evaluation_Create2](./images/media/AMA_Workspace_Evaluation_Create2.png)</kbd>
-    The Discovery Tool panel opens and provides the option to download the tool; in addition, it provides information how to use the tool. 
+    It will include next to the scanner also the information to upload the data collection once created.
 
-    6. Click on **Download discovery tool**.
-    <kbd>![AMA_DiscoveryTool_Panel](./images/media/AMA_DiscoveryTool_Panel.png)</kbd>
+5. Click the back button to return to the Discovery Tool page.
 
-        The discovery tool package will be generated and prepared for download.
-        Once done, you will likely get a warning, that there is a potential security risk, click on **Advanced** and then **Accept the Risk and Continue**. 
-
-        <kbd>![AMA_Potential_Security_Risk](./images/media/AMA_Potential_Security_Risk3.png)</kbd>
-
-    
-        The AMA Discovery Tool package will be generated and downloaded.
-        <kbd>![AMA_DiscoveryTool_Download](./images/media/AMA_DiscoveryTool_Download.png)</kbd>
-    
-        It will include next to the scanner also the information to upload the data collection once created.
-
-    7. Click the back button to return to the Discovery Tool page.
-
-        <kbd>![AMA_DiscoveryTool_Download2](./images/media/AMA_DiscoveryTool_Download2.png)</kbd>
+    <kbd>![AMA_DiscoveryTool_Download2](./images/media/AMA_DiscoveryTool_Download2.png)</kbd>
     
     
 ### 4.2.2 Use the AMA Discovery Tool to analyze the installed WebSphere Applications
