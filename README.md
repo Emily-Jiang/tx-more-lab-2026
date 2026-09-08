@@ -274,13 +274,13 @@ Run the AMA Discovery Tool against your WebSphere environment. After downloading
 
     <kbd>![AMA_Discovery_Run_1](./images/media/AMA_Discovery_Run_1.png)</kbd>
             
-    You can see the downloaded Discovery Tool file named “DiscoveryTool-Linux_Evaluation.tgz”
+    You can see the downloaded Discovery Tool file named `DiscoveryTool-Linux_Evaluation.tgz`
 
 2. Extract the data collector utility to the Student directory using the following command:
 
-    tar xvfz DiscoveryTool-Linux_Evaluation.tgz -C ~/Student
+        tar xvfz DiscoveryTool-Linux_Evaluation.tgz -C ~/Student
 
-The Discovery Tool will be extracted to ~/Student/ama-discovery-5.0.0 directory.
+The Discovery Tool will be extracted to `~/Student/ama-discovery-5.0.0` directory.
 
 Note: At this point, the data collector is ready to execute against a WebSphere environment.
 
