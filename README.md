@@ -715,7 +715,7 @@ In the section you will use the **Java Modernization** to modernize the applicat
 
         3. Bob find a solution and ready to apply the changes.
 
-        <kbd>![Bob_Fix_WebSphere_ServletAPI3.png](./images/media/Bob_Fix_WebSphere_ServletAPI3.png)</kbd>
+        <kbd><img src="./images/media/Bob_Fix_WebSphere_ServletAPI3.png" width="200"></kbd>
 
         You can select to apply the recommended changes or to use a different approach. Let's see which different approaches are available. Let's use the listed approach by click on **Yes, apply both changes**.   Click on **Approve once** to continue. 
 
@@ -724,7 +724,7 @@ In the section you will use the **Java Modernization** to modernize the applicat
     4. Bob has completed the tasks related to **Replatform Liberty issues**. Bob does the validation.
         1. The first step is to deploy and validate.
 
-        <kbd>![Bob_Start_Deployment.png](./images/media/Bob_Start_Deployment.png)</kbd>
+        <kbd><img src="./images/media/Bob_Start_Deployment.png" width="200"></kbd>
 
         Click on **Start local deployment**.
 
@@ -734,7 +734,7 @@ In the section you will use the **Java Modernization** to modernize the applicat
 
         3. Bob tested all endpoints successfully. Now it provides deployment summary. 
         
-        <kbd>![Bob_Start_Deployment14.png](./images/media/Bob_Start_Deployment14.png)</kbd>
+        <kbd><img src="./images/media/Bob_Start_Deployment14.png" width="200"></kbd>
 
            
             
@@ -745,7 +745,7 @@ In the section you will use the **Java Modernization** to modernize the applicat
 
         8. Switch back to Bob and click click on **Yes, the application started successfully with no errors** to continue. If you are asked for permission, click on on **Approve Once**. Finally, Bob created a summary with a diagram visualizing the performed tasks. 
         
-        <kbd>![Bob_Visual_Summary.png](./images/media/Bob_Visual_Summary.png)</kbd>
+        <kbd><img src="./images/media/Bob_Visual_Summary.png" width="200"></kbd>
 
         Click on the diagram to expand the diagram. 
 
