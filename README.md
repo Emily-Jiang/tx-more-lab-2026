@@ -267,7 +267,7 @@ The Discovery Tool panel opens and provides the option to download the tool; in 
 
 Run the AMA Discovery Tool against your WebSphere environment. After downloading the zipped Data Collector utility, it needs to be unpacked and run against a WebSphere Application server (WAS) to collect all the data of deployed applications and their configuration from the WAS server.
 
-1. Go back to the Terminal window by clicking the *Activities* on the top left corner and navigate the /home/itzuser/Downloads directory and view its contents with commands:
+1. Go back to the Terminal window by clicking the *Activities* on the top left corner and navigate the `/home/itzuser/Downloads` directory and view its contents with commands:
 
         cd /home/itzuser/Downloads/
             ls -l | grep Discovery
@@ -313,7 +313,7 @@ Note: At this point, the data collector is ready to execute against a WebSphere 
     The server configuration data is extremely helpful in AMA to generate deployment artifacts in the migration bundle.
  
     d. Review the final command.
-    To analyze the application and configuration for WebSphere will be done using a command as shown in the screenshot
+    To analyze the application and configuration for WebSphere will be done using a command as shown in the screenshot.
     <kbd>![AMA_Discovery_Run_5](./images/media/AMA_Discovery_Run_5.png)</kbd>
     
 
@@ -340,7 +340,7 @@ Note: At this point, the data collector is ready to execute against a WebSphere 
 
     Type **1** to accept the license agreement and press **Enter**.
 
-3. Wait until the analysis has completed. As you can see, 1 application has been analyzed, and the resulting data collection has been automatically uploaded. 
+3. Wait until the analysis has completed. As you can see, four applications have been analyzed, and the resulting data collection has been automatically uploaded. 
 
     The collection is also available as zip file in the directory where the discovery tool was called. It is named like the WAS profile.
 
@@ -373,7 +373,7 @@ Note: At this point, the data collector is ready to execute against a WebSphere 
 
     <kbd>![AMA_Assessment_Tab2](./images/media/AMA_Assessment_Tab2.png)</kbd>
 
-    You can see the assessment details for the 4 applications and the efforts to modernize them to MoRE.
+    You can see the assessment details for the four applications and the efforts to modernize them to MoRE.
 
     <kbd>![AMA_Evaluation_AllApplications](./images/media/AMA_Evaluation_AllApplications.png)</kbd>
 
@@ -393,7 +393,7 @@ Note: At this point, the data collector is ready to execute against a WebSphere 
 
 10. Switch to the terminal window and execute the following command to see the content of the migration bundle. 
 
-    unzip -t ~/Downloads/modresorts-2_0_0_war.ear_migrationPlan.zip 
+        unzip -t ~/Downloads/modresorts-2_0_0_war.ear_migrationPlan.zip 
 
     <kbd>![AMA_Evaluation_Assessment-modresorts13.png](./images/media/AMA_Evaluation_Assessment-modresorts13.png)</kbd>
 
