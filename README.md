@@ -670,7 +670,7 @@ In the section you will use the **Java Modernization** to modernize the applicat
 
         2. You might have to click on **Approve once** a few times to continue until Bob finishes the todolist. Afterwards, Bob asks whether you want the changes to be applied. 
 
-        <kbd><img src="./images/media/Bob_Fix_WebSphere_Runtimes3.png" width="600"></kbd>
+        <kbd><img src="./images/media/Bob_Fix_WebSphere_Runtimes3.png" width="200"></kbd>
 
         Click on **Yes, apply the fix as described** to continue. 
 
