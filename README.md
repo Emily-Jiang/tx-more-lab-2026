@@ -204,7 +204,7 @@ If AMA is avalable, enter **q** to quit the script.
 If AMA is **not running** (see screenshot below), enter **5** to start AMA. 
 <kbd>![AMA_Launcher_stopped](./images/media/AMA_Launcher_stopped.png)</kbd>
         
-Wait until AMA has started and the URL is displayed
+Wait until AMA has started and the URL is displayed.
 <kbd>![AMA_Launcher_stopped](./images/media/AMA_Launcher_started.png)</kbd>
 
 
@@ -231,7 +231,7 @@ Finally, you should see the Application Modernization Overview Screen. Click the
         
 <kbd>![AMA_Initial_Screen-Intro.png](./images/media/AMA_Initial_Screen-Intro.png)</kbd>
 
-### 4.2.1 Create in AMA a new workspace and download the AMA Discovery Tool.
+### 4.2.1 Create in AMA a new workspace and download the AMA Discovery Tool
 
 1. Click on the button **Create workspace** and enter **Evaluation**, do NOT select **include sample data**, then click on **Create**.
 
@@ -276,45 +276,45 @@ Run the AMA Discovery Tool against your WebSphere environment. After downloading
             
     You can see the downloaded Discovery Tool file named “DiscoveryTool-Linux_Evaluation.tgz”
 
-    2. Extract the data collector utility to the Student directory using the following command:
+2. Extract the data collector utility to the Student directory using the following command:
 
-            tar xvfz DiscoveryTool-Linux_Evaluation.tgz -C ~/Student
+    tar xvfz DiscoveryTool-Linux_Evaluation.tgz -C ~/Student
 
-        The Discovery Tool will be extracted to ~/Student/ama-discovery-5.0.0 directory.
+The Discovery Tool will be extracted to ~/Student/ama-discovery-5.0.0 directory.
 
-        Note: At this point, the data collector is ready to execute against a WebSphere environment.
+Note: At this point, the data collector is ready to execute against a WebSphere environment.
 
-    3. Return to the AMA UI in the Web browser to view the section on “Run the Tool”, which shows the command to run on the WebSphere environment.
+3. Return to the AMA UI in the Web browser to view the section on “Run the Tool”, which shows the command to run on the WebSphere environment.
 
-        a. From the Discovery Tool page, scroll down to the “Run Tool” section.
+    a. From the Discovery Tool page, scroll down to the “Run Tool” section.
 
-        <kbd>![AMA_Discovery_Run_2](./images/media/AMA_Discovery_Run_2.png)</kbd>
+    <kbd>![AMA_Discovery_Run_2](./images/media/AMA_Discovery_Run_2.png)</kbd>
         
-        The Discovery tool command that would be executed is based on the domain and analysis type selections you make in this section.
+    The Discovery tool command that would be executed is based on the domain and analysis type selections you make in this section.
 
-        b. Select the domain.
+    b. Select the domain
 
-        Open the twisty to see the different domain options:
+    Open the twisty to see the different domain options:
 
-        <kbd>![AMA_Discovery_Run_3](./images/media/AMA_Discovery_Run_3.png)</kbd>
+    <kbd>![AMA_Discovery_Run_3](./images/media/AMA_Discovery_Run_3.png)</kbd>
         
         
-        Finally, choose the **IBM WebSphere** Domain. 
+    Finally, choose the **IBM WebSphere** Domain. 
 
-        c. Select the Analysis type
+    c. Select the Analysis type
         
-        Open the twisty to see the different analysis types:
+    Open the twisty to see the different analysis types:
 
-        <kbd>![AMA_Discovery_Run_4](./images/media/AMA_Discovery_Run_4.png)</kbd>
+    <kbd>![AMA_Discovery_Run_4](./images/media/AMA_Discovery_Run_4.png)</kbd>
         
-        Choose the **Apps & Configuration** analysis. 
-        Selecting **Apps & Configuration** ensures that the application data and server configuration data is collected.
+    Choose the **Apps & Configuration** analysis. 
+    Selecting **Apps & Configuration** ensures that the application data and server configuration data is collected.
  
-        The server configuration data is extremely helpful in AMA to generate deployment artifacts in the migration bundle.
+    The server configuration data is extremely helpful in AMA to generate deployment artifacts in the migration bundle.
  
-        d. Review the final command.
-        To analyze the application and configuration for WebSphere will be done using a command as shown in the screenshot
-        <kbd>![AMA_Discovery_Run_5](./images/media/AMA_Discovery_Run_5.png)</kbd>
+    d. Review the final command.
+    To analyze the application and configuration for WebSphere will be done using a command as shown in the screenshot
+    <kbd>![AMA_Discovery_Run_5](./images/media/AMA_Discovery_Run_5.png)</kbd>
     
 
 ### 4.2.3 Execute the AMA Discovery Tool
