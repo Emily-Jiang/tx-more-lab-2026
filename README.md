@@ -668,7 +668,7 @@ In the section you will use the **Java Modernization** to modernize the applicat
         Review the Todo list (you could also edit it to add or remove steps). Finally, click on **Approve once** to continue. 
 
 
-        2. You might have to click on **Approve once** a few times to continue until Bob finishes the todolist. Afterwards, Bob asks whether you want the changes to be applied. 
+        2. You might have to click on **Approve once** a few times to continue until Bob finishes the todo list. Afterwards, Bob asks whether you want the changes to be applied. 
 
         <kbd><img src="./images/media/Bob_Fix_WebSphere_Runtimes3.png" width="200"></kbd>
 
@@ -679,12 +679,13 @@ In the section you will use the **Java Modernization** to modernize the applicat
         <kbd><img src="./images/media/Bob_Fix_WebSphere_Runtimes4.png" width="200"></kbd>
 
         Click on **Approve once** to continue. 
+
         5. Bob wants to execute the command "mvn compile". 
 
         <kbd>![Bob_Fix_WebSphere_Runtimes5.png](./images/media/Bob_Fix_WebSphere_Runtimes5.png)</kbd>
 
         Click on **Approve once** to continue. 
-
+        
         6. Bob wants to update the Todo list.
 
         <kbd>![Bob_Fix_WebSphere_Runtimes6.png](./images/media/Bob_Fix_WebSphere_Runtimes6.png)</kbd>
@@ -695,7 +696,7 @@ In the section you will use the **Java Modernization** to modernize the applicat
 
     2. Fix the issues around **The WebSphere Runtime APIs and SPIs are unavailable" rule**  
         
-        Review the task and click on **Approve once** to get continue.  
+    Review the task and click on **Approve once** to get continue.  
 
 
     3. Fix the issues around **WebSphere Servlet API**
@@ -717,7 +718,7 @@ In the section you will use the **Java Modernization** to modernize the applicat
 
         <kbd><img src="./images/media/Bob_Fix_WebSphere_ServletAPI3.png" width="200"></kbd>
 
-        You can select to apply the recommended changes or to use a different approach. Let's see which different approaches are available. Let's use the listed approach by click on **Yes, apply both changes**.   Click on **Approve once** to continue. 
+        You can select to apply the recommended changes or to use a different approach. Let's use the listed approach by clicking on **Yes, apply both changes**.   Click on **Approve once** to continue. 
 
         To reduce the number of approvals for the task, click on **Approve edit tools for task** to continue. 
 
@@ -734,16 +735,14 @@ In the section you will use the **Java Modernization** to modernize the applicat
 
         3. Bob tested all endpoints successfully. Now it provides deployment summary. 
         
-        <kbd><img src="./images/media/Bob_Start_Deployment14.png" width="200"></kbd>
+        <kbd><img src="./images/media/Bob_Start_Deployment14.png" width="400"></kbd>
 
-           
-            
-        7. Open the browser and test the application to verify, that the initial issues are resolved. 
+    5. Open the browser and test the application to verify that the application is working. 
         
-        In the browser, open the URL http://localhost:9080/resorts. If the port 9080 is in use, the URL would be http://localhost:9081/resorts.
-        Then navigate to **Where To > Paris** to verify that the error is gone. Do the same with the **Logout** button. 
+    In the browser, open the URL http://localhost:9080/resorts. If the port 9080 is in use, the URL would be http://localhost:9081/resorts.
+    Then navigate to **Where To > Paris** to verify that no error was displayed. Then click **Logout** button to verify that it was logged out. 
 
-        8. Switch back to Bob and click click on **Yes, the application started successfully with no errors** to continue. If you are asked for permission, click on on **Approve Once**. Finally, Bob created a summary with a diagram visualizing the performed tasks. 
+    6. Switch back to Bob and click click on **Yes, the application started successfully with no errors** to continue. If you are asked for permission, click on on **Approve Once**. Finally, Bob created a summary with a diagram visualizing the performed tasks. 
         
         <kbd><img src="./images/media/Bob_Visual_Summary.png" width="200"></kbd>
 
@@ -751,7 +750,7 @@ In the section you will use the **Java Modernization** to modernize the applicat
 
         As you can see, the diagram contains details about the performed modernization as well as details about the costs and tokens for the different tasks.    
         
-        9. ask Bob to stop the Liberty instance.
+        7. ask Bob to stop the Liberty instance.
 
             Stop Liberty
 
