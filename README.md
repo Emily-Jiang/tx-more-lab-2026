@@ -256,7 +256,7 @@ The Discovery Tool panel opens and provides the option to download the tool; in 
     The AMA Discovery Tool package will be generated and downloaded.
     <kbd>![AMA_DiscoveryTool_Download](./images/media/AMA_DiscoveryTool_Download.png)</kbd>
     
-    It will include next to the scanner also the information to upload the data collection once created.
+
 
 5. Click the back button to return to the Discovery Tool page.
 
@@ -321,83 +321,83 @@ Note: At this point, the data collector is ready to execute against a WebSphere 
 
 1. Go back to the Terminal window and navigate the directory where the AMA Discovery Tool was extracted, then list the content:
 
-            cd ~/Student/ama-discovery-*
-            ls -l
+        cd ~/Student/ama-discovery-*
+        ls -l
 
     <kbd>![AMA_Discovery_Run_6](./images/media/AMA_Discovery_Run_6.png)</kbd>
 
 
-    2.  Execute the following command to start the AMA Discovery Tool:
+2.  Execute the following command to start the AMA Discovery Tool:
 
-            ./bin/ama-discovery -w ~/usr/IBM/WebSphere/AppServer
+        ./bin/ama-discovery -w ~/usr/IBM/WebSphere/AppServer
 
-        <kbd>![AMA_Discovery_Run_7](./images/media/AMA_Discovery_Run_7.png)</kbd>
+    <kbd>![AMA_Discovery_Run_7](./images/media/AMA_Discovery_Run_7.png)</kbd>
 
-        The license agreement will be displayed, and you will be asked to accept it. 
+    The license agreement will be displayed, and you will be asked to accept it. 
         
-        <kbd>![AMA_Discovery_Run_8](./images/media/AMA_Discovery_Run_8.png)</kbd>
+    <kbd>![AMA_Discovery_Run_8](./images/media/AMA_Discovery_Run_8.png)</kbd>
         
 
-        Type **1** to accept the license agreement and press **Enter**.
+    Type **1** to accept the license agreement and press **Enter**.
 
-    3. Wait until the analysis has completed. As you can see, 1 application has been analyzed, and the resulting data collection has been automatically uploaded. 
+3. Wait until the analysis has completed. As you can see, 1 application has been analyzed, and the resulting data collection has been automatically uploaded. 
 
-        The collection is also available as zip file in the directory where the discovery tool was called. It is named like the WAS profile.
+    The collection is also available as zip file in the directory where the discovery tool was called. It is named like the WAS profile.
 
-            ls -l
+        ls -l
 
-        <kbd>![AMA_Discovery_Run_10](./images/media/AMA_Discovery_Run_10.png)</kbd>
-
-
-        Comments: 
-        - In the lab, the process only takes a couple of seconds. In a real scenario, the process typically takes some time to complete, depending on how many applications are deployed on the WebSphere Application server and the complexity of the applications. As this process consumes some CPU and memory, it is not recommended to run the discovery tool in production.
-        - You might have recognized that the WebSphere applications were discovered even though the WebSphere instances were stopped. This is due to the fact that the discovery tools looks into the WebSphere files instead of connecting to a running instance.
-        - In the lab environment, the discovery tool can connect to the AMA instance via port 2220. Therefore the collected data has been automatically uploaded. If this is not the case, you must copy over the data collection zip to another system and manually upload the data to AMA from that system before you can view the results. 
-        - You can also specify in the ama-discovery command not to upload the data collection automatically. 
+    <kbd>![AMA_Discovery_Run_10](./images/media/AMA_Discovery_Run_10.png)</kbd>
 
 
-    4. Return to the AMA UI in the Web browser and you can see that the data collection has been uploaded. 
+    Comments: 
+    - In the lab, the process only takes a couple of seconds. In a real scenario, the process typically takes some time to complete, depending on how many applications are deployed on the WebSphere Application server and the complexity of the applications. As this process consumes some CPU and memory, it is not recommended to run the discovery tool in production.
+    - You might have recognized that the WebSphere applications were discovered even though the WebSphere instances were stopped. This is due to the fact that the discovery tools looks into the WebSphere files instead of connecting to a running instance.
+    - In the lab environment, the discovery tool can connect to the AMA instance via port 2220. Therefore the collected data has been automatically uploaded. If this is not the case, you must copy over the data collection zip to another system and manually upload the data to AMA from that system before you can view the results. 
+    - You can also specify in the ama-discovery command not to upload the data collection automatically. 
+
+
+4. Return to the AMA UI in the Web browser and you can see that the data collection has been uploaded. 
     
-        <kbd>![AMA_Discovery_Run_11](./images/media/AMA_Discovery_Run_11.png)</kbd>
+    <kbd>![AMA_Discovery_Run_11](./images/media/AMA_Discovery_Run_11.png)</kbd>
 
-    5. Click on the **Evaluation** workspace to open it.  
+5. Click on the **Evaluation** workspace to open it.  
     You will be asked to specify the modernization destination. Select **Liberty administered from WebSphere (MoRE)** as the destination, choose **Java SE 21** under the Standard edition and then click on **Confirm**.
     <kbd>![AMA_Select_Liberty](./images/media/AMA_Select_MoRE.png)</kbd>
     
 
-        The Evaluation workspace will open in the Visualization View. 
+    The Evaluation workspace will open in the Visualization View. 
     
-        <kbd>![AMA_Visualization_Evaluation](./images/media/AMA_Visualization_Evaluation.png)</kbd>
+    <kbd>![AMA_Visualization_Evaluation](./images/media/AMA_Visualization_Evaluation.png)</kbd>
 
-   6. Switch to the Assessment View.
+6. Switch to the Assessment View.
 
-        <kbd>![AMA_Assessment_Tab2](./images/media/AMA_Assessment_Tab2.png)</kbd>
+    <kbd>![AMA_Assessment_Tab2](./images/media/AMA_Assessment_Tab2.png)</kbd>
 
     You can see the assessment details for the 4 applications and the efforts to modernize them to MoRE.
 
     <kbd>![AMA_Evaluation_AllApplications](./images/media/AMA_Evaluation_AllApplications.png)</kbd>
 
 
-    7. Click on the modresorts-2_0_0_war.ear to view its migration details. Click on **Inventory report**, **Technology report** and **Analysis report** to learn more details.
+7. Click on the modresorts-2_0_0_war.ear to view its migration details. Click on **Inventory report**, **Technology report** and **Analysis report** to learn more details.
 
-        <kbd>![AMA_Evaluation_Assessment-modresorts0.png](./images/media/AMA_Evaluation_Assessment-modresorts0.png)</kbd>
+    <kbd>![AMA_Evaluation_Assessment-modresorts0.png](./images/media/AMA_Evaluation_Assessment-modresorts0.png)</kbd>
 
-    8. Click on **View migration plan** on the top right to view the Download migration plan.
+8. Click on **View migration plan** on the top right to view the Download migration plan.
 
-    9. Click on **Download plan** to download the **Migration Plan** generated by AMA.
+9. Click on **Download plan** to download the **Migration Plan** generated by AMA.
 
-        <kbd>![AMA_Evaluation_Assessment-modresorts11.png](./images/media/AMA_Evaluation_Assessment-modresorts11.png)</kbd>
+    <kbd>![AMA_Evaluation_Assessment-modresorts11.png](./images/media/AMA_Evaluation_Assessment-modresorts11.png)</kbd>
 
     The migration plan will be downloaded to the Downloads directory.
-        <kbd>![AMA_Evaluation_Assessment-modresorts12.png](./images/media/AMA_Evaluation_Assessment-modresorts12.png)</kbd>
+    <kbd>![AMA_Evaluation_Assessment-modresorts12.png](./images/media/AMA_Evaluation_Assessment-modresorts12.png)</kbd>
 
-    10. Switch to the terminal window and execute the following command to see the content of the migration bundle. 
+10. Switch to the terminal window and execute the following command to see the content of the migration bundle. 
 
-            unzip -t ~/Downloads/modresorts-2_0_0_war.ear_migrationPlan.zip 
+    unzip -t ~/Downloads/modresorts-2_0_0_war.ear_migrationPlan.zip 
 
-        <kbd>![AMA_Evaluation_Assessment-modresorts13.png](./images/media/AMA_Evaluation_Assessment-modresorts13.png)</kbd>
+    <kbd>![AMA_Evaluation_Assessment-modresorts13.png](./images/media/AMA_Evaluation_Assessment-modresorts13.png)</kbd>
 
-    11. Close the browser window containing the AMA UI.
+11. Close the browser window containing the AMA UI.
 
 ## 4.3 AMA Recap
 
