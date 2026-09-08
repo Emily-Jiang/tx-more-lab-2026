@@ -459,7 +459,7 @@ Open a terminal window and switch to the project directory, then initialize git.
     <kbd>![Bob_Popup2.png](./images/media/Bob_Popup2.png)</kbd>
 
 
-5. Look at the bottom left of your Bobide window to find out if Bobide runs in Restricted Mode.
+5. Look at the bottom left of your Bob IDE window to find out if Bob IDE runs in Restricted Mode.
 
     <kbd>![Bob_RestrictedMode2.png](./images/media/Bob_RestrictedMode2.png)</kbd>
 
@@ -661,18 +661,18 @@ In the section you will use the **Java Modernization** to modernize the applicat
 
     1. Fix the issues around **Behavious changes**
 
-        1. Bob creates a subtask and a **Todo** list to fix the issue based on the recommendations from the AMA migration plan. Click Click on **Approve once** to continue.
+        1. Bob creates a subtask and a **Todo** list to fix the issue based on the recommendations from the AMA migration plan. Click on **Approve once** to continue.
 
            
 
-            Review the Todo list (you could also edit it to add or remove steps). Finally, click on **Approve once** to continue. 
+        Review the Todo list (you could also edit it to add or remove steps). Finally, click on **Approve once** to continue. 
 
 
-        2. You might have to click on **Approve once** to continue a few times until Bob finishes the todolist. Afterwards, Bob asks whether you want the changes to be applied. 
+        2. You might have to click on **Approve once** a few times to continue until Bob finishes the todolist. Afterwards, Bob asks whether you want the changes to be applied. 
 
-            <kbd>![Bob_Fix_WebSphere_Runtimes3.png](./images/media/Bob_Fix_WebSphere_Runtimes3.png)</kbd>
+        <kbd><img src="./images/media/Bob_Fix_WebSphere_Runtimes3.png" width="600"></kbd>
 
-            Click on **Yes, apply the fix as described** to continue. 
+        Click on **Yes, apply the fix as described** to continue. 
 
         4. Bob applies the changes and ask for approval. Click on **Approve once** to continue a few times. 
 
