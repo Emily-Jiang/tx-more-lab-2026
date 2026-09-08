@@ -676,7 +676,7 @@ In the section you will use the **Java Modernization** to modernize the applicat
 
         4. Bob applies the changes and ask for approval. Click on **Approve once** to continue a few times. 
 
-            <kbd>![Bob_Fix_WebSphere_Runtimes4.png](./images/media/Bob_Fix_WebSphere_Runtimes4.png)</kbd>
+            <kbd><img src="./images/media/Bob_Fix_WebSphere_Runtimes4.png" width="200"></kbd>
 
             Click on **Approve once** to continue. 
     
@@ -705,7 +705,7 @@ In the section you will use the **Java Modernization** to modernize the applicat
         
         2. Bob creates a subtask and a Todo list  to fix the issue based on the recommendations from the AMA migration plan.
 
-            <kbd>![Bob_Fix_WebSphere_ServletAPI1.png](./images/media/Bob_Fix_WebSphere_ServletAPI1.png)</kbd>
+            <kbd><img src="./images/media/Bob_Fix_WebSphere_ServletAPI1.png" width="200"></kbd>
 
             Click on **Approve once** to get continue. 
 
