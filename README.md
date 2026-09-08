@@ -194,17 +194,17 @@ Access the AMA launch script to verify if AMA is started or not
         ./launch.sh
 
         
-    Check the status if AMA is started. 
-    If AMA **is available** (see screenshot below), enter **q** to quit the menu and keep AMA running. 
+Check the status if AMA is started. 
+If AMA **is available** (see screenshot below), enter **q** to quit the menu and keep AMA running. 
 
 <kbd>![AMA_Launcher](./images/media/AMA_Launcher.png)</kbd>
 
-    If AMA is avalable, enter **q** to quit the script.
+If AMA is avalable, enter **q** to quit the script.
 
-    If AMA is **not running** (see screenshot below), enter **5** to start AMA. 
+If AMA is **not running** (see screenshot below), enter **5** to start AMA. 
 <kbd>![AMA_Launcher_stopped](./images/media/AMA_Launcher_stopped.png)</kbd>
         
-    Wait until AMA has started and the URL is displayed
+Wait until AMA has started and the URL is displayed
 <kbd>![AMA_Launcher_stopped](./images/media/AMA_Launcher_started.png)</kbd>
 
 
@@ -215,7 +215,7 @@ You will now create a new workspace called **Evaluation**. Then you will downloa
 
 To evaluate on-premises Java applications, you need to run the AMA Discovery Tool against the Application server environment. It will extract application information from the environment. The utility can be downloaded from the AMA.
 
-### 4.2.1 Access the AMA UI.
+### 4.2.1 Access the AMA UI
 
 1. Open a browser window by clicking on **Activities** and then select the **Firefox** browser icon.
 
