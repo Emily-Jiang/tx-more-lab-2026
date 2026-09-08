@@ -676,21 +676,20 @@ In the section you will use the **Java Modernization** to modernize the applicat
 
         4. Bob applies the changes and ask for approval. Click on **Approve once** to continue a few times. 
 
-            <kbd><img src="./images/media/Bob_Fix_WebSphere_Runtimes4.png" width="200"></kbd>
+        <kbd><img src="./images/media/Bob_Fix_WebSphere_Runtimes4.png" width="200"></kbd>
 
-            Click on **Approve once** to continue. 
-    
+        Click on **Approve once** to continue. 
         5. Bob wants to execute the command "mvn compile". 
 
-            <kbd>![Bob_Fix_WebSphere_Runtimes5.png](./images/media/Bob_Fix_WebSphere_Runtimes5.png)</kbd>
+        <kbd>![Bob_Fix_WebSphere_Runtimes5.png](./images/media/Bob_Fix_WebSphere_Runtimes5.png)</kbd>
 
-            Click on **Approve once** to continue. 
+        Click on **Approve once** to continue. 
 
         6. Bob wants to update the Todo list.
 
-            <kbd>![Bob_Fix_WebSphere_Runtimes6.png](./images/media/Bob_Fix_WebSphere_Runtimes6.png)</kbd>
+        <kbd>![Bob_Fix_WebSphere_Runtimes6.png](./images/media/Bob_Fix_WebSphere_Runtimes6.png)</kbd>
 
-            Click on **Approve once** to continue. 
+        Click on **Approve once** to continue. 
 
         7. Bob wants to complete the subtask. Click on **Approve once** to continue. 
 
@@ -705,31 +704,29 @@ In the section you will use the **Java Modernization** to modernize the applicat
         
         2. Bob creates a subtask and a Todo list  to fix the issue based on the recommendations from the AMA migration plan.
 
-            <kbd><img src="./images/media/Bob_Fix_WebSphere_ServletAPI1.png" width="200"></kbd>
+        <kbd><img src="./images/media/Bob_Fix_WebSphere_ServletAPI1.png" width="200"></kbd>
 
-            Click on **Approve once** to get continue. 
+        Click on **Approve once** to get continue. 
 
-            Review the Todo list (you could also edit it if needed). 
-            To reduce the number of approvals, you can allow Bob to update the Todo list for the subtask without approval. 
-            Click on **Approve todo tools for task** to continue. 
+        Review the Todo list (you could also edit it if needed). 
+        To reduce the number of approvals, you can allow Bob to update the Todo list for the subtask without approval. 
+        Click on **Approve todo tools for task** to continue. 
 
 
         3. Bob find a solution and ready to apply the changes.
 
-            <kbd>![Bob_Fix_WebSphere_ServletAPI3.png](./images/media/Bob_Fix_WebSphere_ServletAPI3.png)</kbd>
+        <kbd>![Bob_Fix_WebSphere_ServletAPI3.png](./images/media/Bob_Fix_WebSphere_ServletAPI3.png)</kbd>
 
-            You can select to apply the recommended changes or to use a different approach. Let's see which different approaches are available. Let's use the listed approach by click on **Yes, apply both changes**.   Click on **Approve once** to continue. 
+        You can select to apply the recommended changes or to use a different approach. Let's see which different approaches are available. Let's use the listed approach by click on **Yes, apply both changes**.   Click on **Approve once** to continue. 
 
-            To reduce the number of approvals for the task, click on **Approve edit tools for task** to continue. 
+        To reduce the number of approvals for the task, click on **Approve edit tools for task** to continue. 
 
     4. Bob has completed the tasks related to **Replatform Liberty issues**. Bob does the validation.
-    
-    
         1. The first step is to deploy and validate.
 
-            <kbd>![Bob_Start_Deployment.png](./images/media/Bob_Start_Deployment.png)</kbd>
+        <kbd>![Bob_Start_Deployment.png](./images/media/Bob_Start_Deployment.png)</kbd>
 
-            Click on **Start local deployment**.
+        Click on **Start local deployment**.
 
 
 
@@ -737,35 +734,35 @@ In the section you will use the **Java Modernization** to modernize the applicat
 
         3. Bob tested all endpoints successfully. Now it provides deployment summary. 
         
-            <kbd>![Bob_Start_Deployment14.png](./images/media/Bob_Start_Deployment14.png)</kbd>
+        <kbd>![Bob_Start_Deployment14.png](./images/media/Bob_Start_Deployment14.png)</kbd>
 
            
             
         7. Open the browser and test the application to verify, that the initial issues are resolved. 
         
-            In the browser, open the URL http://localhost:9080/resorts. If the port 9080 is in use, the URL would be http://localhost:9081/resorts.
-            Then navigate to **Where To > Paris** to verify that the error is gone. Do the same with the **Logout** button. 
+        In the browser, open the URL http://localhost:9080/resorts. If the port 9080 is in use, the URL would be http://localhost:9081/resorts.
+        Then navigate to **Where To > Paris** to verify that the error is gone. Do the same with the **Logout** button. 
 
         8. Switch back to Bob and click click on **Yes, the application started successfully with no errors** to continue. If you are asked for permission, click on on **Approve Once**. Finally, Bob created a summary with a diagram visualizing the performed tasks. 
         
-            <kbd>![Bob_Visual_Summary.png](./images/media/Bob_Visual_Summary.png)</kbd>
+        <kbd>![Bob_Visual_Summary.png](./images/media/Bob_Visual_Summary.png)</kbd>
 
-            Click on the diagram to expand the diagram. 
+        Click on the diagram to expand the diagram. 
 
-            As you can see, the diagram contains details about the performed modernization as well as details about the costs and tokens for the different tasks.    
+        As you can see, the diagram contains details about the performed modernization as well as details about the costs and tokens for the different tasks.    
         
         9. ask Bob to stop the Liberty instance.
 
-                Stop Liberty
+            Stop Liberty
 
-            <kbd>![Bob_Stop_Liberty.png](./images/media/Bob_Stop_Liberty.png)</kbd>
+        <kbd>![Bob_Stop_Liberty.png](./images/media/Bob_Stop_Liberty.png)</kbd>
     4. Copy the new modresorts.war for the deployment to MoRE.
     The newly built modresorts-2.0.0.war by Bob is located under targe directory.
-        <kbd>![Bob_ModResorts_war.png](./images/media/Bob_ModResorts_war.png)</kbd>
+    <kbd>![Bob_ModResorts_war.png](./images/media/Bob_ModResorts_war.png)</kbd>
 
-        Switch to a **Terminal** window to copy the generated war file into the assets directory. 
+    Switch to a **Terminal** window to copy the generated war file into the assets directory. 
     
-            cp ~/Student/modresorts-project/target/modresorts-2.0.0.war ~/Student/assets/modresorts-more-2.0.0.war
+        cp ~/Student/modresorts-project/target/modresorts-2.0.0.war ~/Student/assets/modresorts-more-2.0.0.war
 
 
 You should now have a good understanding how IBM Bob can help to modernize your applications. 
