@@ -430,7 +430,7 @@ Open a terminal window and switch to the project directory, then initialize git.
 
         
 
-### 5.1.2 Open IBM Bob
+### 5.1.2 Set Up IBM Bob
 
 1. Start the IBM Bob IDE
 
@@ -440,60 +440,60 @@ Open a terminal window and switch to the project directory, then initialize git.
 
     If you get a Welcome panel offering to import settings, click on **Skip for now**,
 
-    <kbd>![Bob_Import_Panel.png](./images/media/Bob_Import_Panel.png)</kbd>
+    <kbd><img src="./images/media/Bob_Import_Panel.png" width="300"></kbd>
         
 
 2. If you get a pop-up that a Bob update is available, click on settings and select **Keep current version**.
 
-    <kbd>![Bob_UpdateAvailable.png](./images/media/Bob_UpdateAvailable.png)</kbd>
+    <kbd><img src="./images/media/Bob_UpdateAvailable.png" width="300"></kbd>
 
-    <kbd>![Bob_Keep_current_version.png](./images/media/Bob_Keep_current_version.png)</kbd>
+    <kbd><img src="./images/media/Bob_Keep_current_version.png" width="300"></kbd>
        
 
 3. If you get a **Bob Getting Started** panel, close it:
 
-    <kbd>![Bob_Getting_Started.png](./images/media/Bob_Getting_Started.png)</kbd>
+    <kbd><img src="./images/media/Bob_Getting_Started.png" width="300"></kbd>
 
 4. If you see during the lab a pop-up like below or any other pop-up asking to install something, close the pop-up without installation by clicking the **X**. 
 
-    <kbd>![Bob_Popup2.png](./images/media/Bob_Popup2.png)</kbd>
+    <kbd><img src="./images/media/Bob_Popup2.png" width="300"></kbd>
 
 
 5. Look at the bottom left of your Bob IDE window to find out if Bob IDE runs in Restricted Mode.
 
-    <kbd>![Bob_RestrictedMode2.png](./images/media/Bob_RestrictedMode2.png)</kbd>
+    <kbd><img src="./images/media/Bob_RestrictedMode2.png" width="300"></kbd>
 
     If so, click on the field **Restricted Mode** to open the panel.
 
-    <kbd>![Bob_RestrictedMode1.png](./images/media/Bob_RestrictedMode1.png)</kbd>
+    <kbd><img src="./images/media/Bob_RestrictedMode1.png" width="300"></kbd>
 
     Then click on **Trust** to make this workspace trusted.
-    <kbd>![Bob_RestrictedMode3.png](./images/media/Bob_RestrictedMode3.png)</kbd>
+    <kbd><img src="./images/media/Bob_RestrictedMode3.png" width="300"></kbd>
 
     Finally, close the pop-up by clicking on **X**.
-    <kbd>![Bob_RestrictedMode4.png](./images/media/Bob_RestrictedMode4.png)</kbd>
+    <kbd><img src="./images/media/Bob_RestrictedMode4.png" width="300"></kbd>
 
     If you used Bob before, you might see a **Migration** panel like this:
 
-    <kbd>![Bob_Skip_Migration.png](./images/media/Bob_Skip_Migration.png)</kbd>
+    <kbd><img src="./images/media/Bob_Skip_Migration.png" width="300"></kbd>
 
     Click on **Skip migration** to continue.
 
         
 6. The lab document uses the color theme **Bob Theme**. If you want to change your theme, you can do so under **settings** on the bottom left corner of your IDE. 
 
-    <kbd>![Bob_Change_Theme.png](./images/media/Bob_Change_Theme.png)</kbd>
+    <kbd><img src="./images/media/Bob_Change_Theme.png" width="300"></kbd>
 
 
 7. Take a look at the installed extensions
 
     1. Open the Extensions panel
 
-        <kbd>![Bob_Extensions.png](./images/media/Bob_Extensions.png)</kbd>
+        <kbd><img src="./images/media/Bob_Extensions.png" width="300"></kbd>
 
     2. Click on the extension called **Liberty Tools**. The Liberty tools provide an easy way to develop against Liberty
 
-        <kbd>![Bob_Extension_Liberty.png](./images/media/Bob_Extension_Liberty.png)</kbd>
+        <kbd><img src="./images/media/Bob_Extension_Liberty.png" width="300"></kbd>
 
     Look at the details, then close the Liberty Tools Extension panel.
     You might have a newer version displayed.
@@ -503,43 +503,43 @@ Open a terminal window and switch to the project directory, then initialize git.
 ### 5.1.3 Log into IBM Bob
 1. On the right side of the IDE, click on the button **Log in to Bob** 
 
-    <kbd>![Bob_Login.png](./images/media/Bob_Login.png)</kbd>
+    <kbd><img src="./images/media/Bob_Login.png" width="300"></kbd>
 
 2. On the pop-up, click on **Allow**. 
 
-    <kbd>![Bob_signup.png](./images/media/Bob_signup.png)</kbd>
+    <kbd><img src="./images/media/Bob_signup.png" width="300"></kbd>
 
 Click on **Open**
 
-<kbd>![Bob_signup2.png](./images/media/Bob_signup2.png)</kbd>
+<kbd><img src="./images/media/Bob_signup2.png" width="300"></kbd>
 
 A browser window will open.
 
-<kbd>![Bob_signup3.png](./images/media/Bob_signup3.png)</kbd>
+<kbd><img src="./images/media/Bob_signup3.png" width="300"></kbd>
 
 3. Choose a way of login and enter your login credentials.
 
-<kbd>![Bob_signup4.png](./images/media/Bob_signup4.png)</kbd>
+<kbd><img src="./images/media/Bob_signup4.png" width="300"></kbd>
 
 The example uses SSO with the IBMid.
 
 4. On the new browser page, select **Open Link**
 
-<kbd>![Bob_signup5.png](./images/media/Bob_signup5.png)</kbd>
+<kbd><img src="./images/media/Bob_signup5.png" width="300"></kbd>
 
 You should see a panel like this:
 
-<kbd>![Bob_signup6.png](./images/media/Bob_signup6.png)</kbd>
+<kbd><img src="./images/media/Bob_signup6.png" width="300"></kbd>
 
 5. Switch back to the IBM Bob IDE and you should see a pop-up like this:
 
-<kbd>![Bob_signup7.png](./images/media/Bob_signup7.png)</kbd>
+<kbd><img src="./images/media/Bob_signup7.png" width="300"></kbd>
 
 Click on **Open**.
 
 You should now have access to IBM Bob and the IBM Bob chat window:
 
-<kbd>![Bob_signup8.png](./images/media/Bob_signup8.png)</kbd>
+<kbd><img src="./images/media/Bob_signup8.png" width="300"></kbd>
 
 ### 5.1.4 Set up IBM Premium Package for Java Modernization
 
@@ -547,40 +547,40 @@ Verify that you use an account that has access to the IBM Premium Package for Ja
 
 1. On the upper right part of the Bob IDE, click on the **Settings** icon.    Then take a look at the account:
     
-    <kbd>![Bob_premium_user.png](./images/media/Bob_premium_user.png)</kbd>
+    <kbd><img src="./images/media/Bob_premium_user.png" width="300"></kbd>
       
     If you have a user with access to the premium package, it is listed under add-ons (see above). 
         
     You should have an account that has access to the premium package.
     
-    <kbd>![Bob_premium_user.png](./images/media/Bob_premium_user.png)</kbd>
+    <kbd><img src="./images/media/Bob_premium_user.png" width="300"></kbd>
     
 2. Install the premium package extension:
     
     1. In the list of **Add-ons**, click on the **Install** button next to **IBM Premium Package for Java Modernization**.
     
-    <kbd>![Bob_premium_user_install.png](./images/media/Bob_premium_user_install.png)</kbd>
+    <kbd><img src="./images/media/Bob_premium_user_install.png" width="300"></kbd>
     
     2. In the pop-up, click on **Trust Publisher & Install**.
     
-    <kbd>![Bob_premium_user_install2.png](./images/media/Bob_premium_user_install2.png)</kbd>
+    <kbd><img src="./images/media/Bob_premium_user_install2.png" width="300"></kbd>
 
     3. Finally, you should see something like this:
 
-    <kbd>![Bob_premium_user_installed.png](./images/media/Bob_premium_user_installed.png)</kbd>
+    <kbd><img src="./images/media/Bob_premium_user_installed.png" width="300"></kbd>
     As you can see, you could start the modernization workflow from here.
 
 
     4. If the **IBM Bob** Panel on the right is not open, click on the **Bob** icon to open it.
 
-    <kbd>![Bob_Open_Bob_Panel.png](./images/media/Bob_Open_Bob_Panel.png)</kbd>
+    <kbd><img src="./images/media/Bob_Open_Bob_Panel.png" width="300"></kbd>
 
     
     5. In the **IBM Bob** panel, click on the workflow icon and take a look at the Bob workflows that are offered. 
     
     You should see different workflows including the ones for Liberty Modernization (which are expanded in the screenshot below):
 
-    <kbd>![Bob_premium_user_Workflows.png](./images/media/Bob_premium_user_Workflows.png)</kbd>
+    <kbd><img src="./images/media/Bob_premium_user_Workflows.png" width="300"></kbd>
 
 
 
@@ -592,12 +592,12 @@ In the section you will use the **Java Modernization** to modernize the applicat
     1. In the **Bob** panel, click on **Permissions** on the bottom to see which activities IBM Bob is allowed to do without approval. Set the settings to **Read**.
     This will allow you to better understand the workflow and decisions.
 
-        <kbd>![Bob_Permissions.png](./images/media/Bob_Permissions.png)</kbd>
+        <kbd><img src="./images/media/Bob_Permissions.png" width="300"></kbd>
 
 
     2. In the **Bob** panel, expand the Java Modernization workflow and click on **Start**.
 
-        <kbd>![Bob_Java_Modernization_Workflow_start.png](./images/media/Bob_Java_Modernization_Workflow_start.png)</kbd>
+        <kbd><img src="./images/media/Bob_Java_Modernization_Workflow_start.png" width="300"></kbd>
 
     3. Click on **Continue**.
 
@@ -605,19 +605,19 @@ In the section you will use the **Java Modernization** to modernize the applicat
 
     1. Bob has detected that the application uses Spring and offers to analyze the application for vulnerabilities. 
     
-        <kbd>![Bob_Java_Modernization_Workflow_Vulnerabilities.png](./images/media/Bob_Java_Modernization_Workflow_Vulnerabilities.png)</kbd>
+        <kbd><img src="./images/media/Bob_Java_Modernization_Workflow_Vulnerabilities.png" width="300"></kbd>
 
         Click on **Approve once**.
 
     2. Next Bob wants to perform an initial build of the application. 
     
-        <kbd>![Bob_Java_Modernization_Workflow_InitialBuild.png](./images/media/Bob_Java_Modernization_Workflow_InitialBuild.png)</kbd>
+        <kbd><img src="./images/media/Bob_Java_Modernization_Workflow_InitialBuild.png" width="300"></kbd>
 
         Click on **Approve once**.
 
     4. Bob offers different options of application modernization. Select **Liberty Modernization** and select to **Disable Git Flow**.
     
-        <kbd>![Bob_Java_Modernization_Workflow_ModernizationType.png](./images/media/Bob_Java_Modernization_Workflow_ModernizationType.png)</kbd>
+        <kbd><img src="./images/media/Bob_Java_Modernization_Workflow_ModernizationType.png" width="300"></kbd>
 
         Click on **Continue**.
 
@@ -626,21 +626,21 @@ In the section you will use the **Java Modernization** to modernize the applicat
     Bob wants to read the AMA migration plan to better understand the modernization target and identified issues. The modernization plan will help to do the modernization in a more deterministic way. 
     1. Click on **Select File**
 
-        <kbd>![Bob_Java_Modernization_Workflow_Request_migrationplan.png](./images/media/Bob_Java_Modernization_Workflow_Request_migrationplan.png)</kbd>
+        <kbd><img src="./images/media/Bob_Java_Modernization_Workflow_Request_migrationplan.png" width="300"></kbd>
 
     2. Click on **Downloads**, then select the migration plan and click on  **Select File**
 
-        <kbd>![Bob_Java_Modernization_Workflow_Upload_migrationplan.png](./images/media/Bob_Java_Modernization_Workflow_Upload_migrationplan.png)</kbd>
+        <kbd><img src="./images/media/Bob_Java_Modernization_Workflow_Upload_migrationplan.png" width="300"></kbd>
 
     3. Verify that the migration plan has been selected and click on  **Continue**
 
-        <kbd>![Bob_Java_Modernization_Workflow_Uploaded_migrationplan.png](./images/media/Bob_Java_Modernization_Workflow_Uploaded_migrationplan.png)</kbd>
+        <kbd><img src="./images/media/Bob_Java_Modernization_Workflow_Uploaded_migrationplan.png" width="300"></kbd>
 
     4. Bob extracts the migration plan and wants to save the embedded Liberty server configuration file **server.xml**. Click on  **Approve once** for server.xml.
 
     5. Bob has analyzed the AMA reports and knows which issues have been identified. As  next step, Bob wants to Run OpenRewrite Recipes for the automated fixes. Click on **Approve once** to apply the automated fixes.
 
-        <kbd>![Bob_Java_Modernization_Workflow_after_testing.png](./images/media/Bob_Java_Modernization_Workflow_after_testing.png)</kbd>
+        <kbd><img src="./images/media/Bob_Java_Modernization_Workflow_after_testing.png" width="300"></kbd>
 
     
         After Bob has applied the recipes, you can see that the **LogoutServlet.java** and the **Weatherservlet.java** have been changed. 
@@ -650,11 +650,11 @@ In the section you will use the **Java Modernization** to modernize the applicat
         - The files **LogoutServlet.java** and the **Weatherservlet.java** have been changed by the recipes. 
         
         Click on **LogoutServlet.java** to view the changes.
-        <kbd>![Bob_git_compare.png](./images/media/Bob_git_compare.png)</kbd>
+        <kbd><img src="./images/media/Bob_git_compare.png" width="300"></kbd>
 
     5. After reviewing the changes, close the comparison.
 
-        <kbd>![Bob_git_compare.png](./images/media/Bob_git_compare2.png)</kbd>
+        <kbd><img src="./images/media/Bob_git_compare2.png" width="300"></kbd>
     Now that Bob resolved all issues with automated fixes via recipes, Bob will take a look at the remaining issues and will use agentic AI to resolve them.
 
 
@@ -683,13 +683,13 @@ In the section you will use the **Java Modernization** to modernize the applicat
 
     5. Bob wants to execute the command "mvn compile". 
 
-    <kbd>![Bob_Fix_WebSphere_Runtimes5.png](./images/media/Bob_Fix_WebSphere_Runtimes5.png)</kbd>
+    <kbd><img src="./images/media/Bob_Fix_WebSphere_Runtimes5.png" width="300"></kbd>
 
     Click on **Approve once** to continue. 
         
     6. Bob wants to update the Todo list.
 
-    <kbd>![Bob_Fix_WebSphere_Runtimes6.png](./images/media/Bob_Fix_WebSphere_Runtimes6.png)</kbd>
+    <kbd><img src="./images/media/Bob_Fix_WebSphere_Runtimes6.png" width="300"></kbd>
 
     Click on **Approve once** to continue. 
 
@@ -736,7 +736,7 @@ Review the task and click on **Approve once** to get continue.
 
     3. Bob tested all endpoints successfully. Now it provides deployment summary. 
         
-    <kbd><img src="./images/media/Bob_Start_Deployment14.png" width="400"></kbd>
+    <kbd><img src="./images/media/Bob_Start_Deployment14.png" width="300"></kbd>
 
 8. Open the browser and test the application to verify that the application is working. 
         
@@ -755,11 +755,11 @@ As you can see, the diagram contains details about the performed modernization a
 
         Stop Liberty
 
-    <kbd>![Bob_Stop_Liberty.png](./images/media/Bob_Stop_Liberty.png)</kbd>
+    <kbd><img src="./images/media/Bob_Stop_Liberty.png" width="300"></kbd>
     
 11. Copy the new modresorts.war for the deployment to MoRE.
     The newly built modresorts-2.0.0.war by Bob is located under targe directory.
-    <kbd>![Bob_ModResorts_war.png](./images/media/Bob_ModResorts_war.png)</kbd>
+    <kbd><img src="./images/media/Bob_ModResorts_war.png" width="300"></kbd>
 
     Switch to a **Terminal** window to copy the generated war file into the assets directory. 
     
