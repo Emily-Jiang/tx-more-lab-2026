@@ -430,7 +430,7 @@ Open a terminal window and switch to the project directory, then initialize git.
 
         
 
-### 5.1.2 Configure IBM Bob
+### 5.1.2 Set Up IBM Bob
 
 1. Start the IBM Bob IDE
 
@@ -440,7 +440,7 @@ Open a terminal window and switch to the project directory, then initialize git.
 
     If you get a Welcome panel offering to import settings, click on **Skip for now**,
 
-    <kbd><img src="./images/media/Bob_Import_Panel.png" width="300"></kbd>
+    <kbd>![Bob_Import_Panel.png](./images/media/Bob_Import_Panel.png)</kbd>
         
 
 2. If you get a pop-up that a Bob update is available, click on settings and select **Keep current version**.
@@ -605,19 +605,19 @@ In the section you will use the **Java Modernization** to modernize the applicat
     
     1. Bob has detected that the application uses Spring and offers to analyze the application for vulnerabilities. 
     
-    <kbd>![Bob_Java_Modernization_Workflow_Vulnerabilities.png](./images/media/Bob_Java_Modernization_Workflow_Vulnerabilities.png)</kbd>
+        <kbd><img src="./images/media/Bob_Java_Modernization_Workflow_Vulnerabilities.png" width="300"></kbd>
 
     Click on **Approve once**.
 
     2. Next Bob wants to perform an initial build of the application. 
     
-    <kbd>![Bob_Java_Modernization_Workflow_InitialBuild.png](./images/media/Bob_Java_Modernization_Workflow_InitialBuild.png)</kbd>
+        <kbd><img src="./images/media/Bob_Java_Modernization_Workflow_InitialBuild.png" width="300"></kbd>
 
     Click on **Approve once**.
 
     4. Bob offers different options of application modernization. Select **Liberty Modernization** and select to **Disable Git Flow**.
     
-    <kbd>![Bob_Java_Modernization_Workflow_ModernizationType.png](./images/media/Bob_Java_Modernization_Workflow_ModernizationType.png)</kbd>
+        <kbd><img src="./images/media/Bob_Java_Modernization_Workflow_ModernizationType.png" width="300"></kbd>
 
     Click on **Continue**.
 
