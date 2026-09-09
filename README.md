@@ -486,7 +486,6 @@ Open a terminal window and switch to the project directory, then initialize git.
 
 
 7. Take a look at the installed extensions
-
     1. Open the Extensions panel
 
         <kbd>![Bob_Extensions.png](./images/media/Bob_Extensions.png)</kbd>
