@@ -440,7 +440,7 @@ Open a terminal window and switch to the project directory, then initialize git.
 
     If you get a Welcome panel offering to import settings, click on **Skip for now**,
 
-    <kbd>![Bob_Import_Panel.png](./images/media/Bob_Import_Panel.png)</kbd>
+    <kbd><img src="./images/media/Bob_Import_Panel.png" width="300"></kbd>
         
 
 2. If you get a pop-up that a Bob update is available, click on settings and select **Keep current version**.
