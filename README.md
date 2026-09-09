@@ -621,7 +621,7 @@ In the section you will use the **Java Modernization** to modernize the applicat
 
         Click on **Continue**.
 
-3. Upload and extract Migration plan
+3. Apply Automated Fixes identified by the Migration plan
 
     Bob wants to read the AMA migration plan to better understand the modernization target and identified issues. The modernization plan will help to do the modernization in a more deterministic way. 
     1. Click on **Select File**
@@ -647,7 +647,6 @@ In the section you will use the **Java Modernization** to modernize the applicat
     
     4. To better compare what has changed, switch to the **Source Control** view and compare the files. Some files have been changed. For an instance,
 
-        - The file **server.env** has been created to make Liberty use Java 21.
         - The files **LogoutServlet.java** and the **Weatherservlet.java** have been changed by the recipes. 
         
         Click on **LogoutServlet.java** to view the changes.
@@ -656,106 +655,109 @@ In the section you will use the **Java Modernization** to modernize the applicat
     5. After reviewing the changes, close the comparison.
 
         <kbd>![Bob_git_compare.png](./images/media/Bob_git_compare2.png)</kbd>
+    Now that Bob resolved all issues with automated fixes via recipes, Bob will take a look at the remaining issues and will use agentic AI to resolve them.
 
-3. Now that Bob resolved all issues with automated fixes via recipes, Bob will take a look at the remaining issues and will use agentic AI to resolve them. While the overall resolution steps will stay the same, there might be differences in the order and the recommendations provided by Bob.
 
-    1. Fix the issues around **Behavious changes**
+    While the overall resolution steps will stay the same, there might be differences in the order and the recommendations provided by Bob.
 
-        1. Bob creates a subtask and a **Todo** list to fix the issue based on the recommendations from the AMA migration plan. Click on **Approve once** to continue.
+4. Use AI to fix the issues around **Behavious changes**
+
+    1. Bob creates a subtask and a **Todo** list to fix the issue based on the recommendations from the AMA migration plan. Click on **Approve once** to continue.
 
            
 
-        Review the Todo list (you could also edit it to add or remove steps). Finally, click on **Approve once** to continue. 
+    Review the Todo list (you could also edit it to add or remove steps). Finally, click on **Approve once** to continue. 
 
 
-        2. You might have to click on **Approve once** a few times to continue until Bob finishes the todo list. Afterwards, Bob asks whether you want the changes to be applied. 
+    2. You might have to click on **Approve once** a few times to continue until Bob finishes the todo list. Afterwards, Bob asks whether you want the changes to be applied. 
 
-        <kbd><img src="./images/media/Bob_Fix_WebSphere_Runtimes3.png" width="200"></kbd>
+    <kbd><img src="./images/media/Bob_Fix_WebSphere_Runtimes3.png" width="200"></kbd>
 
-        Click on **Yes, apply the fix as described** to continue. 
+    Click on **Yes, apply the fix as described** to continue. 
 
-        4. Bob applies the changes and ask for approval. Click on **Approve once** to continue a few times. 
+    4. Bob applies the changes and ask for approval. Click on **Approve once** to continue a few times. 
 
-        <kbd><img src="./images/media/Bob_Fix_WebSphere_Runtimes4.png" width="200"></kbd>
+    <kbd><img src="./images/media/Bob_Fix_WebSphere_Runtimes4.png" width="200"></kbd>
 
-        Click on **Approve once** to continue. 
+    Click on **Approve once** to continue. 
 
-        5. Bob wants to execute the command "mvn compile". 
+    5. Bob wants to execute the command "mvn compile". 
 
-        <kbd>![Bob_Fix_WebSphere_Runtimes5.png](./images/media/Bob_Fix_WebSphere_Runtimes5.png)</kbd>
+    <kbd>![Bob_Fix_WebSphere_Runtimes5.png](./images/media/Bob_Fix_WebSphere_Runtimes5.png)</kbd>
 
-        Click on **Approve once** to continue. 
+    Click on **Approve once** to continue. 
         
-        6. Bob wants to update the Todo list.
+    6. Bob wants to update the Todo list.
 
-        <kbd>![Bob_Fix_WebSphere_Runtimes6.png](./images/media/Bob_Fix_WebSphere_Runtimes6.png)</kbd>
+    <kbd>![Bob_Fix_WebSphere_Runtimes6.png](./images/media/Bob_Fix_WebSphere_Runtimes6.png)</kbd>
 
-        Click on **Approve once** to continue. 
+    Click on **Approve once** to continue. 
 
-        7. Bob wants to complete the subtask. Click on **Approve once** to continue. 
+    7. Bob wants to complete the subtask. Click on **Approve once** to continue. 
 
-    2. Fix the issues around **The WebSphere Runtime APIs and SPIs are unavailable" rule**  
+5. Use AI to fix the issues around **The WebSphere Runtime APIs and SPIs are unavailable" rule**  
         
-    Review the task and click on **Approve once** to get continue.  
+Review the task and click on **Approve once** to get continue.  
 
 
-    3. Fix the issues around **WebSphere Servlet API**
+6. Use AI to fix the issues around **WebSphere Servlet API**
 
-        1. Bob wants to start a new subtask to fix the issues around the WebSphere Servlet API. 
+    1. Bob wants to start a new subtask to fix the issues around the WebSphere Servlet API. 
         
-        2. Bob creates a subtask and a Todo list  to fix the issue based on the recommendations from the AMA migration plan.
+    2. Bob creates a subtask and a Todo list  to fix the issue based on the recommendations from the AMA migration plan.
 
-        <kbd><img src="./images/media/Bob_Fix_WebSphere_ServletAPI1.png" width="200"></kbd>
+    <kbd><img src="./images/media/Bob_Fix_WebSphere_ServletAPI1.png" width="200"></kbd>
 
-        Click on **Approve once** to get continue. 
+    Click on **Approve once** to get continue. 
 
-        Review the Todo list (you could also edit it if needed). 
-        To reduce the number of approvals, you can allow Bob to update the Todo list for the subtask without approval. 
-        Click on **Approve todo tools for task** to continue. 
-
-
-        3. Bob find a solution and ready to apply the changes.
-
-        <kbd><img src="./images/media/Bob_Fix_WebSphere_ServletAPI3.png" width="200"></kbd>
-
-        You can select to apply the recommended changes or to use a different approach. Let's use the listed approach by clicking on **Yes, apply both changes**.   Click on **Approve once** to continue. 
-
-        To reduce the number of approvals for the task, click on **Approve edit tools for task** to continue. 
-
-    4. Bob has completed the tasks related to **Replatform Liberty issues**. Bob does the validation.
-        1. The first step is to deploy and validate.
-
-        <kbd><img src="./images/media/Bob_Start_Deployment.png" width="200"></kbd>
-
-        Click on **Start local deployment**.
+    Review the Todo list (you could also edit it if needed). 
+    To reduce the number of approvals, you can allow Bob to update the Todo list for the subtask without approval. 
+    Click on **Approve todo tools for task** to continue. 
 
 
+    3. Bob find a solution and ready to apply the changes.
 
-        2. Click on **Approve Once** a few times in the subtasks. Bob will finish issues if anything is not working.
+    <kbd><img src="./images/media/Bob_Fix_WebSphere_ServletAPI3.png" width="200"></kbd>
 
-        3. Bob tested all endpoints successfully. Now it provides deployment summary. 
+    You can select to apply the recommended changes or to use a different approach. Let's use the listed approach by clicking on **Yes, apply both changes**.   Click on **Approve once** to continue. 
+
+    To reduce the number of approvals for the task, click on **Approve edit tools for task** to continue. 
+
+7. Bob has completed the tasks related to **Replatform Liberty issues**. Bob does the validation.
+    1. The first step is to deploy and validate.
+
+    <kbd><img src="./images/media/Bob_Start_Deployment.png" width="200"></kbd>
+
+    Click on **Start local deployment**.
+
+
+
+    2. Click on **Approve Once** a few times in the subtasks. Bob will finish issues if anything is not working.
+
+    3. Bob tested all endpoints successfully. Now it provides deployment summary. 
         
-        <kbd><img src="./images/media/Bob_Start_Deployment14.png" width="400"></kbd>
+    <kbd><img src="./images/media/Bob_Start_Deployment14.png" width="400"></kbd>
 
-    5. Open the browser and test the application to verify that the application is working. 
+8. Open the browser and test the application to verify that the application is working. 
         
-    In the browser, open the URL http://localhost:9080/resorts. If the port 9080 is in use, the URL would be http://localhost:9081/resorts.
-    Then navigate to **Where To > Paris** to verify that no error was displayed. Then click **Logout** button to verify that it was logged out. 
+In the browser, open the URL http://localhost:9080/resorts. If the port 9080 is in use, the URL would be http://localhost:9081/resorts.
+Then navigate to **Where To > Paris** to verify that no error was displayed. Then click **Logout** button to verify that it was logged out. 
 
-    6. Switch back to Bob and click click on **Yes, the application started successfully with no errors** to continue. If you are asked for permission, click on on **Approve Once**. Finally, Bob created a summary with a diagram visualizing the performed tasks. 
+9. Switch back to Bob and click click on **Yes, the application started successfully with no errors** to continue. If you are asked for permission, click on on **Approve Once**. Finally, Bob created a summary with a diagram visualizing the performed tasks. 
         
-        <kbd><img src="./images/media/Bob_Visual_Summary.png" width="200"></kbd>
+    <kbd><img src="./images/media/Bob_Visual_Summary.png" width="200"></kbd>
 
-        Click on the diagram to expand the diagram. 
+Click on the diagram to expand the diagram. 
 
-        As you can see, the diagram contains details about the performed modernization as well as details about the costs and tokens for the different tasks.    
+As you can see, the diagram contains details about the performed modernization as well as details about the costs and tokens for the different tasks.    
         
-        7. ask Bob to stop the Liberty instance.
+10. ask Bob to stop the Liberty instance.
 
-            Stop Liberty
+        Stop Liberty
 
-        <kbd>![Bob_Stop_Liberty.png](./images/media/Bob_Stop_Liberty.png)</kbd>
-    4. Copy the new modresorts.war for the deployment to MoRE.
+    <kbd>![Bob_Stop_Liberty.png](./images/media/Bob_Stop_Liberty.png)</kbd>
+    
+11. Copy the new modresorts.war for the deployment to MoRE.
     The newly built modresorts-2.0.0.war by Bob is located under targe directory.
     <kbd>![Bob_ModResorts_war.png](./images/media/Bob_ModResorts_war.png)</kbd>
 
