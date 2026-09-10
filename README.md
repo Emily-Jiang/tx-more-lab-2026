@@ -620,7 +620,7 @@ In the section you will use the **Java Modernization** to modernize the applicat
 
     Click on **Continue**.
 
-3. Analyse the issues identified by the Migration plan and apply automated fixes
+3. Upload the Migration plan and apply automated fixes
 
     Bob wants to read the AMA migration plan to better understand the modernization target and identified issues. The modernization plan will help to do the modernization in a more deterministic way. 
     1. Click on **Select File**
@@ -654,6 +654,7 @@ In the section you will use the **Java Modernization** to modernize the applicat
     5. After reviewing the changes, close the comparison.
 
         <kbd>![Bob_git_compare.png](./images/media/Bob_git_compare2.png)</kbd>
+    
     Now that Bob resolved all issues with automated fixes via recipes, Bob will take a look at the remaining issues and will use agentic AI to resolve them.
 
 
@@ -662,8 +663,6 @@ In the section you will use the **Java Modernization** to modernize the applicat
 4. Use AI to fix the issues around **Behavious changes**
 
     1. Bob creates a subtask and a **Todo** list to fix the issue based on the recommendations from the AMA migration plan. Click on **Approve once** to continue.
-
-           
 
     Review the Todo list (you could also edit it to add or remove steps). Finally, click on **Approve once** to continue. 
 
@@ -683,20 +682,19 @@ In the section you will use the **Java Modernization** to modernize the applicat
     5. Bob wants to execute the command "mvn compile". 
 
     <kbd>![Bob_Fix_WebSphere_Runtimes5.png](./images/media/Bob_Fix_WebSphere_Runtimes5.png)</kbd>
-
     Click on **Approve once** to continue. 
         
     6. Bob wants to update the Todo list.
 
     <kbd>![Bob_Fix_WebSphere_Runtimes6.png](./images/media/Bob_Fix_WebSphere_Runtimes6.png)</kbd>
-
+    
     Click on **Approve once** to continue. 
 
     7. Bob wants to complete the subtask. Click on **Approve once** to continue. 
 
 5. Use AI to fix the issues around **The WebSphere Runtime APIs and SPIs are unavailable" rule**  
-        
-Review the task and click on **Approve once** to get continue.  
+
+    Review the task and click on **Approve once** to get continue.  
 
 
 6. Use AI to fix the issues around **WebSphere Servlet API**
@@ -744,20 +742,20 @@ Then navigate to **Where To > Paris** to verify that no error was displayed. The
 
 9. Switch back to Bob and click click on **Yes, the application started successfully with no errors** to continue. If you are asked for permission, click on on **Approve Once**. Finally, Bob created a summary with a diagram visualizing the performed tasks. 
         
-    <kbd><img src="./images/media/Bob_Visual_Summary.png" width="200"></kbd>
+    <kbd><img src="./images/media/Bob_Visual_Summary.png" width="600"></kbd>
 
 Click on the diagram to expand the diagram. 
 
 As you can see, the diagram contains details about the performed modernization as well as details about the costs and tokens for the different tasks.    
         
-10. ask Bob to stop the Liberty instance.
+10. Ask Bob to stop the Liberty instance.
 
         Stop Liberty
 
     <kbd>![Bob_Stop_Liberty.png](./images/media/Bob_Stop_Liberty.png)</kbd>
     
 11. Copy the new modresorts.war for the deployment to MoRE.
-    The newly built modresorts-2.0.0.war by Bob is located under targe directory.
+    The newly built modresorts-2.0.0.war by Bob is located under target directory.
     <kbd>![Bob_ModResorts_war.png](./images/media/Bob_ModResorts_war.png)</kbd>
 
     Switch to a **Terminal** window to copy the generated war file into the assets directory. 
@@ -776,8 +774,8 @@ Congratulations, you have finished the application modernization part.
 - You used the IBM Bob to apply automated fixes via fixes
 - You used the IBM Bob to apply agentic AI to fix the remaining issues. 
 - You tested successfully the modernized application on Liberty
-- You got an idea how to use IBM Bob to upgrade the Java SE or Java EE level of the application.
-- You also should have a good understanding how to use Bob for troubleshooting migration issues.
+- You got an idea how to use IBM Bob to upgrade the Java SE and EE level of the application.
+
 
 The next step is to deploy the application to MoRE.
 
@@ -787,12 +785,10 @@ The next step is to deploy the application to MoRE.
 
 In this section, you will install the modernized modResorts to MoRE.
 
-1. In a terminal window and enter the following commands to start the servers:
+In a terminal window and enter the following commands to start the servers:
 
-        chmod +x ~/Student/modresorts-project/tWAS-Scripts/WASND_905*.sh
-        ~/Student/modresorts-project/tWAS-Scripts/WASND_905_Cell_start.sh
-
-
+    chmod +x ~/Student/modresorts-project/tWAS-Scripts/WASND_905*.sh
+    ~/Student/modresorts-project/tWAS-Scripts/WASND_905_Cell_start.sh
 
 After the script completes, the message `All servers have been started!` is displayed.
 
@@ -802,8 +798,8 @@ After the script completes, the message `All servers have been started!` is disp
 This section guides you through the process of creating a managed Liberty serve.
 
 You can use either of the following methods to complete this task:
-* If you prefer a visual, step-by-step experience, continue with [Option 1: Using the administrative console](#option-1-using-the-administrative-console).
-* If you prefer automation or scripting, skip ahead to [Option 2: Using administrative scripting](#option-2-using-administrative-scripting).
+* If you prefer a visual, step-by-step experience, continue with [Option 1: Using the administrative console](#611-option-1-using-the-administrative-console).
+* If you prefer automation or scripting, skip ahead to [Option 2: Using administrative scripting](#612-option-2-using-administrative-scripting).
 
 ### 6.1.1 Option 1: Using the administrative console
 
@@ -849,9 +845,9 @@ Run the following command to create a Managed Liberty Server using the provided 
 The modernised WAR file `modresorts-more-2.0.0.war` was copied to the directory `~/Student/assets` and will be used for deployment to the Liberty server. 
 
 ---
-**NOTE (the following not needed if you have completed Section 6)** 
+**NOTE (the following is not needed if you have completed Section 6)** 
 
-If you have NOT finished the section 5, you can used the modernized WAR file modresorts-more-2.0.0.war from `~/modresorts-project/assets`. In a **Terminal** window, copy the file to the directory `~/Student/assets`.
+If you have NOT finished the section 5, you can use the modernized WAR file modresorts-more-2.0.0.war from `~/modresorts-project/assets`. In a **Terminal** window, copy the file to the directory `~/Student/assets`.
         
     cp ~/Student/modresorts-project/assets/modresorts-more-2.0.0.war ~/Student/assets/modresorts-more-2.0.0.war
 ---        
@@ -861,7 +857,7 @@ If you have NOT finished the section 5, you can used the modernized WAR file mod
 
 This section walks you through deploying the application using the administrative console.
 
-If you prefer to use a script, skip ahead to [Option 2: Using administrative scripting](#option-2-using-administrative-scripting).
+If you prefer to use a script, skip ahead to [Option 2: Using administrative scripting](#622-option-2-using-administrative-scripting).
 
 Installing the application WAR file
 
@@ -884,7 +880,7 @@ Installing the application WAR file
 
 5. Leave **Step 1** unchanged and click **Next**.
 
-6. Leave **Step 1** unchanged and click **Next**.
+6. Leave **Step 2** unchanged and click **Next**.
 
 
 7. On **Step 3**, confirm that the **Context Root** is set to `/resorts` and click **Next**.
@@ -895,8 +891,9 @@ Installing the application WAR file
    
    Select **Synchronize changes with Nodes**, and click **Save**. Click **OK** when synchronization is complete.
 
-10. Start the Managed Liberty server.
-Navigate to **Servers** &rarr; **Server Types** &rarr; **WebSphere application server clusters**. Tick the box next to **txc** and then click **Start**.
+10. Start the Managed Liberty server
+
+Navigate to **Servers** &rarr; **Server Types** &rarr; **WebSphere application servers**. Tick the box next to **txc** and then click **Start**.
 
 ![](./images/media/MoRE_start_MLS.png)
 
