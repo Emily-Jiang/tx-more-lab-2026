@@ -37,6 +37,8 @@
     - [6.2.2 Option 2: Using administrative scripting](#622-option-2-using-administrative-scripting)
     - [6.2.3 Checking out the application](#623-checking-out-the-application)
   - [6.3 MoRE Recap](#63-more-recap)
+- [Summary](#summary)
+- [🚀 Your Turn — Modernize Your Own Applications](#-your-turn--modernize-your-own-applications)
 
 ---
 
