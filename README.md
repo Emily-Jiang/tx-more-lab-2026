@@ -791,7 +791,7 @@ As you can see, the diagram contains details about the performed modernization a
     
 11. Copy the new .war file for the deployment to MoRE.
     The newly built `modresorts-2.0.0.war` by Bob is located under `target` directory.
-    
+
     <kbd><img src="./images/media/Bob_ModResorts_war.png" width="200" height="250"></kbd>
 
     Switch to a **Terminal** window to copy the generated war file into the assets directory. 
