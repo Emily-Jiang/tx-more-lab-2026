@@ -390,7 +390,7 @@ Note: At this point, the data collector is ready to execute against a WebSphere 
     <kbd>![AMA_Evaluation_Assessment-modresorts2.png](./images/media/AMA_Evaluation_Assessment-modresorts2.png)</kbd>
     Here, you get insights into the related issues that may require code changes or configuration changes. 
 
-    *In this example, there is 7 issues of which 4 have an automated fix, indicated by an icon as highlighted in the following image below:*
+    In this example, there is 7 issues of which 4 have an automated fix, indicated by an icon as highlighted in the following image below:
 
     - *Behaviour change in the javax.management.MBeanOperationInfo constructor* 
     - *Avoid using the deprecated WSSecurityHelper revokeSSOCookies and getLTPACookieFromSSOToken methods*
@@ -755,7 +755,7 @@ In the section you will use the **Java Modernization** to modernize the applicat
 
     To reduce the number of approvals for the task, click on **Approve edit tools for task** to continue. 
 
-7. Bob has completed the tasks related to **Replatform Liberty issues**. Bob does the validation.
+7. Bob has completed the tasks related to the 7 **Replatform Liberty issues**. Bob does the validation.
     1. The first step is to deploy and validate.
 
     <kbd><img src="./images/media/Bob_Start_Deployment.png" width="200"></kbd>
@@ -789,9 +789,9 @@ As you can see, the diagram contains details about the performed modernization a
 
     <kbd>![Bob_Stop_Liberty.png](./images/media/Bob_Stop_Liberty.png)</kbd>
     
-11. Copy the new modresorts.war for the deployment to MoRE.
-    The newly built modresorts-2.0.0.war by Bob is located under target directory.
-    <kbd>![Bob_ModResorts_war.png](./images/media/Bob_ModResorts_war.png)</kbd>
+11. Copy the new .war file for the deployment to MoRE.
+    The newly built `modresorts-2.0.0.war` by Bob is located under `target` directory.
+    <kbd><img src="./images/media/Bob_ModResorts_war.png" width="200" height="250"></kbd>
 
     Switch to a **Terminal** window to copy the generated war file into the assets directory. 
     
