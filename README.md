@@ -638,7 +638,7 @@ In the section you will use the **Java Modernization** workflow to modernize the
 
 2. Bob prepares the modernization
     
-    1. Bob has detected that the application uses Spring and offers to analyze the application for vulnerabilities. 
+    1. Bob has detected that the application uses Spring and offers to analyze the application. 
     
         <kbd><img src="./images/media/Bob_Java_Modernization_Workflow_Vulnerabilities.png" width="300"></kbd>
 
@@ -658,7 +658,7 @@ In the section you will use the **Java Modernization** workflow to modernize the
 
 3. Upload the Migration plan and apply automated fixes
 
-    Bob wants to read the AMA migration plan to better understand the modernization target and identified issues. The modernization plan will help to do the modernization in a more deterministic way. 
+    Bob wants to read the AMA migration plan to better understand the modernization target and identified issues. The modernization plan will help the modernization in a more deterministic way. 
     1. Click on **Select File**
 
         <kbd>![Bob_Java_Modernization_Workflow_Request_migrationplan.png](./images/media/Bob_Java_Modernization_Workflow_Request_migrationplan.png)</kbd>
