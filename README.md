@@ -57,7 +57,7 @@ Modernizing Java applications doesn't mean manual work or abandoning your operat
 
 ## 1.1 About this hands-on lab
 
-This lab provides fundamental hands-on experience of the evaluation process of WebSphere application on Java 8 and Java EE 7 for their modernization journey to MoRE. It shows the value of using Application Modernization Accelerator (AMA) to evaluate on-premises Java applications, modernise using IBM Bob to upgrade to Java 21 and Jakarta EE 11 and then deploy to MoRE. In this interactive, hands-on lab, you'll explore the cutting-edge capabilities of WebSphere Application Server and MoRE, which are designed to supercharge your modernization journey. 
+This lab provides fundamental hands-on experience of the evaluation process of WebSphere application on Java 8 and Java EE 7 for their modernization journey to MoRE. It shows the value of using Application Modernization Accelerator (AMA) to evaluate on-premises Java applications, modernise using IBM Bob to upgrade to Java 21 and Jakarta EE 10 and then deploy to MoRE. In this interactive, hands-on lab, you'll explore the cutting-edge capabilities of WebSphere Application Server and MoRE, which are designed to supercharge your modernization journey. 
 
 Upon completion of this lab, you will have gained experience using AMA to quickly analyze on-premises Java applications without accessing their source code, and using IBM Bob to update the source code to accelerate your application modernization journey to MoRE.
 
@@ -448,7 +448,7 @@ Congratulations, you have finished the application assessment part.
 You will then use IBM Bob to modernise the application.
 
 # 5. Modernise the application using IBM Bob
-This section will use IBM Bob to modernise the application from Java SE 8 to Java SE 21 and Java EE 7 to Jakarta EE 11 based on the migration report from AMA.
+This section will use IBM Bob to modernise the **modresorts** application from Java SE 8 to Java SE 21 and Java EE 7 to Jakarta EE 10 based on the migration report from AMA.
 
 ## 5.1 Explore the IBM Bob installation and complete setup
 
