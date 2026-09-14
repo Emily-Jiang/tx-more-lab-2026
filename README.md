@@ -696,7 +696,7 @@ In the section you will use the **Java Modernization** workflow to modernize the
 
     While the overall resolution steps will stay the same, there might be differences in the order and the recommendations provided by Bob.
 
-4. Use AI to fix the issues around **Behavious changes**
+4. Use AI to fix the issues around **Issue 1: Behavious changes**
 
     1. Bob creates a subtask and a **Todo** list to fix the issue based on the recommendations from the AMA migration plan. Click on **Approve once** to continue.
 
@@ -719,7 +719,7 @@ In the section you will use the **Java Modernization** workflow to modernize the
 
     <kbd>![Bob_Fix_WebSphere_Runtimes5.png](./images/media/Bob_Fix_WebSphere_Runtimes5.png)</kbd>
 
-    
+
     Click on **Approve once** to continue.
         
     5. Bob wants to update the Todo list.
@@ -730,12 +730,12 @@ In the section you will use the **Java Modernization** workflow to modernize the
 
     6. Bob wants to complete the subtask. Click on **Approve once** to continue.
 
-5. Use AI to fix the issues around **The WebSphere Runtime APIs and SPIs are unavailable" rule**  
+5. Use AI to fix the issues around **Issue 7: The WebSphere Runtime APIs and SPIs are unavailable**  
 
     Review the task and click on **Approve once** to get continue.  
 
 
-6. Use AI to fix the issues around **WebSphere Servlet API**
+6. Use AI to fix the issues around **Issue 5: WebSphere Servlet API**
 
     1. Bob wants to start a new subtask to fix the issues around the WebSphere Servlet API. 
         
@@ -743,7 +743,7 @@ In the section you will use the **Java Modernization** workflow to modernize the
 
     <kbd><img src="./images/media/Bob_Fix_WebSphere_ServletAPI1.png" width="200"></kbd>
 
-    Click on **Approve once** to get continue. 
+    Click on **Approve once** to continue. 
 
     Review the Todo list (you could also edit it if needed). 
     To reduce the number of approvals, you can allow Bob to update the Todo list for the subtask without approval. 
@@ -754,7 +754,7 @@ In the section you will use the **Java Modernization** workflow to modernize the
 
     <kbd><img src="./images/media/Bob_Fix_WebSphere_ServletAPI3.png" width="200"></kbd>
 
-    You can select to apply the recommended changes or to use a different approach. Let's use the listed approach by clicking on **Yes, apply both changes**.   Click on **Approve once** to continue. 
+    You can select to apply the recommended changes or to use a different approach. Let's use the listed approach by clicking on **Yes, apply both changes**.   Click on **Approve once** to continue. You need to repeat this for a few times.
 
     To reduce the number of approvals for the task, click on **Approve edit tools for task** to continue. 
 
