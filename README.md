@@ -811,9 +811,9 @@ Congratulations, you have finished the application modernization part.
 
 **Let’s recap what you did so far.** 
 
-- You used the IBM Bob to apply automated fixes via fixes
+- You used the IBM Bob to apply automated fixes
 - You used the IBM Bob to apply agentic AI to fix the remaining issues. 
-- You tested successfully the modernized application on Liberty
+- You successfully tested the modernized application on Liberty
 - You got an idea how to use IBM Bob to upgrade the Java SE and EE level of the application.
 
 
@@ -835,7 +835,7 @@ After the script completes, the message `All servers have been started!` is disp
 ---
 ## 6.1 Creating a managed Liberty server
 
-This section guides you through the process of creating a managed Liberty serve.
+This section guides you through the process of creating a managed Liberty server.
 
 You can use either of the following methods to complete this task:
 * If you prefer a visual, step-by-step experience, continue with [Option 1: Using the administrative console](#611-option-1-using-the-administrative-console).
@@ -843,7 +843,7 @@ You can use either of the following methods to complete this task:
 
 ### 6.1.1 Option 1: Using the administrative console
 
-1. Switch to a brower window. Launch the **WAS Admin Console** by selecting **WAS** from your browser bookmarks or navigating to the https://localhost:9043/ibm/console URL.
+1. Switch to a brower window. Launch the **WAS Admin Console** by selecting **WAS** from your browser bookmarks or navigating to the https://localhost:9043/ibm/console URL. Once done, you will likely get a warning, that there is a potential security risk, click on Advanced and then Accept the Risk and Continue.
 
    Log in using the following credentials:
    * User ID: `wasadmin`
