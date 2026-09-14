@@ -566,7 +566,7 @@ You should see a panel like this:
 
 <kbd>![Bob_signup6.png](./images/media/Bob_signup6.png)</kbd>
 
-5. Switch back to the IBM Bob IDE and you should see a pop-up like this:
+5. Switch back to the IBM Bob IDE by clicking on **Activities** on the top left of the window and you should see a pop-up like this:
 
 <kbd>![Bob_signup7.png](./images/media/Bob_signup7.png)</kbd>
 
@@ -620,7 +620,7 @@ Verify that you use an account that has access to the IBM Premium Package for Ja
 
 
 ## 5.2 Modernize Modresorts to WebSphere Liberty using IBM Bob
-In the section you will use the **Java Modernization** to modernize the application to Liberty using the AMA migration plan. 
+In the section you will use the **Java Modernization** workflow to modernize the application `modresorts` to Liberty based on the AMA migration plan. 
 
 1. Start the Java Modernization workflow
 
