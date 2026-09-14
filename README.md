@@ -709,15 +709,17 @@ In the section you will use the **Java Modernization** workflow to modernize the
 
     Click on **Yes, apply the fix as described** to continue. 
 
-    3. Bob applies the changes and ask for approval. Click on **Approve once** to continue a few times.
+    3. Bob applies the changes and ask for approval. Click on **Approve once** a few times to continue the process.
 
     <kbd><img src="./images/media/Bob_Fix_WebSphere_Runtimes4.png" width="200"></kbd>
 
     Click on **Approve once** to continue. 
 
-    4. Bob wants to execute the command "mvn compile".
+    4. Bob wants to execute the command `mvn compile`.
 
     <kbd>![Bob_Fix_WebSphere_Runtimes5.png](./images/media/Bob_Fix_WebSphere_Runtimes5.png)</kbd>
+
+    
     Click on **Approve once** to continue.
         
     5. Bob wants to update the Todo list.
