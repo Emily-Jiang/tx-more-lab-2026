@@ -364,7 +364,7 @@ Note: At this point, the data collector is ready to execute against a WebSphere 
     <kbd>![AMA_Discovery_Run_11](./images/media/AMA_Discovery_Run_11.png)</kbd>
 
 5. Click on the **Evaluation** workspace to open it.  
-    You will be asked to specify the modernization destination. Select **Liberty administered from WebSphere (MoRE)** as the destination, choose **Java SE 21** under the Standard edition and then click on **Confirm**.
+    You will be asked to specify the modernization destination. Select **MoRE** as the destination, choose **Java SE 21** under the Standard edition and then click on **Confirm**.
     <kbd>![AMA_Select_Liberty](./images/media/AMA_Select_MoRE.png)</kbd>
     
 
@@ -381,7 +381,7 @@ Note: At this point, the data collector is ready to execute against a WebSphere 
     <kbd>![AMA_Evaluation_AllApplications](./images/media/AMA_Evaluation_AllApplications.png)</kbd>
 
 
-7. Click on the modresorts-2_0_0_war.ear to view its migration details. Click on **Inventory report**, **Technology report** and **Analysis report** to learn more details.
+7. Click on the **modresorts-2_0_0_war.ear** to view its migration details. Click on **Inventory report**, **Technology report** and **Analysis report** to learn more details.
 
     <kbd>![AMA_Evaluation_Assessment-modresorts0.png](./images/media/AMA_Evaluation_Assessment-modresorts0.png)</kbd>
 
@@ -390,19 +390,19 @@ Note: At this point, the data collector is ready to execute against a WebSphere 
     <kbd>![AMA_Evaluation_Assessment-modresorts2.png](./images/media/AMA_Evaluation_Assessment-modresorts2.png)</kbd>
     Here, you get insights into the related issues that may require code changes or configuration changes. 
 
-    In this example, there is 7 issues of which 4 have an automated fix, indicated by an icon as highlighted in the following image below:
+    In this example, there is 7 issues of which 4 issues (Issue 2, 3, 4 and 6) have an automated fix, indicated by an icon as highlighted in the image below:
 
-    - *Behaviour change in the javax.management.MBeanOperationInfo constructor* 
-    - *Avoid using the deprecated WSSecurityHelper revokeSSOCookies and getLTPACookieFromSSOToken methods*
-    - *Use the default InitialContext JNDI properties*
-    - *Update your application to use the new Jakarta EE package name*
-    - *The WebSphere Servlet API was superseded by a newer implementation*
-    - *Getting the server name on Liberty*
-    - *The WebSphere Runtime APIs and SPIs are unavailable*
+    - Issue 1: *Behaviour change in the javax.management.MBeanOperationInfo constructor* 
+    - Issue 2: *Avoid using the deprecated WSSecurityHelper revokeSSOCookies and getLTPACookieFromSSOToken methods*
+    - Issue 3: *Use the default InitialContext JNDI properties*
+    - Issue 4: *Update your application to use the new Jakarta EE package name*
+    - Issue 5: *The WebSphere Servlet API was superseded by a newer implementation*
+    - Issue 6: *Getting the server name on Liberty*
+    - Issue 7: *The WebSphere Runtime APIs and SPIs are unavailable*
 
-    There are also 10 issues which can be resolved without code changes and the external dependencies can be accurately mapped by the migration tool.
 
     <kbd>![AMA_Evaluation_Assessment-modresorts3.png](./images/media/AMA_Evaluation_Assessment-modresorts3.png)</kbd>
+    There are also 10 issues which can be resolved without code changes and the external dependencies can be accurately mapped by the migration tool.
 
 9. Scroll down to the section **Issues**. 
 
