@@ -95,7 +95,7 @@ All components are installed under `/home/itzuser/usr/IBM` on the student virtua
 
 ## 3.1 Verify the installed software
 
-1. Open a terminal by clicking on Activities and selecting terminal.
+1. Open a terminal by clicking on **Activities** and selecting **Terminal**.
 
     <kbd>![Toolbar_terminal](./images/media/Toolbar_terminal.png)</kbd>
 
@@ -129,9 +129,9 @@ All components are installed under `/home/itzuser/usr/IBM` on the student virtua
        mkdir ~/Student/assets
        mkdir ~/Student/backup
 
-## 3.3 Build and deploy the WebSphere application modResort
+## 3.3 Build and deploy the WebSphere application modResorts
 
-The objective of this section is to build and then deploy a web application to a traditional WAS 9 instance.
+The objective of this section is to build and then deploy a web application to a traditional WAS 9.0.5.28 instance.
 
 ### 3.3.1 Build the WAS application
 
@@ -182,7 +182,7 @@ Open a terminal window and enter the following commands to install the applicati
 
 
 # 4. Explore Application Modernization Accelerator
-In this section, you will explore the main capabilities of Application Modernization Accelerator. 
+In this section, you will explore the main capabilities of Application Modernization Accelerator via analysing the appliction `modResorts`.
 
 ## 4.1 Start AMA
 
