@@ -769,7 +769,7 @@ In the section you will use the **Java Modernization** workflow to modernize the
 
     2. Click on **Approve Once** a few times in the subtasks. Bob will fix issues if anything is not working.
 
-    3. Bob tested all endpoints successfully. Now it provides deployment summary. 
+    3. Bob tested all endpoints successfully. 
         
     <kbd><img src="./images/media/Bob_Start_Deployment14.png" width="400"></kbd>
 
