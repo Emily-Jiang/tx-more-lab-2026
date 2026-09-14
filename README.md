@@ -677,8 +677,8 @@ In the section you will use the **Java Modernization** workflow to modernize the
 
         <kbd>![Bob_Java_Modernization_Workflow_after_testing.png](./images/media/Bob_Java_Modernization_Workflow_after_testing.png)</kbd>
 
+    After Bob has applied the recipes, some files have been updated. 
     
-        After Bob has applied the recipes, you can see that the **LogoutServlet.java** and the **Weatherservlet.java** have been changed. 
     
     3. To better compare what has changed, switch to the **Source Control** view and compare the files. Some files have been changed. For an instance,
 
