@@ -126,7 +126,9 @@ All components are installed under `/home/itzuser/usr/IBM` on the student virtua
 1. Create the Student directories and some sub-directories used in the lab with commands:
 
        mkdir ~/Student
+
        mkdir ~/Student/assets
+
        mkdir ~/Student/backup
 
 ## 3.3 Build and deploy the WebSphere application modResorts
@@ -137,16 +139,17 @@ The objective of this section is to build and then deploy a web application to a
 
 1. Clone the repository to get access to the application binaries and more.
 
-       rm -rf ~/Student/temprepo/
        git clone https://github.com/Emily-Jiang/tx-more-lab-2026 ~/Student/temprepo
+
        mv ~/Student/temprepo/modresorts-project ~/Student
+
        rm -rf ~/Student/temprepo/
 
 2. Install the required WAS library
 
         cd ~/Student/modresorts-project/
 
-       mvn install:install-file -Dfile=/home/itzuser/usr/IBM/WebSphere/AppServer/dev/was_public.jar -DpomFile=/home/itzuser/usr/IBM/WebSphere/AppServer/dev/was_public-9.0.0.pom
+        mvn install:install-file -Dfile=/home/itzuser/usr/IBM/WebSphere/AppServer/dev/was_public.jar -DpomFile=/home/itzuser/usr/IBM/WebSphere/AppServer/dev/was_public-9.0.0.pom
 
     Make sure that the build is successful.
 
@@ -273,7 +276,8 @@ Run the AMA Discovery Tool against your WebSphere environment. After downloading
 1. Go back to the Terminal window by clicking the *Activities* on the top left corner and navigate the `/home/itzuser/Downloads` directory and view its contents with commands:
 
         cd /home/itzuser/Downloads/
-            ls -l | grep Discovery
+
+        ls -l | grep Discovery
 
     <kbd>![AMA_Discovery_Run_1](./images/media/AMA_Discovery_Run_1.png)</kbd>
             
@@ -325,6 +329,7 @@ Note: At this point, the data collector is ready to execute against a WebSphere 
 1. Go back to the Terminal window and navigate the directory where the AMA Discovery Tool was extracted, then list the content:
 
         cd ~/Student/ama-discovery-*
+
         ls -l
 
     <kbd>![AMA_Discovery_Run_6](./images/media/AMA_Discovery_Run_6.png)</kbd>
@@ -457,11 +462,15 @@ This section will use IBM Bob to modernise the **modresorts** application from J
 Open a terminal window and switch to the project directory, then initialize git.
 
         cd ~/Student/modresorts-project
+
         git init
+
         git config --global user.name "John Doe"
+
         git config --global user.email john.doe@noreply
 
         git add .
+
         git commit -a -m "Initial project"
 
         
@@ -828,6 +837,7 @@ In this section, you will install the modernized modResorts to MoRE.
 In a terminal window and enter the following commands to start the servers:
 
     chmod +x ~/Student/modresorts-project/tWAS-Scripts/WASND_905*.sh
+    
     ~/Student/modresorts-project/tWAS-Scripts/WASND_905_Cell_start.sh
 
 After the script completes, the message `All servers have been started!` is displayed.
