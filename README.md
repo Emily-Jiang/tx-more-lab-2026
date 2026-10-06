@@ -705,7 +705,7 @@ In the section you will use the **Java Modernization** workflow to modernize the
 
     While the overall resolution steps will stay the same, there might be differences in the order and the recommendations provided by Bob.
 
-4. Use AI to fix the issues around **Issue 1: Behavious changes**
+4. Use AI to fix the issues around **Issue 1: Behaviour changes**
 
     1. Bob creates a subtask and a **Todo** list to fix the issue based on the recommendations from the AMA migration plan. Click on **Approve once** to continue.
 
